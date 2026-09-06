@@ -87,11 +87,12 @@ export default function ConsultationModal({
               <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#64748B] mb-1.5">
                 Select Clinical Division
               </label>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {[
                   { id: "care", label: "Care Services" },
                   { id: "aesthetics", label: "Aesthetics" },
                   { id: "surgery", label: "Cosmetic Surgery" },
+                  { id: "therapy", label: "Therapeutic" },
                 ].map((item) => (
                   <button
                     key={item.id}

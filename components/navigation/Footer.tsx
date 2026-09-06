@@ -36,7 +36,7 @@ export default function Footer() {
               OptimizedCare unites sovereign British surgical precision, doctor-led aesthetic dermatology, and dignified private residential nursing under centralized Care Quality Commission governance.
             </p>
 
-            {/* CQC & GMC Regulatory Badges */}
+            {/* CQC, GMC & HCPC Regulatory Badges */}
             <div className="flex flex-wrap items-center gap-2 pt-1">
               <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-white border border-[#E2E8F0] text-[11px] font-medium text-[#0A192F]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#1E3A2F]" />
@@ -48,7 +48,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-white border border-[#E2E8F0] text-[11px] font-medium text-[#0A192F]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#725b38]" />
-                <span>BAAPS / BAPRAS</span>
+                <span>HCPC &amp; CSP Certified</span>
               </div>
             </div>
 
@@ -82,9 +82,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/surgery#finance" className="hover:text-[#0A192F] transition-colors flex items-center gap-1.5">
+                <Link href="/therapy" className="hover:text-[#0A192F] transition-colors flex items-center gap-1.5">
                   <span className="w-1 h-1 rounded-full bg-[#C5A880]" />
-                  <span>Chrysalis 0% Finance Plans</span>
+                  <span>Therapeutic &amp; Rehab Services</span>
                 </Link>
               </li>
             </ul>

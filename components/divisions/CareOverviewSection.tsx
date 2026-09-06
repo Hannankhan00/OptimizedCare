@@ -32,7 +32,7 @@ export default function CareOverviewSection({
 
               {/* Concise Highlights Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="flex items-start gap-2.5 p-3.5 rounded-md bg-[#f8f9ff] border border-[#E2E8F0]">
+                <div className="flex items-start gap-2.5 p-3.5 rounded-md bg-[#f8f9ff] border border-[#E2E8F0] hover:border-[#C5A880]/50 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300">
                   <span className="material-symbols-outlined text-[#2D5A46] text-[20px] flex-shrink-0 mt-0.5">
                     apartment
                   </span>
@@ -42,7 +42,7 @@ export default function CareOverviewSection({
                   </div>
                 </div>
 
-                <div className="flex items-start gap-2.5 p-3.5 rounded-md bg-[#f8f9ff] border border-[#E2E8F0]">
+                <div className="flex items-start gap-2.5 p-3.5 rounded-md bg-[#f8f9ff] border border-[#E2E8F0] hover:border-[#C5A880]/50 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300">
                   <span className="material-symbols-outlined text-[#2D5A46] text-[20px] flex-shrink-0 mt-0.5">
                     home
                   </span>
@@ -52,7 +52,7 @@ export default function CareOverviewSection({
                   </div>
                 </div>
 
-                <div className="flex items-start gap-2.5 p-3.5 rounded-md bg-[#f8f9ff] border border-[#E2E8F0]">
+                <div className="flex items-start gap-2.5 p-3.5 rounded-md bg-[#f8f9ff] border border-[#E2E8F0] hover:border-[#C5A880]/50 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300">
                   <span className="material-symbols-outlined text-[#2D5A46] text-[20px] flex-shrink-0 mt-0.5">
                     healing
                   </span>
@@ -62,7 +62,7 @@ export default function CareOverviewSection({
                   </div>
                 </div>
 
-                <div className="flex items-start gap-2.5 p-3.5 rounded-md bg-[#f8f9ff] border border-[#E2E8F0]">
+                <div className="flex items-start gap-2.5 p-3.5 rounded-md bg-[#f8f9ff] border border-[#E2E8F0] hover:border-[#C5A880]/50 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300">
                   <span className="material-symbols-outlined text-[#2D5A46] text-[20px] flex-shrink-0 mt-0.5">
                     verified
                   </span>
@@ -78,7 +78,7 @@ export default function CareOverviewSection({
             <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#E2E8F0]">
               <Link
                 href="/care"
-                className="h-11 px-6 bg-[#0A192F] text-white font-medium text-[14px] rounded-[4px] border border-[#C5A880] hover:bg-[#152542] transition-all shadow-sm flex items-center gap-2 group"
+                className="h-11 px-6 bg-[#0A192F] text-white font-medium text-[14px] rounded-[4px] border border-[#C5A880] hover:bg-[#152542] active:scale-[0.985] transition-all duration-200 shadow-sm flex items-center gap-2 group"
               >
                 <span>Visit Care Main Page</span>
                 <span className="material-symbols-outlined text-[18px] text-[#C5A880] group-hover:translate-x-1 transition-transform">
@@ -89,7 +89,7 @@ export default function CareOverviewSection({
               <button
                 type="button"
                 onClick={() => onOpenConsultation?.("care")}
-                className="h-11 px-5 bg-white border border-[#E2E8F0] hover:border-[#0A192F] text-[#0A192F] font-semibold text-[14px] rounded-[4px] transition-colors cursor-pointer"
+                className="h-11 px-5 bg-white border border-[#E2E8F0] hover:border-[#0A192F] hover:bg-[#f8f9ff] active:scale-[0.985] text-[#0A192F] font-semibold text-[14px] rounded-[4px] transition-all duration-200 cursor-pointer"
               >
                 Arrange Care Assessment
               </button>
@@ -98,7 +98,7 @@ export default function CareOverviewSection({
 
           {/* Right: Visual Showcase (Matching exact height of left content) */}
           <div className="lg:col-span-5 flex flex-col h-full">
-            <div className="relative rounded-xl overflow-hidden border border-[#E2E8F0] shadow-xl group w-full h-full min-h-[420px] lg:min-h-full">
+            <div className="relative rounded-xl overflow-hidden border border-[#E2E8F0] ring-1 ring-black/5 luxury-shadow-lg group w-full h-full min-h-[420px] lg:min-h-full">
               <img
                 src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80"
                 alt="Supported living and compassionate domiciliary care"
@@ -116,7 +116,7 @@ export default function CareOverviewSection({
                     Rated “Outstanding” for Dignity &amp; Care
                   </p>
                 </div>
-                <span className="w-3 h-3 rounded-full bg-[#1E3A2F] flex-shrink-0"></span>
+                <span className="w-3 h-3 rounded-full bg-[#1E3A2F] flex-shrink-0 animate-pulse"></span>
               </div>
             </div>
           </div>

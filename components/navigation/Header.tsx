@@ -17,6 +17,7 @@ export default function Header({
     { name: "Supported Care", href: "/care" },
     { name: "Advanced Aesthetics", href: "/aesthetics" },
     { name: "Cosmetic Surgery", href: "/surgery" },
+    { name: "Therapeutic Services", href: "/therapy" },
   ];
 
   return (

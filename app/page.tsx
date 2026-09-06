@@ -8,6 +8,7 @@ import ConsultationModal from "@/components/common/ConsultationModal";
 import CareOverviewSection from "@/components/divisions/CareOverviewSection";
 import AestheticsOverviewSection from "@/components/divisions/AestheticsOverviewSection";
 import SurgeryOverviewSection from "@/components/divisions/SurgeryOverviewSection";
+import TherapyOverviewSection from "@/components/divisions/TherapyOverviewSection";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"aesthetics" | "surgery" | "care">("aesthetics");
@@ -121,6 +122,30 @@ export default function Home() {
         href: "/surgery#finance",
       },
     },
+    {
+      id: "therapy",
+      divisionNumber: "Division 04",
+      navTitle: "Therapeutic Services",
+      badge: "HCPC & CSP Multidisciplinary Rehabilitation",
+      title: "Restorative Physiotherapy, Speech & Clinical Therapy",
+      description:
+        "Empowering physical autonomy, cognitive communication, and mental health resilience through specialist occupational therapy, chartered physiotherapy, and clinical psychotherapy.",
+      image:
+        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80",
+      highlights: [
+        "HCPC, CSP, RCOT & RCSLT Registered Clinicians",
+        "In-Clinic Suites & Direct Home Visit Therapy",
+        "Direct Payments & NHS Continuing Healthcare",
+      ],
+      primaryCta: {
+        label: "Explore Therapeutic Services",
+        href: "/therapy",
+      },
+      secondaryCta: {
+        label: "Book Therapy Assessment",
+        action: () => openConsultation("therapy"),
+      },
+    },
   ];
 
   const SLIDE_DURATION = 6500; // 6.5s auto-rotation
@@ -216,14 +241,14 @@ export default function Home() {
                   <div className="flex items-center gap-1.5">
                     <button
                       onClick={handlePrev}
-                      className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#C5A880] hover:text-[#0A192F] text-white flex items-center justify-center border border-white/20 transition-all cursor-pointer"
+                      className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#C5A880] hover:text-[#0A192F] text-white flex items-center justify-center border border-white/20 hover:border-[#C5A880] active:scale-95 transition-all cursor-pointer shadow-xs"
                       aria-label="Previous Slide"
                     >
                       <span className="material-symbols-outlined text-[18px]">chevron_left</span>
                     </button>
                     <button
                       onClick={handleNext}
-                      className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#C5A880] hover:text-[#0A192F] text-white flex items-center justify-center border border-white/20 transition-all cursor-pointer"
+                      className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#C5A880] hover:text-[#0A192F] text-white flex items-center justify-center border border-white/20 hover:border-[#C5A880] active:scale-95 transition-all cursor-pointer shadow-xs"
                       aria-label="Next Slide"
                     >
                       <span className="material-symbols-outlined text-[18px]">chevron_right</span>
@@ -261,7 +286,7 @@ export default function Home() {
                   {activeSlideData.primaryCta.href ? (
                     <Link
                       href={activeSlideData.primaryCta.href}
-                      className="inline-flex items-center justify-center h-12 px-7 bg-[#fedeb2] text-[#0A192F] font-semibold text-[14px] rounded-[4px] hover:bg-[#e0c298] transition-all shadow-lg cursor-pointer"
+                      className="inline-flex items-center justify-center h-12 px-7 bg-[#fedeb2] text-[#0A192F] font-semibold text-[14px] rounded-[4px] hover:bg-[#e0c298] active:scale-[0.985] transition-all shadow-lg cursor-pointer"
                     >
                       <span>{activeSlideData.primaryCta.label}</span>
                       <span className="material-symbols-outlined text-[18px] ml-1.5">
@@ -271,7 +296,7 @@ export default function Home() {
                   ) : (
                     <button
                       onClick={activeSlideData.primaryCta.action}
-                      className="inline-flex items-center justify-center h-12 px-7 bg-[#fedeb2] text-[#0A192F] font-semibold text-[14px] rounded-[4px] hover:bg-[#e0c298] transition-all shadow-lg cursor-pointer"
+                      className="inline-flex items-center justify-center h-12 px-7 bg-[#fedeb2] text-[#0A192F] font-semibold text-[14px] rounded-[4px] hover:bg-[#e0c298] active:scale-[0.985] transition-all shadow-lg cursor-pointer"
                     >
                       <span>{activeSlideData.primaryCta.label}</span>
                       <span className="material-symbols-outlined text-[18px] ml-1.5">
@@ -283,14 +308,14 @@ export default function Home() {
                   {activeSlideData.secondaryCta.href ? (
                     <Link
                       href={activeSlideData.secondaryCta.href}
-                      className="inline-flex items-center justify-center h-12 px-6 bg-white/10 hover:bg-white/20 text-white font-medium text-[14px] rounded-[4px] border border-white/30 transition-all cursor-pointer"
+                      className="inline-flex items-center justify-center h-12 px-6 bg-white/10 hover:bg-white/20 text-white font-medium text-[14px] rounded-[4px] border border-white/30 active:scale-[0.985] transition-all cursor-pointer"
                     >
                       <span>{activeSlideData.secondaryCta.label}</span>
                     </Link>
                   ) : (
                     <button
                       onClick={activeSlideData.secondaryCta.action}
-                      className="inline-flex items-center justify-center h-12 px-6 bg-white/10 hover:bg-white/20 text-white font-medium text-[14px] rounded-[4px] border border-white/30 transition-all cursor-pointer"
+                      className="inline-flex items-center justify-center h-12 px-6 bg-white/10 hover:bg-white/20 text-white font-medium text-[14px] rounded-[4px] border border-white/30 active:scale-[0.985] transition-all cursor-pointer"
                     >
                       <span>{activeSlideData.secondaryCta.label}</span>
                     </button>
@@ -335,7 +360,7 @@ export default function Home() {
               {/* Primary 3 Trust Pillars */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center pb-8 border-b border-[#E2E8F0]/80">
                 {/* Trust Pillar 1: CQC Outstanding */}
-                <div className="flex items-center gap-4 p-4 bg-white/90 rounded-lg shadow-sm border border-[#E2E8F0]">
+                <div className="flex items-center gap-4 p-5 bg-white/95 backdrop-blur-sm rounded-lg luxury-shadow-sm hover:luxury-shadow-md hover:-translate-y-0.5 border border-[#E2E8F0] hover:border-[#C5A880]/50 transition-all duration-300">
                   <div className="w-12 h-12 rounded-lg bg-[#0A192F] flex items-center justify-center text-[#C5A880] shrink-0">
                     <span className="material-symbols-outlined text-2xl">verified_user</span>
                   </div>
@@ -357,7 +382,7 @@ export default function Home() {
                 </div>
 
                 {/* Trust Pillar 2: GMC Specialist Register */}
-                <div className="flex items-center gap-4 p-4 bg-white/90 rounded-lg shadow-sm border border-[#E2E8F0]">
+                <div className="flex items-center gap-4 p-5 bg-white/95 backdrop-blur-sm rounded-lg luxury-shadow-sm hover:luxury-shadow-md hover:-translate-y-0.5 border border-[#E2E8F0] hover:border-[#C5A880]/50 transition-all duration-300">
                   <div className="w-12 h-12 rounded-lg bg-[#0A192F] flex items-center justify-center text-[#C5A880] shrink-0">
                     <span className="material-symbols-outlined text-2xl">workspace_premium</span>
                   </div>
@@ -377,7 +402,7 @@ export default function Home() {
                 </div>
 
                 {/* Trust Pillar 3: Over 10,000 Patients & Reviews */}
-                <div className="flex items-center gap-4 p-4 bg-white/90 rounded-lg shadow-sm border border-[#E2E8F0]">
+                <div className="flex items-center gap-4 p-5 bg-white/95 backdrop-blur-sm rounded-lg luxury-shadow-sm hover:luxury-shadow-md hover:-translate-y-0.5 border border-[#E2E8F0] hover:border-[#C5A880]/50 transition-all duration-300">
                   <div className="w-12 h-12 rounded-lg bg-[#0A192F] flex items-center justify-center text-[#C5A880] shrink-0">
                     <span className="material-symbols-outlined text-2xl">stars</span>
                   </div>
@@ -434,6 +459,9 @@ export default function Home() {
 
             {/* Division 03: Surgery Section */}
             <SurgeryOverviewSection onOpenConsultation={openConsultation} />
+
+            {/* Division 04: Therapeutic & Rehabilitation Section */}
+            <TherapyOverviewSection onOpenConsultation={openConsultation} />
           </div>
 
           {/* ========================================================================= */}

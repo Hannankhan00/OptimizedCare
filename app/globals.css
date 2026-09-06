@@ -93,15 +93,51 @@
   .font-headline-xl { font-size: 28px; line-height: 36px; letter-spacing: -0.02em; }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
   font-feature-settings: "cv05" 1, "cv08" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 .tnum {
   font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Taste-Skill Architectural Shadow & Surface Layering */
+.luxury-shadow-sm {
+  box-shadow: 0 2px 8px -2px rgba(10, 25, 47, 0.05), 0 1px 4px -1px rgba(10, 25, 47, 0.03);
+}
+
+.luxury-shadow-md {
+  box-shadow: 0 12px 30px -6px rgba(10, 25, 47, 0.08), 0 4px 12px -2px rgba(10, 25, 47, 0.04);
+}
+
+.luxury-shadow-lg {
+  box-shadow: 0 24px 60px -12px rgba(10, 25, 47, 0.12), 0 8px 24px -4px rgba(10, 25, 47, 0.06);
+}
+
+/* Glassmorphic Clinical Surface Fallback */
+.clinical-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .material-symbols-outlined {
