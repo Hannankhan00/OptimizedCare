@@ -183,24 +183,24 @@ export default function CompactServicesGrid() {
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
 
   return (
-    <section id="services-grid" className="w-full py-20 md:py-28 bg-[#FBFBFD]">
+    <section id="services-grid" className="w-full py-20 md:py-28 bg-[#F8FAFC]">
       <div className="max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12">
-        {/* Apple Centered Eyebrow & Headline */}
+        {/* Apple Centered Eyebrow & Headline with Compact Personnel Palette */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-block p-1 rounded-full bg-[#E5E5EA]/60 ring-1 ring-black/5">
+          <div className="inline-block p-1 rounded-full bg-[#E2E8F0]/80 ring-1 ring-[#2A9D8F]/20">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#0D5C3A]" />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0D5C3A]">
+              <span className="w-2 h-2 rounded-full bg-[#2A9D8F]" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#2A9D8F]">
                 Comprehensive Care Catalogue
               </span>
             </div>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-semibold text-[#1D1D1F] tracking-tight leading-[1.12] text-balance">
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-semibold text-[#1D3557] tracking-tight leading-[1.12] text-balance">
             Every Service Tailored. No Pre-Defined Boxes.
           </h2>
 
-          <p className="text-[17px] sm:text-[18px] text-[#6E6E73] font-normal leading-relaxed text-pretty">
+          <p className="text-[17px] sm:text-[18px] text-[#457B9D] font-normal leading-relaxed text-pretty">
             We do not force individuals into rigid models. Explore our 8 accredited clinical pathways designed to support autonomy, safety, and quality of life.
           </p>
         </div>
@@ -210,37 +210,37 @@ export default function CompactServicesGrid() {
           {servicesData.map((svc) => (
             <div
               key={svc.id}
-              className={`${svc.colSpan || "lg:col-span-6"} group relative flex flex-col justify-between p-2 rounded-[2rem] bg-[#E5E5EA]/40 ring-1 ring-black/5 hover:ring-[#0D5C3A]/20 transition-all duration-500 shadow-sm hover:shadow-md`}
+              className={`${svc.colSpan || "lg:col-span-6"} group relative flex flex-col justify-between p-2 rounded-[2rem] bg-[#E2E8F0]/60 ring-1 ring-black/5 hover:ring-[#2A9D8F]/30 transition-all duration-500 shadow-sm hover:shadow-md`}
             >
               {/* Inner Double-Bezel Core */}
               <div className="relative flex flex-col h-full bg-white rounded-[calc(2rem-0.5rem)] p-6 sm:p-8 overflow-hidden">
-                {/* Background Accent Mesh (Subtle Emerald) */}
-                <div className="pointer-events-none absolute -top-16 -right-16 w-48 h-48 bg-gradient-to-bl from-[#ECFDF5] to-transparent rounded-full opacity-60 group-hover:scale-125 transition-transform duration-700" />
+                {/* Background Accent Mesh */}
+                <div className="pointer-events-none absolute -top-16 -right-16 w-48 h-48 bg-gradient-to-bl from-[#E8F6F3] to-transparent rounded-full opacity-60 group-hover:scale-125 transition-transform duration-700" />
 
                 {/* Top Row: Service Number & Tag */}
                 <div className="relative flex items-center justify-between gap-4 mb-6">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] flex items-center justify-center flex-shrink-0 group-hover:bg-[#0D5C3A] transition-colors duration-300">
-                      <span className="material-symbols-outlined text-[20px] text-[#0D5C3A] group-hover:text-white transition-colors">
+                    <div className="w-10 h-10 rounded-full bg-[#E8F6F3] border border-[#94D2BD] flex items-center justify-center flex-shrink-0 group-hover:bg-[#2A9D8F] transition-colors duration-300">
+                      <span className="material-symbols-outlined text-[20px] text-[#2A9D8F] group-hover:text-white transition-colors">
                         {svc.icon}
                       </span>
                     </div>
-                    <span className="text-[12px] font-bold text-[#86868B] tracking-wider tnum">
+                    <span className="text-[12px] font-bold text-[#457B9D] tracking-wider tnum">
                       {svc.number}
                     </span>
                   </div>
 
-                  <span className="px-3 py-1 rounded-full bg-[#F5F5F7] border border-[#E5E5EA] text-[11px] font-semibold text-[#1D1D1F] tracking-wide">
+                  <span className="px-3 py-1 rounded-full bg-[#F0F9FF] border border-[#E2E8F0] text-[11px] font-semibold text-[#1D3557] tracking-wide">
                     {svc.tag}
                   </span>
                 </div>
 
                 {/* Title & Summary */}
                 <div className="relative space-y-3 mb-6">
-                  <h3 className="text-[22px] sm:text-[24px] font-semibold text-[#1D1D1F] tracking-tight group-hover:text-[#0D5C3A] transition-colors">
+                  <h3 className="text-[22px] sm:text-[24px] font-semibold text-[#1D3557] tracking-tight group-hover:text-[#2A9D8F] transition-colors">
                     {svc.title}
                   </h3>
-                  <p className="text-[15px] text-[#6E6E73] leading-relaxed">
+                  <p className="text-[15px] text-[#457B9D] leading-relaxed">
                     {svc.summary}
                   </p>
                 </div>
@@ -249,25 +249,25 @@ export default function CompactServicesGrid() {
                 <div className="relative space-y-2.5 mb-8 flex-1">
                   {svc.highlights.slice(0, 3).map((hl, i) => (
                     <div key={i} className="flex items-start gap-2.5">
-                      <span className="w-4 h-4 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="material-symbols-outlined text-[#0D5C3A] text-[11px]">
+                      <span className="w-4 h-4 rounded-full bg-[#E8F6F3] border border-[#94D2BD] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="material-symbols-outlined text-[#2A9D8F] text-[11px]">
                           check
                         </span>
                       </span>
-                      <span className="text-[13px] text-[#424245] leading-snug">{hl}</span>
+                      <span className="text-[13px] text-[#1D3557] font-medium leading-snug">{hl}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Bottom Action Bar */}
-                <div className="relative pt-4 border-t border-[#F5F5F7] flex items-center justify-between gap-4">
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-[#0D5C3A] truncate">
+                <div className="relative pt-4 border-t border-[#F0F9FF] flex items-center justify-between gap-4">
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-[#2A9D8F] truncate">
                     {svc.clinicalFocus}
                   </div>
 
                   <button
                     onClick={() => setSelectedService(svc)}
-                    className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#1D1D1F] hover:text-[#0D5C3A] transition-colors cursor-pointer group-hover:translate-x-1 duration-300"
+                    className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#1D3557] hover:text-[#2A9D8F] transition-colors cursor-pointer group-hover:translate-x-1 duration-300"
                   >
                     <span>View Care Details</span>
                     <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
@@ -281,22 +281,22 @@ export default function CompactServicesGrid() {
 
       {/* Apple Sheet / Detail Modal */}
       {selectedService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-md animate-fadeIn">
-          <div className="relative w-full max-w-2xl p-2 rounded-[2.5rem] bg-white/95 ring-1 ring-black/10 shadow-2xl overflow-hidden animate-scaleUp">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1D3557]/60 backdrop-blur-md animate-fadeIn">
+          <div className="relative w-full max-w-2xl p-2 rounded-[2.5rem] bg-white/95 ring-1 ring-[#2A9D8F]/20 shadow-2xl overflow-hidden animate-scaleUp">
             <div className="bg-white rounded-[2rem] p-6 sm:p-8 max-h-[85vh] overflow-y-auto space-y-6">
               {/* Modal Header */}
-              <div className="flex items-start justify-between gap-4 border-b border-[#E5E5EA] pb-5">
+              <div className="flex items-start justify-between gap-4 border-b border-[#E2E8F0] pb-5">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] flex items-center justify-center">
-                    <span className="material-symbols-outlined text-[#0D5C3A] text-[24px]">
+                  <div className="w-12 h-12 rounded-full bg-[#E8F6F3] border border-[#94D2BD] flex items-center justify-center">
+                    <span className="material-symbols-outlined text-[#2A9D8F] text-[24px]">
                       {selectedService.icon}
                     </span>
                   </div>
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#0D5C3A]">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#2A9D8F]">
                       Pathway {selectedService.number} • {selectedService.tag}
                     </span>
-                    <h3 className="text-2xl font-bold text-[#1D1D1F] tracking-tight">
+                    <h3 className="text-2xl font-bold text-[#1D3557] tracking-tight">
                       {selectedService.title}
                     </h3>
                   </div>
@@ -304,14 +304,14 @@ export default function CompactServicesGrid() {
 
                 <button
                   onClick={() => setSelectedService(null)}
-                  className="w-9 h-9 rounded-full bg-[#F5F5F7] hover:bg-[#E5E5EA] flex items-center justify-center text-[#6E6E73] hover:text-[#1D1D1F] transition-colors cursor-pointer"
+                  className="w-9 h-9 rounded-full bg-[#F0F9FF] hover:bg-[#E2E8F0] flex items-center justify-center text-[#457B9D] hover:text-[#1D3557] transition-colors cursor-pointer"
                 >
                   <span className="material-symbols-outlined text-[18px]">close</span>
                 </button>
               </div>
 
               {/* Service Hero Image */}
-              <div className="rounded-2xl overflow-hidden border border-[#E5E5EA]">
+              <div className="rounded-2xl overflow-hidden border border-[#E2E8F0]">
                 <img
                   src={selectedService.image}
                   alt={selectedService.title}
@@ -321,28 +321,28 @@ export default function CompactServicesGrid() {
 
               {/* Deep Narrative Description */}
               <div className="space-y-3">
-                <h4 className="text-[14px] font-bold text-[#1D1D1F] uppercase tracking-wider">
+                <h4 className="text-[14px] font-bold text-[#1D3557] uppercase tracking-wider">
                   Care Model &amp; Clinical Delivery
                 </h4>
-                <p className="text-[15px] text-[#424245] leading-relaxed">
+                <p className="text-[15px] text-[#457B9D] leading-relaxed">
                   {selectedService.details}
                 </p>
               </div>
 
               {/* Full Highlights Checklist */}
-              <div className="space-y-3 bg-[#FBFBFD] p-5 rounded-2xl border border-[#E5E5EA]">
-                <h4 className="text-[13px] font-bold text-[#1D1D1F] uppercase tracking-wider">
+              <div className="space-y-3 bg-[#F8FAFC] p-5 rounded-2xl border border-[#E2E8F0]">
+                <h4 className="text-[13px] font-bold text-[#1D3557] uppercase tracking-wider">
                   Key Service Inclusions
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {selectedService.highlights.map((hl, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <span className="w-4 h-4 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="material-symbols-outlined text-[#0D5C3A] text-[11px]">
+                      <span className="w-4 h-4 rounded-full bg-[#E8F6F3] border border-[#94D2BD] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="material-symbols-outlined text-[#2A9D8F] text-[11px]">
                           check
                         </span>
                       </span>
-                      <span className="text-[13px] text-[#1D1D1F] font-medium leading-snug">
+                      <span className="text-[13px] text-[#1D3557] font-medium leading-snug">
                         {hl}
                       </span>
                     </div>
@@ -351,22 +351,22 @@ export default function CompactServicesGrid() {
               </div>
 
               {/* Modal Actions */}
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-[#E5E5EA]">
-                <div className="text-[13px] text-[#6E6E73]">
-                  Direct referral via <span className="font-semibold text-[#0D5C3A]">0161 478 5814</span>
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-[#E2E8F0]">
+                <div className="text-[13px] text-[#457B9D]">
+                  Direct referral via <a href="tel:+447404210566" className="font-semibold text-[#2A9D8F] hover:underline">+44 7404 210566</a>
                 </div>
 
                 <div className="flex items-center gap-3 w-full sm:w-auto">
                   <button
                     onClick={() => setSelectedService(null)}
-                    className="flex-1 sm:flex-none px-4 py-2.5 rounded-full border border-[#E5E5EA] text-[14px] font-medium text-[#1D1D1F] hover:bg-[#F5F5F7] transition-colors cursor-pointer"
+                    className="flex-1 sm:flex-none px-4 py-2.5 rounded-full border border-[#E2E8F0] text-[14px] font-medium text-[#1D3557] hover:bg-[#F0F9FF] transition-colors cursor-pointer"
                   >
                     Close
                   </button>
                   <a
                     href="#contact-compact"
                     onClick={() => setSelectedService(null)}
-                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#0D5C3A] text-white text-[14px] font-medium hover:bg-[#0A4A2E] transition-colors shadow-sm cursor-pointer"
+                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#2A9D8F] text-white text-[14px] font-medium hover:bg-[#21867A] transition-colors shadow-sm cursor-pointer"
                   >
                     <span>Enquire for this Service</span>
                     <span className="material-symbols-outlined text-[16px]">arrow_forward</span>

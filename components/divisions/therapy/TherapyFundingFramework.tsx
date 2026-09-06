@@ -2,60 +2,60 @@
 
 import React from "react";
 
-interface AestheticsSafetyGovernanceProps {
+interface TherapyFundingFrameworkProps {
   onOpenConsultation?: (dept: string) => void;
 }
 
-export default function AestheticsSafetyGovernance({
+export default function TherapyFundingFramework({
   onOpenConsultation,
-}: AestheticsSafetyGovernanceProps) {
+}: TherapyFundingFrameworkProps) {
   const pillars = [
     {
-      title: "100% Doctor-Led Practice",
-      icon: "medical_services",
-      desc: "All injectable procedures are performed exclusively by GMC-registered medical doctors and independent prescribers. Zero non-medical injectors.",
-      highlight: "GMC Specialist Registration",
+      title: "Direct Payments & NHS CHC",
+      icon: "account_balance_wallet",
+      desc: "We accept Local Authority Direct Payments, NHS Continuing Healthcare (CHC) personal health budgets, and statutory social care funding with straightforward invoicing.",
+      highlight: "Personal Budgets Accepted",
     },
     {
-      title: "Ultrasound Vascular Pre-Scan",
-      icon: "radiology",
-      desc: "High-frequency Clarius ultrasound maps your facial arterial network in real-time before needle or cannula entry, virtually eliminating vascular occlusion risk.",
-      highlight: "Real-Time Blood Flow Visualisation",
-    },
-    {
-      title: "Immediate Hyalase Reversal On-Site",
-      icon: "emergency",
-      desc: "Immediate on-site availability of prescription hyaluronidase reversal enzymes, emergency protocols, and 24/7 direct physician telephone access.",
-      highlight: "24/7 Patient Emergency Line",
-    },
-    {
-      title: "Save Face & CQC Accredited Suites",
+      title: "Private Medical Insurance & Self-Pay",
       icon: "health_and_safety",
-      desc: "Our Stockport clinic suites operate under hospital-grade sterile disinfection, positive pressure air filtration, and single-use CE instruments.",
-      highlight: "Hospital-Grade Sterility",
+      desc: "Recognized by leading UK private medical insurers including BUPA, AXA Health, Aviva, and Vitality, as well as transparent direct self-pay fee schedules.",
+      highlight: "BUPA & AXA Health Approved",
+    },
+    {
+      title: "In-Clinic Suites & Home Visits",
+      icon: "home_health",
+      desc: "Attend our private Stockport clinical rooms, or receive treatment in the comfort and familiarity of your own home across the region and UK.",
+      highlight: "UK-Wide Domiciliary Service",
+    },
+    {
+      title: "48-Hour Clinical Documentation",
+      icon: "clinical_notes",
+      desc: "Comprehensive assessment reports and clinical discharge summaries delivered within 48 hours for GP liaison, case managers, and statutory social services.",
+      highlight: "Rapid Multi-Agency Liaison",
     },
   ];
 
-  const workflowSteps = [
+  const journeySteps = [
     {
       step: "01",
-      title: "Dynamic Facial Mapping",
-      desc: "We analyze your facial animation at rest and during natural speech to calibrate micro-unit dosages that maintain true personal expression.",
+      title: "Clinical Intake & Triage",
+      desc: "Our senior lead clinician reviews your referral, medical history, and mobility status to match you with the ideal sub-specialist therapist.",
     },
     {
       step: "02",
-      title: "Ultrasound Vascular Scan",
-      desc: "A high-frequency ultrasound transducer identifies the exact depth and route of key arteries (facial, angular, labial) in the treatment zone.",
+      title: "Comprehensive Initial Assessment",
+      desc: "A thorough 60-minute evaluation conducted in-clinic or in your home, assessing joint range, functional capacity, swallowing safety, or mental health.",
     },
     {
       step: "03",
-      title: "Atraumatic Micro-Cannula",
-      desc: "Using blunt-tipped micro-cannulas rather than sharp needles to slide past delicate vessels, substantially minimizing bruising and tissue trauma.",
+      title: "SMART Functional Goal Setting",
+      desc: "Collaborating with you and your family to establish concrete, realistic milestones—whether climbing stairs, speaking clearly, or self-bathing.",
     },
     {
       step: "04",
-      title: "14-Day Physician Review",
-      desc: "A mandatory face-to-face follow-up with your administering doctor at two weeks to assess tissue integration and provide complimentary fine-tuning.",
+      title: "Evidence-Based Treatment & Review",
+      desc: "Structured one-on-one therapy sessions with continuous outcome measurement and formal progress updates for your GP and care team.",
     },
   ];
 
@@ -67,21 +67,21 @@ export default function AestheticsSafetyGovernance({
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E8F6F3] border border-[#94D2BD] text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-wider mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2A9D8F]" />
-              <span className="text-[#1D3557]">Clinical Governance &amp; Ethics</span>
+              <span className="text-[#1D3557]">Access, Funding &amp; Delivery Models</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1D3557] tracking-tight leading-tight">
-              The OptimizedCare Clinical Safety Standard
+              Clinical Pathways &amp; Flexible Funding Options
             </h2>
             <p className="text-[16px] text-[#457B9D] mt-2 max-w-2xl leading-relaxed">
-              Setting the medical benchmark for patient safety in the UK aesthetics sector through ultrasound guidance, prescription physician governance, and hospital sterility.
+              Whether self-funding, utilizing Local Authority Direct Payments, or funded under NHS Continuing Healthcare, our service integrates seamlessly with your broader care network.
             </p>
           </div>
 
           <button
-            onClick={() => onOpenConsultation?.("aesthetics")}
+            onClick={() => onOpenConsultation?.("therapy")}
             className="inline-flex items-center justify-center h-12 px-7 bg-[#2A9D8F] hover:bg-[#21867A] text-white font-semibold text-[14px] rounded-full transition-all shadow-xs shrink-0 cursor-pointer active:scale-95"
           >
-            <span>Consult GMC Physician</span>
+            <span>Consult Clinical Team</span>
             <span className="material-symbols-outlined text-[18px] ml-2">arrow_forward</span>
           </button>
         </div>
@@ -113,23 +113,23 @@ export default function AestheticsSafetyGovernance({
           ))}
         </div>
 
-        {/* Step-by-Step Clinical Safety Workflow */}
+        {/* Step-by-Step Clinical Delivery Journey */}
         <div className="p-2 rounded-[2rem] bg-white border border-[#E2E8F0] shadow-sm">
           <div className="p-6 md:p-10 rounded-[calc(2rem-0.5rem)] bg-[#F8FAFC] border border-[#E2E8F0]">
             <div className="flex flex-col items-center text-center max-w-xl mx-auto mb-10">
               <span className="text-[11px] font-bold uppercase tracking-widest text-[#2A9D8F] block mb-2">
-                Procedural Protocol
+                Care Journey
               </span>
               <h3 className="text-2xl font-semibold text-[#1D3557] tracking-tight">
-                Our 4-Stage Clinical Consultation Journey
+                Our 4-Stage Rehabilitation Process
               </h3>
               <p className="text-[14px] text-[#457B9D] mt-2">
-                From ultrasonic pre-scan to post-procedure follow-up, your care is managed by a single named doctor.
+                Transparent clinical milestones designed to rebuild physical autonomy and personal dignity.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {workflowSteps.map((step) => (
+              {journeySteps.map((step) => (
                 <div key={step.step} className="flex flex-col p-5 bg-white rounded-xl border border-[#E2E8F0]">
                   <span className="text-[28px] font-mono font-bold text-[#2A9D8F] mb-2 leading-none">
                     {step.step}
@@ -149,11 +149,11 @@ export default function AestheticsSafetyGovernance({
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#2A9D8F] text-[20px]">check_circle</span>
                 <span>
-                  <strong>Complimentary 2-Week Follow-Up Review:</strong> Face-to-face physician review with fine-tuning included in every protocol.
+                  <strong>Interdisciplinary Team Meetings (MDT):</strong> Our physiotherapists, OTs, speech therapists, and psychologists coordinate closely to prevent treatment conflicts.
                 </span>
               </div>
-              <span className="font-mono text-[11px] text-[#1D3557] font-semibold bg-white px-3 py-1 rounded-full border border-[#E2E8F0]">
-                Protocol HB-AESTH-2026
+              <span className="font-mono text-[11px] text-[#1D3557] font-semibold bg-white px-3 py-1 rounded-full border border-[#E2E8F0] shrink-0">
+                Protocol OC-THRP-2026
               </span>
             </div>
           </div>

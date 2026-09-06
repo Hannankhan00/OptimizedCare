@@ -39,15 +39,15 @@ export async function POST(request: Request) {
       );
     }
 
-    const recipient = "info@compactpersonnel.co.uk";
+    const recipient = "info@optimizedcare.org.pk";
     const timestamp = new Date().toISOString();
-    const referenceId = `CP-${Date.now().toString(36).toUpperCase()}`;
+    const referenceId = `OC-CARE-${Date.now().toString(36).toUpperCase()}`;
 
     // Structure the email message content
-    const emailSubject = `[Compact Personnel Referral] New Enquiry from ${fullName} - ${service || "General Care"}`;
+    const emailSubject = `[Supported Care Referral] New Enquiry from ${fullName} - ${service || "General Care"}`;
     const formattedEmailBody = `
 =====================================================
-NEW CARE ENQUIRY - COMPACT PERSONNEL & OPTIMIZEDCARE
+NEW CARE ENQUIRY - OPTIMIZEDCARE SUPPORTED SERVICES
 =====================================================
 Reference ID:    ${referenceId}
 Received At:     ${timestamp}
@@ -82,7 +82,7 @@ ${message}
      *    SMTP_PORT=587
      *    SMTP_USER=your-smtp-user
      *    SMTP_PASS=your-smtp-password
-     *    SMTP_FROM="OptimizedCare x Compact Personnel" <no-reply@compactpersonnel.co.uk>
+     *    SMTP_FROM="OptimizedCare Supported Services" <info@optimizedcare.org.pk>
      * 2. Install nodemailer (`npm i nodemailer @types/nodemailer`)
      * 3. Uncomment and trigger the transporter below:
      *
@@ -117,11 +117,11 @@ ${message}
       { status: 200 }
     );
   } catch (error) {
-    console.error("[Compact Contact API Error]:", error);
+    console.error("[Care Contact API Error]:", error);
     return NextResponse.json(
       {
         success: false,
-        error: "An unexpected error occurred while processing your request. Please call 0161 478 5814 directly.",
+        error: "An unexpected error occurred while processing your request. Please call +44 7404 210566 directly.",
       },
       { status: 500 }
     );

@@ -124,11 +124,11 @@ export default function CareIntakeJourney({ onOpenConsultation }: CareIntakeJour
         </div>
 
         <a
-          href="tel:03331234567"
+          href="tel:+447404210566"
           className="h-10 px-5 bg-white text-[#211E1A] font-semibold text-[13px] rounded-[4px] hover:bg-[#EFEAE0] transition-colors flex items-center gap-2 flex-shrink-0"
         >
           <span className="material-symbols-outlined text-[16px] text-[#8A4530]">call</span>
-          <span>Call 0333 123 4567</span>
+          <span>Call +44 7404 210566</span>
         </a>
       </div>
     </div>

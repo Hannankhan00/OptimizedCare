@@ -12,117 +12,126 @@ export default function SurgicalJourneyProtocol({
   const stages = [
     {
       step: "01",
-      title: "Consultant Plastic Surgeon Consultation",
+      title: "Consultant Surgeon Consultation",
       tag: "Stage 1",
       icon: "person",
-      desc: "A direct 45-minute consultation with your operating BAAPS/BAPRAS consultant surgeon. Candid discussion of anatomy, technique, Crisalix 3D imaging, and realistic outcomes.",
+      desc: "A direct 45-minute consultation with your operating BAAPS/BAPRAS consultant plastic surgeon. Detailed anatomical evaluation and Crisalix 3D simulation.",
       highlight: "Direct Surgeon Meeting",
     },
     {
       step: "02",
-      title: "Mandatory 2-Week Cooling-Off Period",
+      title: "Mandatory 14-Day Cooling-Off",
       tag: "Stage 2",
       icon: "hourglass_top",
-      desc: "Strictly upholding GMC ethical standards, a minimum 14-day reflective period is mandatory. No same-day bookings or high-pressure sales coordinators.",
+      desc: "Strictly upholding GMC ethical standards, a minimum two-week reflective period is mandatory. No same-day deposits or high-pressure sales coordinators.",
       highlight: "Ethical Reflection",
     },
     {
       step: "03",
-      title: "Pre-Operative Health Screening",
+      title: "Pre-Operative Medical Screening",
       tag: "Stage 3",
       icon: "vital_signs",
-      desc: "Complete pre-assessment including blood panels, MRSA screening, ECG, and consultation with our Consultant Anesthetist (FRCA) to guarantee your theatre safety.",
-      highlight: "Full Medical Workup",
+      desc: "Complete pre-assessment including blood panels, MRSA screening, ECG, and consultation with our Consultant Anesthetist (FRCA) ensuring total theatre safety.",
+      highlight: "FRCA Anesthetist Review",
     },
     {
       step: "04",
       title: "Private Hospital Theatre Day",
       tag: "Stage 4",
       icon: "local_hospital",
-      desc: "Procedure performed in our CQC-inspected Central London partner hospital theatres. En-suite private room, dedicated surgical recovery nurse, and surgeon post-op review.",
-      highlight: "Private En-Suite Room",
+      desc: "Procedure performed in our CQC-inspected partner hospital theatres. En-suite private room, dedicated recovery nurse, and surgeon post-op visit.",
+      highlight: "En-Suite Hospital Room",
     },
     {
       step: "05",
-      title: "Comprehensive 2-Year Clinical Aftercare",
+      title: "2-Year Clinical Aftercare Package",
       tag: "Stage 5",
       icon: "verified_user",
-      desc: "All dressings, compression garments, unlimited scheduled surgeon reviews at 1 week, 6 weeks, 6 months, and 1 year, backed by our 24/7 nurse emergency hotline.",
+      desc: "Unlimited scheduled surgeon reviews at 1 week, 6 weeks, 6 months, and 1 year, supported by compression garments and our 24/7 emergency nurse hotline.",
       highlight: "Revision Policy Included",
     },
   ];
 
   return (
-    <div className="w-full bg-white rounded-xl border border-[#DDD3BF] shadow-sm p-6 md:p-8 lg:p-10">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-        <div>
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#E9C9AC]/40 text-[#8A4530] text-[11px] font-semibold uppercase tracking-wider border border-[#A85D3D]/30 mb-2">
-            <span className="material-symbols-outlined text-[14px]">checklist</span>
-            Surgery Component 03 • The Five-Stage Surgical Journey
+    <div className="w-full py-16 md:py-24 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+      <div className="max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E8F6F3] border border-[#94D2BD] text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-wider mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2A9D8F]" />
+              <span className="text-[#1D3557]">GMC Clinical Governance</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-semibold text-[#1D3557] tracking-tight leading-tight">
+              The Five-Stage Clinical Surgical Journey
+            </h2>
+            <p className="text-[16px] text-[#457B9D] mt-2 max-w-2xl leading-relaxed">
+              From initial consultation to long-term aftercare, our patient safety protocol strictly follows General Medical Council (GMC) guidance.
+            </p>
           </div>
-          <h3 className="font-serif text-2xl md:text-3xl font-semibold text-[#211E1A] tracking-tight">
-            British Standard Clinical Surgery Protocol
-          </h3>
-          <p className="text-[15px] text-[#5A5347] mt-1">
-            From initial consultation to long-term aftercare, our patient safety protocol strictly follows General Medical Council (GMC) guidance.
-          </p>
-        </div>
 
-        <button
-          onClick={() => onOpenConsultation?.("surgery")}
-          className="h-10 px-5 bg-[#211E1A] text-white font-medium text-[13px] rounded-[4px] border border-[#A85D3D] hover:bg-[#3A342B] transition-colors shadow-sm flex items-center gap-2 flex-shrink-0 cursor-pointer"
-        >
-          <span>Book Consultant Consultation</span>
-          <span className="material-symbols-outlined text-[16px] text-[#A85D3D]">arrow_forward</span>
-        </button>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-        {stages.map((stage, idx) => (
-          <div
-            key={idx}
-            className="p-5 rounded-lg bg-[#F7F4EC] border border-[#DDD3BF] flex flex-col justify-between hover:border-[#A85D3D]/70 transition-all group"
+          <button
+            onClick={() => onOpenConsultation?.("surgery")}
+            className="inline-flex items-center justify-center h-12 px-7 bg-[#2A9D8F] hover:bg-[#21867A] text-white font-semibold text-[14px] rounded-full transition-all shadow-xs shrink-0 cursor-pointer active:scale-95"
           >
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-mono text-xl font-bold text-[#A85D3D]">
-                  {stage.step}
-                </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#8A4530] bg-white px-2 py-0.5 rounded border border-[#DDD3BF]">
-                  {stage.tag}
-                </span>
-              </div>
-              <div className="w-9 h-9 rounded-md bg-white border border-[#DDD3BF] flex items-center justify-center text-[#211E1A] mb-3 group-hover:bg-[#211E1A] group-hover:text-white transition-colors">
-                <span className="material-symbols-outlined text-[18px]">{stage.icon}</span>
-              </div>
-              <h4 className="text-[14px] font-semibold text-[#211E1A] leading-snug">
-                {stage.title}
-              </h4>
-              <p className="text-[12px] text-[#5A5347] mt-2 leading-relaxed">
-                {stage.desc}
-              </p>
-            </div>
-
-            <div className="mt-4 pt-3 border-t border-[#DDD3BF] flex items-center gap-1 text-[11px] font-medium text-[#2D5A46]">
-              <span className="material-symbols-outlined text-[14px]">check_circle</span>
-              <span>{stage.highlight}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* GMC & BAAPS Reassurance Guarantee */}
-      <div className="mt-8 p-4 rounded-lg bg-[#EFEAE0] border border-[#DDD3BF] flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-[#5A5347]">
-        <div className="flex items-center gap-3">
-          <span className="material-symbols-outlined text-[#8A4530] text-[22px]">verified_user</span>
-          <span>
-            <strong>Zero High-Pressure Sales Guarantee:</strong> All surgical appointments are conducted strictly by Consultant Plastic Surgeons, never patient advisors or sales personnel.
-          </span>
+            <span>Book Surgeon Consultation</span>
+            <span className="material-symbols-outlined text-[18px] ml-2">arrow_forward</span>
+          </button>
         </div>
-        <div className="flex items-center gap-2 flex-shrink-0">
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-[#211E1A] bg-white px-3 py-1 rounded border border-[#DDD3BF]">
-            BAAPS &amp; BAPRAS Fellows
-          </span>
+
+        {/* 5 Stages Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          {stages.map((stage, idx) => (
+            <div
+              key={idx}
+              className="p-5 rounded-2xl bg-white border border-[#E2E8F0] hover:border-[#94D2BD] shadow-xs flex flex-col justify-between transition-all duration-300 group"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-2xl font-bold text-[#2A9D8F]">
+                    {stage.step}
+                  </span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#2A9D8F] bg-[#E8F6F3] border border-[#94D2BD] px-2.5 py-0.5 rounded-full">
+                    {stage.tag}
+                  </span>
+                </div>
+
+                <div className="w-10 h-10 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#1D3557] mb-4 group-hover:bg-[#1D3557] group-hover:text-white transition-colors shadow-2xs">
+                  <span className="material-symbols-outlined text-[20px]">{stage.icon}</span>
+                </div>
+
+                <h3 className="text-[15px] font-semibold text-[#1D3557] leading-snug">
+                  {stage.title}
+                </h3>
+
+                <p className="text-[12px] text-[#457B9D] mt-2 leading-relaxed">
+                  {stage.desc}
+                </p>
+              </div>
+
+              <div className="mt-5 pt-3 border-t border-[#E2E8F0] flex items-center gap-1.5 text-[11px] font-semibold text-[#2A9D8F]">
+                <span className="material-symbols-outlined text-[14px]">verified</span>
+                <span>{stage.highlight}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Reassurance Footer Banner */}
+        <div className="mt-8 p-2 rounded-[2rem] bg-white border border-[#E2E8F0] shadow-sm">
+          <div className="p-6 rounded-[calc(2rem-0.5rem)] bg-[#F8FAFC] border border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-[#457B9D]">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-[#E8F6F3] border border-[#94D2BD] flex items-center justify-center text-[#2A9D8F] shrink-0">
+                <span className="material-symbols-outlined text-[20px]">shield</span>
+              </div>
+              <span>
+                <strong className="text-[#1D3557]">Comprehensive 2-Year Clinical Aftercare Warranty:</strong> All follow-up appointments, wound checks, surgical dressings, and revision policies are explicitly contracted with no hidden charges.
+              </span>
+            </div>
+            <span className="font-mono text-[11px] text-[#1D3557] font-semibold bg-white px-3 py-1 rounded-full border border-[#E2E8F0] shrink-0">
+              GMC Surgery Protocol OC-SURG-2026
+            </span>
+          </div>
         </div>
       </div>
     </div>

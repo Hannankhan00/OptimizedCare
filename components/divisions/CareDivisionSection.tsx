@@ -31,11 +31,11 @@ export default function CareDivisionSection({
 
         <div className="flex items-center gap-3">
           <a
-            href="tel:03331234567"
+            href="tel:+447404210566"
             className="h-10 px-4 bg-white border border-[#DDD3BF] text-[#211E1A] text-[13px] font-semibold rounded-[4px] flex items-center gap-2 hover:bg-[#EFEAE0] transition-colors"
           >
             <span className="material-symbols-outlined text-[#A85D3D] text-[18px]">call</span>
-            <span>0333 123 4567</span>
+            <span>+44 7404 210566</span>
           </a>
           <button
             onClick={() => onOpenConsultation?.("care")}

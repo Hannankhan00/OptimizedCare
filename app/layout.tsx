@@ -19,7 +19,7 @@ const fraunces = Fraunces({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#211E1A",
+  themeColor: "#2A9D8F",
   width: "device-width",
   initialScale: 1,
 };
@@ -27,7 +27,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "OptimizedCare | Healthcare Group",
   description:
-    "Private Medical Excellence, GMC Specialist Cosmetic Surgery, Doctor-Led Aesthetic Dermatology, and Dignified Residential & Domiciliary Care across London & UK.",
+    "Private Medical Excellence, GMC Specialist Cosmetic Surgery, Doctor-Led Aesthetic Dermatology, and Dignified Residential & Domiciliary Care across Stockport & UK.",
   keywords: [
     "OptimizedCare",
     "OptimizedCare UK",
@@ -54,7 +54,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans bg-[#F4F0E7] text-[#211E1A]">
+      <body className="min-h-full flex flex-col font-sans bg-[#F8FAFC] text-[#1D3557]">
         {children}
       </body>
     </html>
