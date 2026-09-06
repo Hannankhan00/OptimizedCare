@@ -100,17 +100,17 @@ export default function SkinConcernTriage({ onOpenConsultation }: SkinConcernTri
   const current = concerns[selectedConcern];
 
   return (
-    <div className="w-full bg-[#f8f9ff] rounded-xl border border-[#E2E8F0] shadow-sm p-6 md:p-8 lg:p-10">
+    <div className="w-full bg-[#F7F4EC] rounded-xl border border-[#DDD3BF] shadow-sm p-6 md:p-8 lg:p-10">
       <div className="max-w-[1000px] mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#fedeb2]/40 text-[#725b38] text-[11px] font-semibold uppercase tracking-wider border border-[#C5A880]/30 mb-2">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#E9C9AC]/40 text-[#8A4530] text-[11px] font-semibold uppercase tracking-wider border border-[#A85D3D]/30 mb-2">
             <span className="material-symbols-outlined text-[14px]">psychology_alt</span>
             Aesthetics Component 02 • Skin Concern Diagnostic Triage
           </div>
-          <h3 className="text-2xl md:text-3xl font-semibold text-[#0A192F] tracking-tight">
+          <h3 className="font-serif text-2xl md:text-3xl font-semibold text-[#211E1A] tracking-tight">
             Personalised Clinical Protocol Finder
           </h3>
-          <p className="text-[14px] md:text-[15px] text-[#44474D] mt-2">
+          <p className="text-[14px] md:text-[15px] text-[#5A5347] mt-2">
             Select your primary aesthetic objective to see the gold-standard medical protocol recommended by our Harley Street clinical doctors.
           </p>
         </div>
@@ -123,13 +123,13 @@ export default function SkinConcernTriage({ onOpenConsultation }: SkinConcernTri
               onClick={() => setSelectedConcern(idx)}
               className={`p-3 rounded-lg border text-left flex flex-col justify-between transition-all cursor-pointer ${
                 selectedConcern === idx
-                  ? "bg-[#0A192F] text-white border-[#0A192F] shadow-sm"
-                  : "bg-white text-[#44474D] border-[#E2E8F0] hover:border-[#C5A880]/60 hover:bg-white/90"
+                  ? "bg-[#211E1A] text-white border-[#211E1A] shadow-sm"
+                  : "bg-white text-[#5A5347] border-[#DDD3BF] hover:border-[#A85D3D]/60 hover:bg-white/90"
               }`}
             >
               <span
                 className={`material-symbols-outlined text-[20px] mb-2 ${
-                  selectedConcern === idx ? "text-[#C5A880]" : "text-[#725b38]"
+                  selectedConcern === idx ? "text-[#A85D3D]" : "text-[#8A4530]"
                 }`}
               >
                 {item.icon}
@@ -137,14 +137,14 @@ export default function SkinConcernTriage({ onOpenConsultation }: SkinConcernTri
               <div>
                 <span
                   className={`text-[12px] font-semibold block leading-tight ${
-                    selectedConcern === idx ? "text-white" : "text-[#0A192F]"
+                    selectedConcern === idx ? "text-white" : "text-[#211E1A]"
                   }`}
                 >
                   {item.title}
                 </span>
                 <span
                   className={`text-[10px] mt-1 block truncate ${
-                    selectedConcern === idx ? "text-white/70" : "text-[#64748B]"
+                    selectedConcern === idx ? "text-white/70" : "text-[#6B6457]"
                   }`}
                 >
                   {item.subtitle}
@@ -155,19 +155,19 @@ export default function SkinConcernTriage({ onOpenConsultation }: SkinConcernTri
         </div>
 
         {/* Diagnostic Output Panel */}
-        <div className="bg-white rounded-xl border border-[#E2E8F0] p-6 md:p-8 shadow-sm">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between pb-6 border-b border-[#E2E8F0] gap-4">
+        <div className="bg-white rounded-xl border border-[#DDD3BF] p-6 md:p-8 shadow-sm">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between pb-6 border-b border-[#DDD3BF] gap-4">
             <div>
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-[#725b38]">
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-[#8A4530]">
                 Doctor Recommended Prescription
               </span>
-              <h4 className="text-xl md:text-2xl font-bold text-[#0A192F] mt-1">
+              <h4 className="text-xl md:text-2xl font-bold text-[#211E1A] mt-1">
                 {current.recommendedProtocol}
               </h4>
             </div>
-            <div className="bg-[#eff4ff] px-4 py-2 rounded border border-[#E2E8F0] flex-shrink-0">
-              <span className="text-[11px] uppercase tracking-wider text-[#64748B] block">Indicative Fee</span>
-              <span className="font-mono text-[14px] font-bold text-[#0A192F] tnum">
+            <div className="bg-[#EFEAE0] px-4 py-2 rounded border border-[#DDD3BF] flex-shrink-0">
+              <span className="text-[11px] uppercase tracking-wider text-[#6B6457] block">Indicative Fee</span>
+              <span className="font-mono text-[14px] font-bold text-[#211E1A] tnum">
                 {current.priceGuideline}
               </span>
             </div>
@@ -176,16 +176,16 @@ export default function SkinConcernTriage({ onOpenConsultation }: SkinConcernTri
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-6">
             <div className="md:col-span-7 space-y-4">
               <div>
-                <span className="text-[12px] font-semibold text-[#0A192F] uppercase tracking-wider block mb-1">
+                <span className="text-[12px] font-semibold text-[#211E1A] uppercase tracking-wider block mb-1">
                   Clinical Mechanism of Action
                 </span>
-                <p className="text-[14px] text-[#44474D] leading-relaxed">
+                <p className="text-[14px] text-[#5A5347] leading-relaxed">
                   {current.clinicalRationale}
                 </p>
               </div>
 
-              <div className="bg-[#f8f9ff] p-4 rounded-lg border border-[#E2E8F0]">
-                <span className="text-[12px] font-semibold text-[#0A192F] uppercase tracking-wider block mb-2">
+              <div className="bg-[#F7F4EC] p-4 rounded-lg border border-[#DDD3BF]">
+                <span className="text-[12px] font-semibold text-[#211E1A] uppercase tracking-wider block mb-2">
                   Expected Clinical Outcome
                 </span>
                 <p className="text-[13px] text-[#2D5A46] font-medium flex items-center gap-1.5">
@@ -195,15 +195,15 @@ export default function SkinConcernTriage({ onOpenConsultation }: SkinConcernTri
               </div>
             </div>
 
-            <div className="md:col-span-5 bg-[#f8f9ff] p-5 rounded-lg border border-[#E2E8F0] flex flex-col justify-between">
+            <div className="md:col-span-5 bg-[#F7F4EC] p-5 rounded-lg border border-[#DDD3BF] flex flex-col justify-between">
               <div>
-                <span className="text-[12px] font-semibold text-[#0A192F] uppercase tracking-wider block mb-2.5">
+                <span className="text-[12px] font-semibold text-[#211E1A] uppercase tracking-wider block mb-2.5">
                   Protocol Specifications
                 </span>
-                <ul className="space-y-2 text-[12px] text-[#44474D]">
+                <ul className="space-y-2 text-[12px] text-[#5A5347]">
                   {current.protocolDetails.map((detail, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="material-symbols-outlined text-[14px] text-[#C5A880] flex-shrink-0 mt-0.5">
+                      <span className="material-symbols-outlined text-[14px] text-[#A85D3D] flex-shrink-0 mt-0.5">
                         check
                       </span>
                       <span>{detail}</span>
@@ -215,10 +215,10 @@ export default function SkinConcernTriage({ onOpenConsultation }: SkinConcernTri
               <button
                 type="button"
                 onClick={() => onOpenConsultation?.("aesthetics")}
-                className="w-full mt-4 h-10 bg-[#0A192F] text-white font-medium text-[13px] rounded-[4px] border border-[#C5A880] hover:bg-[#152542] transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full mt-4 h-10 bg-[#211E1A] text-white font-medium text-[13px] rounded-[4px] border border-[#A85D3D] hover:bg-[#3A342B] transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Consult Our Doctors</span>
-                <span className="material-symbols-outlined text-[15px] text-[#C5A880]">calendar_month</span>
+                <span className="material-symbols-outlined text-[15px] text-[#A85D3D]">calendar_month</span>
               </button>
             </div>
           </div>

@@ -1,94 +1,94 @@
 ---
-name: Harley & Belgravia Clinical Trust
+name: Cavendish Stone & Clay
 colors:
-  surface: '#f8f9ff'
-  surface-dim: '#cbdbf5'
-  surface-bright: '#f8f9ff'
+  surface: '#F7F4EC'
+  surface-dim: '#D6C9B4'
+  surface-bright: '#F7F4EC'
   surface-container-lowest: '#ffffff'
-  surface-container-low: '#eff4ff'
-  surface-container: '#e5eeff'
-  surface-container-high: '#dce9ff'
-  surface-container-highest: '#d3e4fe'
-  on-surface: '#0b1c30'
-  on-surface-variant: '#44474d'
-  inverse-surface: '#213145'
-  inverse-on-surface: '#eaf1ff'
-  outline: '#75777e'
-  outline-variant: '#c5c6cd'
-  surface-tint: '#515f78'
-  primary: '#000000'
+  surface-container-low: '#EFEAE0'
+  surface-container: '#EAE3D5'
+  surface-container-high: '#E3DACB'
+  surface-container-highest: '#DCD0BC'
+  on-surface: '#211E1A'
+  on-surface-variant: '#5A5347'
+  inverse-surface: '#3A342B'
+  inverse-on-surface: '#F7F4EC'
+  outline: '#7A7365'
+  outline-variant: '#CFC7B8'
+  surface-tint: '#6B6459'
+  primary: '#211E1A'
   on-primary: '#ffffff'
-  primary-container: '#0d1c32'
-  on-primary-container: '#76849f'
-  inverse-primary: '#b9c7e4'
-  secondary: '#725b38'
+  primary-container: '#2A2620'
+  on-primary-container: '#8C8271'
+  inverse-primary: '#D9CFB8'
+  secondary: '#8A4530'
   on-secondary: '#ffffff'
-  secondary-container: '#fedeb2'
-  on-secondary-container: '#78603e'
-  tertiary: '#000000'
+  secondary-container: '#E9C9AC'
+  on-secondary-container: '#6B4A30'
+  tertiary: '#211E1A'
   on-tertiary: '#ffffff'
-  tertiary-container: '#211b0f'
-  on-tertiary-container: '#8c8371'
-  error: '#ba1a1a'
+  tertiary-container: '#241D14'
+  on-tertiary-container: '#8C7F68'
+  error: '#B23A22'
   on-error: '#ffffff'
-  error-container: '#ffdad6'
-  on-error-container: '#93000a'
-  primary-fixed: '#d6e3ff'
-  primary-fixed-dim: '#b9c7e4'
-  on-primary-fixed: '#0d1c32'
-  on-primary-fixed-variant: '#39475f'
-  secondary-fixed: '#fedeb2'
-  secondary-fixed-dim: '#e0c298'
-  on-secondary-fixed: '#281800'
-  on-secondary-fixed-variant: '#584323'
-  tertiary-fixed: '#ede1cd'
-  tertiary-fixed-dim: '#d1c5b2'
-  on-tertiary-fixed: '#211b0f'
-  on-tertiary-fixed-variant: '#4d4637'
-  background: '#f8f9ff'
-  on-background: '#0b1c30'
-  surface-variant: '#d3e4fe'
+  error-container: '#F6DCCF'
+  on-error-container: '#7A2214'
+  primary-fixed: '#ECE6D6'
+  primary-fixed-dim: '#D9CFB8'
+  on-primary-fixed: '#2A2620'
+  on-primary-fixed-variant: '#4A4335'
+  secondary-fixed: '#E9C9AC'
+  secondary-fixed-dim: '#D2A67E'
+  on-secondary-fixed: '#241A10'
+  on-secondary-fixed-variant: '#4F3A22'
+  tertiary-fixed: '#EFE6D6'
+  tertiary-fixed-dim: '#D9CDB8'
+  on-tertiary-fixed: '#241D14'
+  on-tertiary-fixed-variant: '#4A4030'
+  background: '#F4F0E7'
+  on-background: '#211E1A'
+  surface-variant: '#DCD0BC'
 typography:
   display-lg:
-    fontFamily: Inter
+    fontFamily: Fraunces
     fontSize: 56px
-    fontWeight: '600'
-    lineHeight: 64px
-    letterSpacing: -0.03em
+    fontWeight: '500'
+    lineHeight: 62px
+    letterSpacing: -0.01em
   display-lg-mobile:
-    fontFamily: Inter
+    fontFamily: Fraunces
     fontSize: 36px
-    fontWeight: '600'
-    lineHeight: 44px
-    letterSpacing: -0.02em
+    fontWeight: '500'
+    lineHeight: 42px
+    letterSpacing: -0.005em
   headline-xl:
-    fontFamily: Inter
+    fontFamily: Fraunces
     fontSize: 40px
     fontWeight: '500'
-    lineHeight: 48px
-    letterSpacing: -0.025em
+    lineHeight: 46px
+    letterSpacing: -0.01em
   headline-xl-mobile:
-    fontFamily: Inter
+    fontFamily: Fraunces
     fontSize: 28px
     fontWeight: '500'
-    lineHeight: 36px
-    letterSpacing: -0.02em
+    lineHeight: 34px
+    letterSpacing: -0.005em
   headline-lg:
-    fontFamily: Inter
+    fontFamily: Fraunces
     fontSize: 32px
     fontWeight: '500'
-    lineHeight: 40px
-    letterSpacing: -0.02em
+    lineHeight: 38px
+    letterSpacing: -0.005em
   headline-md:
-    fontFamily: Inter
+    fontFamily: Fraunces
     fontSize: 24px
     fontWeight: '500'
-    lineHeight: 32px
-    letterSpacing: -0.015em
+    lineHeight: 30px
+    letterSpacing: 0em
   headline-sm:
     fontFamily: Inter
     fontSize: 20px
-    fontWeight: '500'
+    fontWeight: '600'
     lineHeight: 28px
     letterSpacing: -0.01em
   body-xl:
@@ -161,103 +161,103 @@ spacing:
 
 ## Brand & Style
 
-The visual identity embodies the heritage, discretion, and world-class precision of classic British private medicine. Rooted in the institutional gravitas of London’s foremost medical enclaves, it projects an aura of peerless clinical excellence, understated luxury, and absolute patient reassurance. The aesthetic eschews ostentation in favor of surgical clarity, disciplined proportions, and quiet refinement.
+The visual identity trades the aristocratic navy-and-gold shorthand for private medicine in favour of something more tactile and specific: the stone facades, apothecary cabinetry, and warm plasterwork of Marylebone's Cavendish Square medical district. It is quieter than a "luxury" palette and more particular than a generic clinical blue — closer to a well-made pharmacy counter than a hotel lobby.
 
-This design system targets high-net-worth individuals, discerning international patients, and consulting specialists who demand uncompromising standards of privacy, diagnostic accuracy, and bespoke patient care.
+This design system targets discerning private patients and referring clinicians who read confidence in restraint, not ornament. Trust is built through material honesty — real stone tones, real ink, a single considered accent — rather than metallic accents that could belong to any premium brand.
 
-To convey medical precision and calm authority:
-- The design movement is a bespoke synthesis of **Contemporary British Minimalism** and **Architectural Precision**.
-- Whitespace is treated as an active clinical and psychological buffer—calming anxiety and isolating critical diagnostic data.
-- Layouts are uncompromisingly structured, clean, and rational, evoking the order of modern operating theatres and the quiet dignity of Mayfair consulting rooms.
-- Micro-interactions are restrained, instantaneous, and frictionless, avoiding playful or elastic physics in favor of linear confidence.
+To convey precision without coldness:
+- The design movement is **Architectural Stone Minimalism**: warm, mineral neutrals framed by an near-black ink, punctuated by one desaturated clay accent.
+- Whitespace remains an active clinical buffer, but warmed — parchment and stone rather than clinical blue-white.
+- Layouts stay structured and rational; a single serif display face (Fraunces) is reserved for headlines to signal heritage and craft, while Inter continues to carry every functional, data-dense, and UI surface.
+- Micro-interactions stay restrained and linear. No elastic bounce, no gradient sheen — confidence through material calm.
 
 ## Colors
 
-The color palette reflects British clinical eminence paired with refined hospitality:
+The palette is built from one neutral family (warm stone, never mixed with cool grays) plus exactly one decorative accent. Success and alert remain distinct semantic hues so they are never confused with the brand accent.
 
-- **Primary (`#0A192F` - Sovereign Navy):** The structural core. Deep, commanding, and authoritative, evoking stability, medical rigor, and institutional legacy. Used for prominent headers, primary action surfaces, dominant iconography, and structural framing.
-- **Secondary (`#C5A880` - Polished Champagne Gold):** A subdued, non-glitzy metallic accent providing distinction and warmth. Used for prestige indicators, active tab indicator lines, key credentials, and bespoke accents.
-- **Tertiary (`#E5D9C5` - Cashmere Beige):** Soft, muted warmth used for warm clinical fills, tertiary badge backgrounds, and secondary interactive borders.
+- **Ink (`#211E1A` - Primary):** A near-black warm charcoal, not navy. The structural core for dominant headers, primary buttons, and framing. Reads as ink on paper rather than corporate blue.
+- **Clay (`#A85D3D` - Secondary / the one accent):** A desaturated terracotta drawn from apothecary jars and Portland stone trim. Used for prestige indicators, active tab lines, key credentials, and the single recurring decorative accent. There is no second accent color anywhere in the system.
+- **Sand (`#E4D6C0` - Tertiary):** Warm, muted fill for badge backgrounds and secondary interactive borders — a lighter step of the same stone family, never a different hue.
 - **Neutral Backgrounds & Foundations:**
-  - **Clinical Pure White (`#FFFFFF`):** Dominates diagnostic surfaces, input cards, and data readouts.
-  - **Warm Parlour White (`#F7F5F0`):** The primary canvas background, mitigating stark hospital glare with the warmth of high-grade vellum.
-  - **Subtle Slate Borders (`#E2E8F0`):** Architectural boundary lines that bring razor-sharp division without visual noise.
-  - **Muted Text Slate (`#64748B`):** Secondary metadata, clinical notations, and legal disclosures.
-- **Semantic Accents:**
-  - **Clinical Success (`#1E3A2F` / `#2D5A46`):** Deep British racing emerald for verified test results and confirmed appointments.
-  - **Clinical Alert (`#7F1D1D`):** Rich garnet red for critical contraindications, avoiding synthetic or alarming neon alerts.
+  - **Diagnostic White (`#FFFFFF`):** Card surfaces, data cards, input fields.
+  - **Parchment Canvas (`#F4F0E7`):** The primary background — warm stone rather than blue-white, mitigating glare without feeling clinical-cold.
+  - **Stone Borders (`#DDD3BF`):** Warm 1px boundary lines — replacing the old cool slate so every border shares the same underlying hue family as the background.
+  - **Muted Stone Text (`#6B6457`):** Secondary metadata, captions, and legal disclosures.
+- **Semantic Accents (intentionally distinct from Clay so they always read as status, never decoration):**
+  - **Clinical Success (`#1E3A2F` / `#2D5A46`):** Deep botanical green, unchanged — verified results, confirmed appointments.
+  - **Clinical Alert (`#7A2E1F` / `#B23A22`):** Warm garnet, shifted to sit comfortably beside Clay instead of clashing cool red against warm stone.
 
 ## Typography
 
-Inter is implemented with rigorous discipline across all functional tiers. It strips away academic eccentricity, supplying hyper-legible medical clarity and executive authority. 
+Inter continues to carry every functional surface — labels, body copy, tabular data, forms, navigation. **Fraunces**, a soft-contrast serif with real optical warmth, is now reserved exclusively for display and headline tiers (`display-lg` through `headline-md`). This single pairing decision is what separates the system from a generic "Inter everywhere" AI layout: headlines read as considered editorial statements, while everything a patient has to scan or fill in stays in the hyper-legible sans.
 
-- **Weight Hierarchy:** Restrict typography primarily to weights `400` (Regular), `500` (Medium), and `600` (Semi-Bold). Avoid `700` and `800` to prevent typographic brute force; authority is communicated through contrast, tracking, and spatial discipline.
-- **Micro-Tracking & Numerals:** Ensure OpenType features `tnum` (tabular numbers) and `cv05` / `cv08` are enabled globally for clinical vitals, pathology markers, dosage data, and financial schedules. 
-- **Sub-headings & Eyebrows:** Eyebrow labels use `label-caps` in uppercase, paired with `letterSpacing: 0.08em` in Sovereign Navy (`#0A192F`) or Polished Gold (`#C5A880`) to designate clinical departments, accreditation seals, or royal patronage notes.
+- **Weight Hierarchy:** Fraunces headlines sit at `500` (Medium) only — never bold, letting size and the serif's natural warmth carry authority instead of weight. Inter continues to restrict itself to `400`/`500`/`600`.
+- **Micro-Tracking & Numerals:** `tnum` stays enabled globally for clinical vitals, pathology markers, dosage data, and financial schedules.
+- **Sub-headings & Eyebrows:** Eyebrow labels stay in Inter `label-caps`, uppercase, `letterSpacing: 0.08em`, set in Ink (`#211E1A`) or Clay (`#A85D3D`) — never in the serif, which is reserved for the headline it introduces.
 
 ## Layout & Spacing
 
-The layout system is governed by an architectural 8px grid designed to yield generous breathing room, mirroring the unhurried atmosphere of an elite private clinic.
+Unchanged from the prior system — the architectural 8px grid, 1360px desktop container, and 680px prose measure were never the problem; the palette and typeface were. Preserving them keeps this a re-skin, not a rebuild.
 
-- **Grid Architecture:** 
-  - **Desktop (≥ 1280px):** 12-column grid within a maximum width of `1360px`, featuring `48px` (`3rem`) gutters and generous outer margins. Specialized consultation and clinical history pages constrain prose width to `680px` to maintain an ideal reading cadence of 60–70 characters per line.
-  - **Tablet (768px - 1279px):** 8-column layout with `32px` (`2rem`) gutters, providing balanced containment for surgical schedules and diagnostic imagery.
-  - **Mobile (< 768px):** 4-column layout with `16px` (`1rem`) gutters and edge margins, collapsing multi-pane clinical tables into stacked card matrices.
+- **Grid Architecture:**
+  - **Desktop (≥ 1280px):** 12-column grid within a maximum width of `1360px`, `48px` (`3rem`) gutters.
+  - **Tablet (768px - 1279px):** 8-column layout with `32px` (`2rem`) gutters.
+  - **Mobile (< 768px):** 4-column layout with `16px` (`1rem`) gutters, collapsing multi-pane tables into stacked cards.
 - **Rhythm & Padding:**
-  - Component interiors rely heavily on `space-xl` (`1.5rem`) and `space-2xl` (`2rem`) padding to avoid visual cramping.
-  - Section dividers leverage generous vertical intervals (`space-4xl` to `space-5xl`), framing each clinical discipline as a distinct, unhurried consultation.
+  - Component interiors use `space-xl` (`1.5rem`) and `space-2xl` (`2rem`) padding.
+  - Section dividers use `space-4xl` to `space-5xl` vertical intervals.
 
 ## Elevation & Depth
 
-Depth is established through low-contrast linear architecture, subtle tonal transitions, and micro-diffused ambient illumination. Heavily blurred dropshadows and bright floating layers are strictly avoided, as they undermine the grounding required of clinical authority.
+Shadows are now tinted with Ink rather than navy, so depth reads as warm and grounded rather than cool and corporate.
 
-- **Primary Surface Separation:** Boundaries are primarily articulated using razor-sharp 1px borders colored in subtle slate (`#E2E8F0`) or muted cashmere beige (`#E5D9C5`).
+- **Primary Surface Separation:** Razor-sharp 1px borders in Stone (`#DDD3BF`) or Sand (`#E4D6C0`).
 - **Elevation Tiers:**
-  - **Base Layer (Flat):** Canvas background in `#F7F5F0`. Interactive fields and default panels sit directly on this tier.
-  - **Tier 1 (Resting Cards & Clinical Tiles):** Background in `#FFFFFF` with a 1px border (`#E2E8F0`) and an imperceptible ambient shadow: `0px 1px 3px rgba(10, 25, 47, 0.03), 0px 4px 8px rgba(10, 25, 47, 0.02)`.
-  - **Tier 2 (Hover & Active Diagnostics):** Retains `#FFFFFF` background while shifting the border to `#C5A880` (Champagne Gold) with a refined shadow: `0px 4px 16px rgba(10, 25, 47, 0.06), 0px 1px 2px rgba(10, 25, 47, 0.04)`.
-  - **Tier 3 (Modals, Overlays, and Dossiers):** Pure white `#FFFFFF` surface accompanied by a formal, deep ambient drop: `0px 12px 36px rgba(10, 25, 47, 0.09), 0px 2px 6px rgba(10, 25, 47, 0.04)`. The backdrop overlay is Sovereign Navy at 50% opacity (`rgba(10, 25, 47, 0.50)`) combined with an ultra-fine backdrop blur (`blur(4px)`).
+  - **Base Layer (Flat):** Canvas background in `#F4F0E7`.
+  - **Tier 1 (Resting Cards):** `#FFFFFF` background, `1px` border (`#DDD3BF`), ambient shadow `0px 1px 3px rgba(33, 30, 26, 0.05), 0px 4px 8px rgba(33, 30, 26, 0.03)`.
+  - **Tier 2 (Hover & Active):** `#FFFFFF` background, border shifts to Clay (`#A85D3D`), shadow `0px 4px 16px rgba(33, 30, 26, 0.08), 0px 1px 2px rgba(33, 30, 26, 0.05)`.
+  - **Tier 3 (Modals & Overlays):** `#FFFFFF` surface with a deep ambient drop `0px 12px 36px rgba(33, 30, 26, 0.14), 0px 2px 6px rgba(33, 30, 26, 0.06)`. Backdrop is Ink at 55% opacity (`rgba(33, 30, 26, 0.55)`) with `blur(4px)`.
 
 ## Shapes
 
-The shape profile is calibrated to Level `1` (Soft), utilizing disciplined micro-radii to balance surgical precision with understated architectural warmth. 
+Unchanged: Level `1` (Soft) micro-radii.
 
-- **Base Corner Radius (`0.25rem` / `4px`):** Applied uniformly to buttons, form inputs, badge tags, and secondary action elements. This micro-radius eliminates abrasive raw edges while preserving a decisive, square-cut silhouette.
-- **Card & Modal Radius (`0.5rem` / `8px`):** Applied to primary clinical cards, modular dashboards, and high-level patient summaries.
-- **Large Panels & Architectural Dividers (`0.75rem` / `12px`):** Reserved exclusively for major layout groupings or image enclosures.
-- **Pill Shapes:** Strictly forbidden for functional buttons, clinical containers, and inputs. Restrained pill shapes are used only for status indicators (e.g., "Consultant On Call") and discreet notification tags, capped at a maximum height of `24px`.
+- **Base Corner Radius (`0.25rem` / `4px`):** Buttons, inputs, badges.
+- **Card & Modal Radius (`0.5rem` / `8px`):** Primary cards, dashboards.
+- **Large Panels (`0.75rem` / `12px`):** Major layout groupings, image enclosures.
+- **Pill Shapes:** Still forbidden for functional buttons and inputs. Reserved only for status indicators, capped at `24px` height.
 
 ## Components
 
 ### Buttons
-- **Primary:** Background in Sovereign Navy (`#0A192F`), text in pure white (`#FFFFFF`), border in `#0A192F`, radius `4px`. Hover transition shifts background to `#132744` with subtle elevation. Active state tightens internal scale by 0.5%.
-- **Secondary (Prestige/Consultation):** Background in `#FFFFFF`, text in `#0A192F`, border in `1px solid #C5A880` (Champagne). Hover state introduces a delicate wash of `#F7F5F0` with text remaining `#0A192F`.
-- **Tertiary / Ghost:** No background fill, text in `#0A192F`, hover applies a soft text transition to `#C5A880` and an underline offset of `4px`.
-- **Sizing:** Fixed vertical heights of `48px` (Large/Primary) and `40px` (Medium/Secondary) with minimum horizontal padding of `24px`.
+- **Primary:** Background Ink (`#211E1A`), text white, radius `4px`. Hover shifts to `#3A342B`. Active tightens scale by 0.5%.
+- **Secondary (Prestige/Consultation):** Background `#FFFFFF`, text Ink, `1px solid #A85D3D` border. Hover washes in `#F4F0E7`, text stays Ink.
+- **Tertiary / Ghost:** No fill, text Ink, hover transitions to Clay with a `4px` underline offset.
+- **Sizing:** `48px` (Large) / `40px` (Medium), minimum `24px` horizontal padding.
 
 ### Cards & Clinical Dossiers
-- **Structure:** Encased in `#FFFFFF` with a `1px solid #E2E8F0` border and `4px` or `8px` corner radius.
-- **Header:** Accommodates an upper eyebrow label (`label-caps`) in `#64748B` or `#C5A880` identifying the medical specialty, followed by a crisp `headline-sm` in `#0A192F`.
-- **Divider:** Subtle hairline horizontal separator in `#F1F5F9`.
-- **Padding:** Internal padding maintains a minimum of `24px` (`1.5rem`), expanding to `32px` on desktop viewport sizes.
+- **Structure:** `#FFFFFF` with `1px solid #DDD3BF` border, `4px` or `8px` radius.
+- **Header:** Eyebrow `label-caps` in `#6B6457` or `#A85D3D`, followed by a `headline-sm` (Inter, `600`) in `#211E1A` — sub-card titles stay in Inter; only page-level and section-level headlines use Fraunces.
+- **Divider:** Hairline separator in `#EFE9DD`.
+- **Padding:** Minimum `24px` (`1.5rem`), expanding to `32px` on desktop.
 
 ### Input Fields & Selectors
-- **Resting:** Background `#FFFFFF`, border `1px solid #E2E8F0`, corner radius `4px`, text in `#0A192F` (`body-md`), label in `#0A192F` (`label-md`). Height is fixed at `44px`.
-- **Focus:** Sharp border transition to `#0A192F` accompanied by an outer micro-ring of `1px solid rgba(10, 25, 47, 0.12)`. No loud generic focus rings.
-- **Helper Text:** Positioned below in `#64748B` (`body-sm`), conveying confidentiality and cryptographic data security.
+- **Resting:** `#FFFFFF` background, `1px solid #DDD3BF` border, `4px` radius, text `#211E1A`, label `#211E1A`. Height `44px`.
+- **Focus:** Border transitions to `#211E1A` with an outer micro-ring `1px solid rgba(33, 30, 26, 0.15)`. No default browser blue ring anywhere in the system.
+- **Helper Text:** `#6B6457` (`body-sm`).
 
 ### Checkboxes & Radio Buttons
-- **Checkboxes:** `18px × 18px` square, `2px` micro-radius. Unchecked state features an `#E2E8F0` border against `#FFFFFF`. Checked state fills with `#0A192F` displaying a crisp white clinical tick.
-- **Radio Buttons:** `18px` circular selector. Selected state features a solid `#0A192F` outer border housing a centered `8px` dot in Champagne Gold (`#C5A880`).
+- **Checkboxes:** `18px × 18px`, `2px` micro-radius. Unchecked border `#DDD3BF` on `#FFFFFF`. Checked fills `#211E1A` with a white tick.
+- **Radio Buttons:** `18px` circular. Selected state: solid `#211E1A` outer ring, centered `8px` Clay (`#A85D3D`) dot.
 
 ### Chips & Accreditation Badges
-- **Status Chips:** Height `24px`, horizontal padding `10px`, font `label-caps`. Background in `#F7F5F0`, border `1px solid #E5D9C5`, text in `#0A192F`.
-- **Verified Practitioner Badges:** Sovereign Navy background (`#0A192F`), text in `#FFFFFF`, featuring a discreet metallic Champagne Gold accent dot (`4px × 4px`).
+- **Status Chips:** Height `24px`, horizontal padding `10px`, `label-caps`. Background `#F4F0E7`, border `1px solid #E4D6C0`, text `#211E1A`.
+- **Verified Practitioner Badges:** Ink background, white text, `4px × 4px` Clay accent dot.
 
 ### Lists & Timelines
-- **Consultation Schedules & Records:** Alternating or bordered list rows demarcated by `1px solid #E2E8F0`. Hover transitions trigger a gentle background shift to `#F7F5F0`.
-- **Timestamp / Pathology Values:** Displayed in tabular numerical formatting (`tnum`), right-aligned, set in `#0A192F` (`body-md`) with supporting metrics in `#64748B`.
+- **Consultation Schedules & Records:** Rows bordered `1px solid #DDD3BF`. Hover shifts background to `#F4F0E7`.
+- **Timestamp / Pathology Values:** Tabular (`tnum`), right-aligned, `#211E1A` with supporting metrics in `#6B6457`.
 
 ### Medical Prescription & Pathology Indicators
-- **Normal Range Badges:** Muted moss green (`#1E3A2F` text over `#F0F5F2` fill, bordered with `#D1E3D8`).
-- **Attention Required:** Understated burgundy (`#7F1D1D` text over `#FDF2F2` fill, bordered with `#F3D6D6`).
+- **Normal Range Badges:** `#1E3A2F` text over `#F0F5F2` fill, bordered `#D1E3D8` — unchanged, kept distinct from Clay.
+- **Attention Required:** `#7A2214` text over `#FBF1EA` fill, bordered `#EFD9CC`.

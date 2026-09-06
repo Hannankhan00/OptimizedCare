@@ -87,24 +87,24 @@ export default function CareServicesCatalogue({ onOpenConsultation }: CareServic
   const current = services[activeTab];
 
   return (
-    <div className="w-full bg-white rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+    <div className="w-full bg-white rounded-xl border border-[#DDD3BF] shadow-sm overflow-hidden">
       {/* Header Banner */}
-      <div className="p-6 md:p-8 border-b border-[#E2E8F0] bg-[#eff4ff]/40">
+      <div className="p-6 md:p-8 border-b border-[#DDD3BF] bg-[#EFEAE0]/40">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#fedeb2]/40 text-[#725b38] text-[11px] font-semibold uppercase tracking-wider border border-[#C5A880]/30 mb-2">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#E9C9AC]/40 text-[#8A4530] text-[11px] font-semibold uppercase tracking-wider border border-[#A85D3D]/30 mb-2">
               <span className="material-symbols-outlined text-[14px]">verified</span>
               Care Component 01 • Regulated Service Catalogue
             </div>
-            <h3 className="text-2xl md:text-3xl font-semibold text-[#0A192F] tracking-tight">
+            <h3 className="font-serif text-2xl md:text-3xl font-semibold text-[#211E1A] tracking-tight">
               Supported Living, Domiciliary &amp; Live-In Provisions
             </h3>
-            <p className="text-[15px] text-[#44474D] mt-1">
+            <p className="text-[15px] text-[#5A5347] mt-1">
               Select a specialized care discipline to review service specifics, clinical staffing, and CQC registration categories.
             </p>
           </div>
           <div className="flex-shrink-0">
-            <span className="inline-flex items-center gap-1 text-[12px] font-medium text-[#725b38] bg-white px-3 py-1.5 rounded border border-[#E2E8F0]">
+            <span className="inline-flex items-center gap-1 text-[12px] font-medium text-[#8A4530] bg-white px-3 py-1.5 rounded border border-[#DDD3BF]">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               Accepting Private &amp; Direct Payment Referrals
             </span>
@@ -119,11 +119,11 @@ export default function CareServicesCatalogue({ onOpenConsultation }: CareServic
               onClick={() => setActiveTab(idx)}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-[4px] text-[13px] font-medium whitespace-nowrap transition-all cursor-pointer border ${
                 activeTab === idx
-                  ? "bg-[#0A192F] text-white border-[#0A192F] shadow-sm"
-                  : "bg-white text-[#44474D] border-[#E2E8F0] hover:bg-[#f8f9ff] hover:text-[#0A192F]"
+                  ? "bg-[#211E1A] text-white border-[#211E1A] shadow-sm"
+                  : "bg-white text-[#5A5347] border-[#DDD3BF] hover:bg-[#F7F4EC] hover:text-[#211E1A]"
               }`}
             >
-              <span className="material-symbols-outlined text-[18px] text-[#C5A880]">
+              <span className="material-symbols-outlined text-[18px] text-[#A85D3D]">
                 {svc.icon}
               </span>
               <span>{svc.title}</span>
@@ -136,15 +136,15 @@ export default function CareServicesCatalogue({ onOpenConsultation }: CareServic
       <div className="p-6 md:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left Column: Image & Badging */}
         <div className="lg:col-span-5">
-          <div className="relative rounded-lg overflow-hidden border border-[#E2E8F0] shadow-md group">
+          <div className="relative rounded-lg overflow-hidden border border-[#DDD3BF] shadow-md group">
             <img
               src={current.image}
               alt={current.title}
               className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F]/80 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#211E1A]/80 via-transparent to-transparent"></div>
             <div className="absolute bottom-4 left-4 right-4 text-white">
-              <span className="inline-block px-2.5 py-1 rounded bg-[#C5A880] text-[#0A192F] text-[11px] font-bold uppercase tracking-wider mb-1">
+              <span className="inline-block px-2.5 py-1 rounded bg-[#A85D3D] text-[#211E1A] text-[11px] font-bold uppercase tracking-wider mb-1">
                 {current.badge}
               </span>
               <p className="text-[13px] text-white/90 font-medium">
@@ -157,23 +157,23 @@ export default function CareServicesCatalogue({ onOpenConsultation }: CareServic
         {/* Right Column: Provisions & Details */}
         <div className="lg:col-span-7 space-y-5">
           <div>
-            <span className="text-[12px] font-semibold text-[#725b38] uppercase tracking-wider">
+            <span className="text-[12px] font-semibold text-[#8A4530] uppercase tracking-wider">
               {current.subtitle}
             </span>
-            <h4 className="text-2xl font-semibold text-[#0A192F] tracking-tight mt-0.5">
+            <h4 className="text-2xl font-semibold text-[#211E1A] tracking-tight mt-0.5">
               {current.title}
             </h4>
-            <p className="text-[15px] text-[#44474D] mt-2 leading-relaxed">
+            <p className="text-[15px] text-[#5A5347] mt-2 leading-relaxed">
               {current.description}
             </p>
           </div>
 
-          <div className="bg-[#f8f9ff] p-4 rounded-lg border border-[#E2E8F0]">
-            <p className="text-[12px] font-semibold text-[#0A192F] uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[16px] text-[#725b38]">clinical_notes</span>
+          <div className="bg-[#F7F4EC] p-4 rounded-lg border border-[#DDD3BF]">
+            <p className="text-[12px] font-semibold text-[#211E1A] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-[16px] text-[#8A4530]">clinical_notes</span>
               Core Regulated Provisions
             </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[13px] text-[#44474D]">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[13px] text-[#5A5347]">
               {current.provisions.map((item, i) => (
                 <li key={i} className="flex items-start gap-2">
                   <span className="material-symbols-outlined text-[15px] text-[#2D5A46] flex-shrink-0 mt-0.5">
@@ -185,17 +185,17 @@ export default function CareServicesCatalogue({ onOpenConsultation }: CareServic
             </ul>
           </div>
 
-          <div className="flex items-center justify-between gap-4 pt-2 border-t border-[#E2E8F0]">
+          <div className="flex items-center justify-between gap-4 pt-2 border-t border-[#DDD3BF]">
             <div>
-              <span className="text-[11px] uppercase tracking-wider text-[#64748B] block">Best Suited For</span>
-              <p className="text-[13px] font-medium text-[#0A192F]">{current.suitableFor}</p>
+              <span className="text-[11px] uppercase tracking-wider text-[#6B6457] block">Best Suited For</span>
+              <p className="text-[13px] font-medium text-[#211E1A]">{current.suitableFor}</p>
             </div>
             <button
               onClick={() => onOpenConsultation?.("care")}
-              className="h-10 px-5 bg-[#0A192F] text-white font-medium text-[13px] rounded-[4px] border border-[#C5A880] hover:bg-[#152542] transition-colors shadow-sm flex items-center gap-2 flex-shrink-0 cursor-pointer"
+              className="h-10 px-5 bg-[#211E1A] text-white font-medium text-[13px] rounded-[4px] border border-[#A85D3D] hover:bg-[#3A342B] transition-colors shadow-sm flex items-center gap-2 flex-shrink-0 cursor-pointer"
             >
               <span>Enquire for Service</span>
-              <span className="material-symbols-outlined text-[16px] text-[#C5A880]">arrow_forward</span>
+              <span className="material-symbols-outlined text-[16px] text-[#A85D3D]">arrow_forward</span>
             </button>
           </div>
         </div>

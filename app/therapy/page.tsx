@@ -91,63 +91,63 @@ export default function TherapyPage() {
     <>
       <Header onOpenConsultation={() => setIsConsultationOpen(true)} />
 
-      <main className="w-full pt-28 bg-[#f8f9ff] min-h-screen text-[#0b1c30]">
+      <main className="w-full pt-28 bg-[#F7F4EC] min-h-screen text-[#211E1A]">
         {/* Department Hero */}
-        <section className="w-full bg-[#f8f9ff] py-14 md:py-20 border-b border-[#E2E8F0]">
+        <section className="w-full bg-[#F7F4EC] py-14 md:py-20 border-b border-[#DDD3BF]">
           <div className="max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12">
             {/* Back Button */}
             <div className="mb-6">
               <Link
                 href="/"
-                className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#64748B] hover:text-[#0A192F] transition-colors py-1 px-2.5 rounded bg-white border border-[#E2E8F0]"
+                className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#6B6457] hover:text-[#211E1A] transition-colors py-1 px-2.5 rounded bg-white border border-[#DDD3BF]"
               >
-                <span className="material-symbols-outlined text-[16px] text-[#C5A880]">arrow_back</span>
+                <span className="material-symbols-outlined text-[16px] text-[#A85D3D]">arrow_back</span>
                 <span>Back to Main Home Page (OptimizedCare)</span>
               </Link>
             </div>
 
             <div className="flex flex-col lg:flex-row items-center gap-12">
               <div className="flex-1 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#fedeb2]/40 text-[#725b38] text-[11px] font-semibold uppercase tracking-widest border border-[#C5A880]/30">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#725b38]"></span>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#E9C9AC]/40 text-[#8A4530] text-[11px] font-semibold uppercase tracking-widest border border-[#A85D3D]/30">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8A4530]"></span>
                   Division 04 • Therapeutic &amp; Rehabilitation Services
                 </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-semibold text-[#0A192F] tracking-tight leading-[1.15]">
+                <h1 className="font-serif text-3xl sm:text-4xl lg:text-[46px] font-semibold text-[#211E1A] tracking-tight leading-[1.15]">
                   Specialist Clinical Therapy &amp; Rehabilitation
                 </h1>
-                <p className="text-[17px] text-[#44474D] leading-relaxed">
+                <p className="text-[17px] text-[#5A5347] leading-relaxed">
                   Inspired by Phoenix Gold Care clinical frameworks, our multidisciplinary therapy division delivers coordinated Physiotherapy, Occupational Therapy, Speech &amp; Language Therapy, and Psychotherapy across London and the UK.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 pt-2">
                   <button
                     onClick={() => setIsConsultationOpen(true)}
-                    className="h-11 px-6 bg-[#0A192F] text-white font-medium text-[14px] rounded-[4px] border border-[#C5A880] hover:bg-[#152542] transition-colors shadow-sm cursor-pointer"
+                    className="h-11 px-6 bg-[#211E1A] text-white font-medium text-[14px] rounded-[4px] border border-[#A85D3D] hover:bg-[#3A342B] transition-colors shadow-sm cursor-pointer"
                   >
                     Arrange Therapy Assessment
                   </button>
                   <a
                     href="tel:03331234567"
-                    className="h-11 px-5 bg-white border border-[#E2E8F0] text-[#0A192F] font-semibold text-[14px] rounded-[4px] flex items-center gap-2 hover:bg-[#eff4ff] transition-colors"
+                    className="h-11 px-5 bg-white border border-[#DDD3BF] text-[#211E1A] font-semibold text-[14px] rounded-[4px] flex items-center gap-2 hover:bg-[#EFEAE0] transition-colors"
                   >
-                    <span className="material-symbols-outlined text-[#C5A880] text-[18px]">call</span>
+                    <span className="material-symbols-outlined text-[#A85D3D] text-[18px]">call</span>
                     <span>0333 123 4567</span>
                   </a>
                 </div>
               </div>
 
               <div className="flex-1 w-full max-w-lg lg:max-w-none">
-                <div className="relative rounded-xl overflow-hidden shadow-xl border border-[#E2E8F0]">
+                <div className="relative rounded-xl overflow-hidden shadow-xl border border-[#DDD3BF]">
                   <img
                     alt="Multidisciplinary clinical rehabilitation and physiotherapy"
                     className="w-full aspect-[4/3] object-cover"
                     src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80"
                   />
-                  <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur p-4 rounded-lg border border-[#E2E8F0] shadow-sm flex items-center justify-between">
+                  <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur p-4 rounded-lg border border-[#DDD3BF] shadow-sm flex items-center justify-between">
                     <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-wider text-[#725b38]">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider text-[#8A4530]">
                         Regulatory Certification
                       </p>
-                      <p className="text-[14px] font-semibold text-[#0A192F]">
+                      <p className="text-[14px] font-semibold text-[#211E1A]">
                         HCPC Registered • CSP, RCOT &amp; RCSLT Certified
                       </p>
                     </div>
@@ -160,16 +160,16 @@ export default function TherapyPage() {
         </section>
 
         {/* 4 Core Disciplines Interactive Showcase */}
-        <section className="w-full py-16 md:py-24 bg-white border-b border-[#E2E8F0]">
+        <section className="w-full py-16 md:py-24 bg-white border-b border-[#DDD3BF]">
           <div className="max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="text-[11px] font-semibold text-[#725b38] uppercase tracking-widest">
+              <span className="text-[11px] font-semibold text-[#8A4530] uppercase tracking-widest">
                 Our Multidisciplinary Clinical Spectrum
               </span>
-              <h2 className="text-3xl font-semibold text-[#0A192F] tracking-tight mt-2">
+              <h2 className="font-serif text-3xl font-semibold text-[#211E1A] tracking-tight mt-2">
                 Four Pillars of Restorative Healthcare
               </h2>
-              <p className="text-[16px] text-[#44474D] mt-3">
+              <p className="text-[16px] text-[#5A5347] mt-3">
                 Coordinated rehabilitation designed to restore functional movement, independence, clear speech, and mental resilience.
               </p>
             </div>
@@ -182,11 +182,11 @@ export default function TherapyPage() {
                   onClick={() => setActiveDiscipline(idx)}
                   className={`flex items-center gap-2 px-5 py-3 rounded-[4px] text-[13px] font-medium whitespace-nowrap transition-all cursor-pointer border ${
                     activeDiscipline === idx
-                      ? "bg-[#0A192F] text-white border-[#0A192F] shadow-sm"
-                      : "bg-[#f8f9ff] text-[#44474D] border-[#E2E8F0] hover:bg-white"
+                      ? "bg-[#211E1A] text-white border-[#211E1A] shadow-sm"
+                      : "bg-[#F7F4EC] text-[#5A5347] border-[#DDD3BF] hover:bg-white"
                   }`}
                 >
-                  <span className="material-symbols-outlined text-[18px] text-[#C5A880]">
+                  <span className="material-symbols-outlined text-[18px] text-[#A85D3D]">
                     {d.icon}
                   </span>
                   <span>{d.title.split(" & ")[0]}</span>
@@ -195,17 +195,17 @@ export default function TherapyPage() {
             </div>
 
             {/* Active Discipline Card */}
-            <div className="bg-[#f8f9ff] rounded-xl border border-[#E2E8F0] p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="bg-[#F7F4EC] rounded-xl border border-[#DDD3BF] p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               <div className="lg:col-span-5">
-                <div className="relative rounded-lg overflow-hidden border border-[#E2E8F0] shadow-md group">
+                <div className="relative rounded-lg overflow-hidden border border-[#DDD3BF] shadow-md group">
                   <img
                     src={current.image}
                     alt={current.title}
                     className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F]/80 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#211E1A]/80 via-transparent to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <span className="inline-block px-2.5 py-1 rounded bg-[#C5A880] text-[#0A192F] text-[11px] font-bold uppercase tracking-wider mb-1">
+                    <span className="inline-block px-2.5 py-1 rounded bg-[#A85D3D] text-[#211E1A] text-[11px] font-bold uppercase tracking-wider mb-1">
                       {current.badge}
                     </span>
                     <p className="text-[13px] text-white/90 font-medium">
@@ -217,23 +217,23 @@ export default function TherapyPage() {
 
               <div className="lg:col-span-7 space-y-5">
                 <div>
-                  <span className="text-[12px] font-semibold text-[#725b38] uppercase tracking-wider">
+                  <span className="text-[12px] font-semibold text-[#8A4530] uppercase tracking-wider">
                     {current.subtitle}
                   </span>
-                  <h3 className="text-2xl md:text-3xl font-semibold text-[#0A192F] tracking-tight mt-1">
+                  <h3 className="font-serif text-2xl md:text-3xl font-semibold text-[#211E1A] tracking-tight mt-1">
                     {current.title}
                   </h3>
-                  <p className="text-[15px] text-[#44474D] mt-2 leading-relaxed">
+                  <p className="text-[15px] text-[#5A5347] mt-2 leading-relaxed">
                     {current.description}
                   </p>
                 </div>
 
-                <div className="bg-white p-5 rounded-lg border border-[#E2E8F0]">
-                  <p className="text-[12px] font-semibold text-[#0A192F] uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[16px] text-[#725b38]">verified</span>
+                <div className="bg-white p-5 rounded-lg border border-[#DDD3BF]">
+                  <p className="text-[12px] font-semibold text-[#211E1A] uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[16px] text-[#8A4530]">verified</span>
                     Clinical Interventions &amp; Treatments
                   </p>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-[13px] text-[#44474D]">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-[13px] text-[#5A5347]">
                     {current.provisions.map((item, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <span className="material-symbols-outlined text-[15px] text-[#2D5A46] flex-shrink-0 mt-0.5">
@@ -245,17 +245,17 @@ export default function TherapyPage() {
                   </ul>
                 </div>
 
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-[#E2E8F0]">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-[#DDD3BF]">
                   <div>
-                    <span className="text-[11px] uppercase tracking-wider text-[#64748B] block">Suited For</span>
-                    <p className="text-[13px] font-medium text-[#0A192F]">{current.suitableFor}</p>
+                    <span className="text-[11px] uppercase tracking-wider text-[#6B6457] block">Suited For</span>
+                    <p className="text-[13px] font-medium text-[#211E1A]">{current.suitableFor}</p>
                   </div>
                   <button
                     onClick={() => setIsConsultationOpen(true)}
-                    className="h-10 px-5 bg-[#0A192F] text-white font-medium text-[13px] rounded-[4px] border border-[#C5A880] hover:bg-[#152542] transition-colors shadow-sm flex items-center gap-2 flex-shrink-0 cursor-pointer"
+                    className="h-10 px-5 bg-[#211E1A] text-white font-medium text-[13px] rounded-[4px] border border-[#A85D3D] hover:bg-[#3A342B] transition-colors shadow-sm flex items-center gap-2 flex-shrink-0 cursor-pointer"
                   >
                     <span>Request Assessment</span>
-                    <span className="material-symbols-outlined text-[16px] text-[#C5A880]">arrow_forward</span>
+                    <span className="material-symbols-outlined text-[16px] text-[#A85D3D]">arrow_forward</span>
                   </button>
                 </div>
               </div>
@@ -264,35 +264,35 @@ export default function TherapyPage() {
         </section>
 
         {/* Clinical Pathway & Funding Options */}
-        <section className="w-full py-16 bg-[#f8f9ff] border-b border-[#E2E8F0]">
+        <section className="w-full py-16 bg-[#F7F4EC] border-b border-[#DDD3BF]">
           <div className="max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-6 bg-white rounded-lg border border-[#E2E8F0] shadow-sm">
-                <div className="w-10 h-10 rounded bg-[#fedeb2]/40 text-[#725b38] flex items-center justify-center mb-4">
+              <div className="p-6 bg-white rounded-lg border border-[#DDD3BF] shadow-sm">
+                <div className="w-10 h-10 rounded bg-[#E9C9AC]/40 text-[#8A4530] flex items-center justify-center mb-4">
                   <span className="material-symbols-outlined text-[20px]">home_health</span>
                 </div>
-                <h4 className="text-[16px] font-semibold text-[#0A192F]">In-Clinic &amp; Domiciliary</h4>
-                <p className="text-[13px] text-[#44474D] mt-2 leading-relaxed">
+                <h4 className="text-[16px] font-semibold text-[#211E1A]">In-Clinic &amp; Domiciliary</h4>
+                <p className="text-[13px] text-[#5A5347] mt-2 leading-relaxed">
                   Appointments available at our private clinic suites or delivered in the comfort and privacy of your home across London and the UK.
                 </p>
               </div>
 
-              <div className="p-6 bg-white rounded-lg border border-[#E2E8F0] shadow-sm">
-                <div className="w-10 h-10 rounded bg-[#fedeb2]/40 text-[#725b38] flex items-center justify-center mb-4">
+              <div className="p-6 bg-white rounded-lg border border-[#DDD3BF] shadow-sm">
+                <div className="w-10 h-10 rounded bg-[#E9C9AC]/40 text-[#8A4530] flex items-center justify-center mb-4">
                   <span className="material-symbols-outlined text-[20px]">account_balance_wallet</span>
                 </div>
-                <h4 className="text-[16px] font-semibold text-[#0A192F]">Funding &amp; Direct Payments</h4>
-                <p className="text-[13px] text-[#44474D] mt-2 leading-relaxed">
+                <h4 className="text-[16px] font-semibold text-[#211E1A]">Funding &amp; Direct Payments</h4>
+                <p className="text-[13px] text-[#5A5347] mt-2 leading-relaxed">
                   We accept Local Authority Direct Payments, NHS Continuing Healthcare (CHC) personal budgets, private medical insurance, and self-pay.
                 </p>
               </div>
 
-              <div className="p-6 bg-white rounded-lg border border-[#E2E8F0] shadow-sm">
-                <div className="w-10 h-10 rounded bg-[#fedeb2]/40 text-[#725b38] flex items-center justify-center mb-4">
+              <div className="p-6 bg-white rounded-lg border border-[#DDD3BF] shadow-sm">
+                <div className="w-10 h-10 rounded bg-[#E9C9AC]/40 text-[#8A4530] flex items-center justify-center mb-4">
                   <span className="material-symbols-outlined text-[20px]">clinical_notes</span>
                 </div>
-                <h4 className="text-[16px] font-semibold text-[#0A192F]">Multidisciplinary Reports</h4>
-                <p className="text-[13px] text-[#44474D] mt-2 leading-relaxed">
+                <h4 className="text-[16px] font-semibold text-[#211E1A]">Multidisciplinary Reports</h4>
+                <p className="text-[13px] text-[#5A5347] mt-2 leading-relaxed">
                   Comprehensive assessment documentation provided within 48 hours for GP liaison, case managers, and social services.
                 </p>
               </div>

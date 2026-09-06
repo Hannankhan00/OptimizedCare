@@ -11,7 +11,6 @@ import SurgeryOverviewSection from "@/components/divisions/SurgeryOverviewSectio
 import TherapyOverviewSection from "@/components/divisions/TherapyOverviewSection";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<"aesthetics" | "surgery" | "care">("aesthetics");
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [consultationDept, setConsultationDept] = useState("surgery");
 
@@ -30,10 +29,10 @@ export default function Home() {
       id: "trust",
       divisionNumber: "Flagship Umbrella",
       navTitle: "OptimizedCare Group",
-      badge: "The Sovereign Clinical Trust • London & UK",
+      badge: "The Clinical Trust • London & UK",
       title: "World-Class British Medicine & Dedicated Personal Care",
       description:
-        "Uniting pioneer surgical precision, doctor-led aesthetic science, and dignified private residential nursing under sovereign clinical governance at OptimizedCare.org.uk.",
+        "Uniting pioneer surgical precision, doctor-led aesthetic science, and dignified private residential nursing under unified clinical governance at OptimizedCare.org.uk.",
       image:
         "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80",
       highlights: [
@@ -47,7 +46,7 @@ export default function Home() {
       },
       secondaryCta: {
         label: "Explore Treatments",
-        href: "#treatments",
+        href: "#divisions",
       },
     },
     {
@@ -83,7 +82,7 @@ export default function Home() {
       description:
         "Physician-administered anti-wrinkle injectables, subtle hyaluronic dermal contouring, Profhilo biostimulators, and Morpheus8 RF subdermal remodeling at private Harley Street suites.",
       image:
-        "https://images.unsplash.com/photo-1512290900672-1f41d9a26370?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80",
       highlights: [
         "Strictly GMC & NMC Doctor-Led Consultations",
         "Profhilo, Polynucleotides & Natural Contouring",
@@ -191,64 +190,42 @@ export default function Home() {
       <Header onOpenConsultation={() => openConsultation("surgery")} />
 
       {/* Main Page Container */}
-      <main className="w-full pt-28 bg-[#f8f9ff] min-h-screen text-[#0b1c30]">
+      <main className="w-full pt-28 bg-white min-h-screen text-[#1D1D1F]">
         <div className="flex flex-col w-full">
           {/* ========================================================================= */}
-          {/* INTERACTIVE HERO CAROUSEL: 4 SECTIONS / DIVISIONS IN COMMON               */}
+          {/* HERO: WHITE, BLACK TEXT, IMAGE AS A FRAMED PANEL (NOT A FULL-BLEED SCRIM)  */}
           {/* ========================================================================= */}
           <section
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            className="relative w-full bg-[#0A192F] text-white overflow-hidden border-b border-[#C5A880]/30"
+            className="relative w-full bg-white border-b border-[#D2D2D7] overflow-hidden"
           >
-            {/* Cinematic Background Images with Cross-Fade */}
-            <div className="absolute inset-0 z-0">
-              {slides.map((s, idx) => (
-                <div
-                  key={s.id}
-                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                    currentSlide === idx ? "opacity-35 scale-105" : "opacity-0 scale-100"
-                  } transform transition-transform duration-[7000ms]`}
-                >
-                  <img
-                    src={s.image}
-                    alt={s.title}
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-              ))}
-              {/* Sovereign Navy Gradient Scrim */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/90 to-[#0A192F]/65 z-10" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-transparent to-transparent z-10" />
-            </div>
-
-            {/* Main Carousel Hero Content */}
-            <div className="relative z-20 max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12 pt-12 md:pt-16 pb-10 min-h-[560px] md:min-h-[620px] flex flex-col justify-between">
-              {/* Top Row: Division Counter & Pause Indicator */}
-              <div className="flex items-center justify-between gap-4 pb-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-[#C5A880]/40 text-[#fedeb2] text-[11px] font-semibold uppercase tracking-widest backdrop-blur-md">
-                  <span className="w-2 h-2 rounded-full bg-[#C5A880] animate-ping" />
+            <div className="relative max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12 pt-10 md:pt-14 pb-10">
+              {/* Top Row: Division Badge & Counter/Arrows */}
+              <div className="flex items-center justify-between gap-4 pb-8">
+                <div className="inline-flex items-center gap-2 text-[#1D1D1F] text-[11px] font-semibold uppercase tracking-widest">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F]" />
                   <span>{activeSlideData.badge}</span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-slate-300 font-mono">
-                    <span className="text-[#fedeb2] font-semibold">0{currentSlide + 1}</span>
-                    <span className="text-slate-500">/</span>
-                    <span>04</span>
+                  <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-[#6E6E73] font-mono">
+                    <span className="text-[#1D1D1F] font-semibold">0{currentSlide + 1}</span>
+                    <span className="text-[#D2D2D7]">/</span>
+                    <span>05</span>
                   </div>
                   {/* Arrow Buttons */}
                   <div className="flex items-center gap-1.5">
                     <button
                       onClick={handlePrev}
-                      className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#C5A880] hover:text-[#0A192F] text-white flex items-center justify-center border border-white/20 hover:border-[#C5A880] active:scale-95 transition-all cursor-pointer shadow-xs"
+                      className="w-9 h-9 rounded-full bg-white hover:bg-[#1D1D1F] hover:text-white text-[#1D1D1F] flex items-center justify-center border border-[#D2D2D7] hover:border-[#1D1D1F] active:scale-95 transition-all cursor-pointer"
                       aria-label="Previous Slide"
                     >
                       <span className="material-symbols-outlined text-[18px]">chevron_left</span>
                     </button>
                     <button
                       onClick={handleNext}
-                      className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#C5A880] hover:text-[#0A192F] text-white flex items-center justify-center border border-white/20 hover:border-[#C5A880] active:scale-95 transition-all cursor-pointer shadow-xs"
+                      className="w-9 h-9 rounded-full bg-white hover:bg-[#1D1D1F] hover:text-white text-[#1D1D1F] flex items-center justify-center border border-[#D2D2D7] hover:border-[#1D1D1F] active:scale-95 transition-all cursor-pointer"
                       aria-label="Next Slide"
                     >
                       <span className="material-symbols-outlined text-[18px]">chevron_right</span>
@@ -257,74 +234,92 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Active Slide Main Content (Text + Highlights) */}
-              <div className="max-w-[880px] my-auto py-4">
-                <div className="inline-block text-[#C5A880] font-semibold text-[12px] uppercase tracking-widest mb-3">
-                  {activeSlideData.divisionNumber}
+              {/* Main Two-Column Hero Content */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                <div className="lg:col-span-6">
+                  <div className="inline-block text-[#6E6E73] font-semibold text-[12px] uppercase tracking-widest mb-3">
+                    {activeSlideData.divisionNumber}
+                  </div>
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-semibold text-[#1D1D1F] tracking-tight leading-[1.1] mb-5 text-balance transition-all duration-500">
+                    {activeSlideData.title}
+                  </h1>
+                  <p className="text-[16px] md:text-[18px] text-[#6E6E73] leading-relaxed mb-6 max-w-[560px]">
+                    {activeSlideData.description}
+                  </p>
+
+                  {/* Key Bullet Highlights */}
+                  <div className="flex flex-col gap-2 mb-8 text-[13px] text-[#1D1D1F] font-medium">
+                    {activeSlideData.highlights.map((h) => (
+                      <div key={h} className="flex items-center gap-2">
+                        <span className="material-symbols-outlined text-[#1D1D1F] text-[17px]">
+                          check
+                        </span>
+                        <span>{h}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Slide Action CTAs */}
+                  <div className="flex flex-wrap items-center gap-5">
+                    {activeSlideData.primaryCta.href ? (
+                      <Link
+                        href={activeSlideData.primaryCta.href}
+                        className="inline-flex items-center justify-center h-12 px-7 bg-[#1D1D1F] text-white font-semibold text-[14px] rounded-full hover:opacity-85 active:scale-[0.985] transition-all cursor-pointer"
+                      >
+                        <span>{activeSlideData.primaryCta.label}</span>
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={activeSlideData.primaryCta.action}
+                        className="inline-flex items-center justify-center h-12 px-7 bg-[#1D1D1F] text-white font-semibold text-[14px] rounded-full hover:opacity-85 active:scale-[0.985] transition-all cursor-pointer"
+                      >
+                        <span>{activeSlideData.primaryCta.label}</span>
+                      </button>
+                    )}
+
+                    {activeSlideData.secondaryCta.href ? (
+                      <Link
+                        href={activeSlideData.secondaryCta.href}
+                        className="inline-flex items-center gap-1 text-[#1D1D1F] font-medium text-[14px] hover:underline underline-offset-4 cursor-pointer"
+                      >
+                        <span>{activeSlideData.secondaryCta.label}</span>
+                        <span className="material-symbols-outlined text-[16px]">chevron_right</span>
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={activeSlideData.secondaryCta.action}
+                        className="inline-flex items-center gap-1 text-[#1D1D1F] font-medium text-[14px] hover:underline underline-offset-4 cursor-pointer"
+                      >
+                        <span>{activeSlideData.secondaryCta.label}</span>
+                        <span className="material-symbols-outlined text-[16px]">chevron_right</span>
+                      </button>
+                    )}
+                  </div>
                 </div>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-semibold text-white tracking-tight leading-[1.12] mb-5 text-balance transition-all duration-500">
-                  {activeSlideData.title}
-                </h1>
-                <p className="text-[16px] md:text-[18px] text-slate-200 leading-relaxed mb-6 max-w-[720px]">
-                  {activeSlideData.description}
-                </p>
 
-                {/* Key Bullet Highlights */}
-                <div className="flex flex-wrap items-center gap-y-2 gap-x-6 mb-8 text-[13px] text-[#fedeb2] font-medium">
-                  {activeSlideData.highlights.map((h) => (
-                    <div key={h} className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[#C5A880] text-[17px]">
-                        check_circle
-                      </span>
-                      <span>{h}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Slide Action CTAs */}
-                <div className="flex flex-wrap items-center gap-4">
-                  {activeSlideData.primaryCta.href ? (
-                    <Link
-                      href={activeSlideData.primaryCta.href}
-                      className="inline-flex items-center justify-center h-12 px-7 bg-[#fedeb2] text-[#0A192F] font-semibold text-[14px] rounded-[4px] hover:bg-[#e0c298] active:scale-[0.985] transition-all shadow-lg cursor-pointer"
-                    >
-                      <span>{activeSlideData.primaryCta.label}</span>
-                      <span className="material-symbols-outlined text-[18px] ml-1.5">
-                        arrow_forward
-                      </span>
-                    </Link>
-                  ) : (
-                    <button
-                      onClick={activeSlideData.primaryCta.action}
-                      className="inline-flex items-center justify-center h-12 px-7 bg-[#fedeb2] text-[#0A192F] font-semibold text-[14px] rounded-[4px] hover:bg-[#e0c298] active:scale-[0.985] transition-all shadow-lg cursor-pointer"
-                    >
-                      <span>{activeSlideData.primaryCta.label}</span>
-                      <span className="material-symbols-outlined text-[18px] ml-1.5">
-                        arrow_forward
-                      </span>
-                    </button>
-                  )}
-
-                  {activeSlideData.secondaryCta.href ? (
-                    <Link
-                      href={activeSlideData.secondaryCta.href}
-                      className="inline-flex items-center justify-center h-12 px-6 bg-white/10 hover:bg-white/20 text-white font-medium text-[14px] rounded-[4px] border border-white/30 active:scale-[0.985] transition-all cursor-pointer"
-                    >
-                      <span>{activeSlideData.secondaryCta.label}</span>
-                    </Link>
-                  ) : (
-                    <button
-                      onClick={activeSlideData.secondaryCta.action}
-                      className="inline-flex items-center justify-center h-12 px-6 bg-white/10 hover:bg-white/20 text-white font-medium text-[14px] rounded-[4px] border border-white/30 active:scale-[0.985] transition-all cursor-pointer"
-                    >
-                      <span>{activeSlideData.secondaryCta.label}</span>
-                    </button>
-                  )}
+                {/* Framed Image Panel (Cross-Fade) */}
+                <div className="lg:col-span-6">
+                  <div className="relative rounded-2xl overflow-hidden border border-[#D2D2D7] w-full aspect-[4/3] md:aspect-[16/11]">
+                    {slides.map((s, idx) => (
+                      <div
+                        key={s.id}
+                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                          currentSlide === idx ? "opacity-100" : "opacity-0"
+                        }`}
+                      >
+                        <img
+                          src={s.image}
+                          alt={s.title}
+                          className="w-full h-full object-cover object-center"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              {/* Sleek Minimal Carousel Indicators (No Clunky Boxes) */}
-              <div className="pt-8 flex items-center justify-between border-t border-white/10">
+              {/* Sleek Minimal Carousel Indicators */}
+              <div className="pt-8 mt-8 flex items-center justify-between border-t border-[#D2D2D7]">
                 <div className="flex items-center gap-2">
                   {slides.map((s, idx) => (
                     <button
@@ -332,19 +327,19 @@ export default function Home() {
                       onClick={() => handleSelectSlide(idx)}
                       className={`h-1.5 rounded-full transition-all cursor-pointer ${
                         currentSlide === idx
-                          ? "w-10 bg-[#C5A880]"
-                          : "w-3 bg-white/25 hover:bg-white/50"
+                          ? "w-10 bg-[#1D1D1F]"
+                          : "w-3 bg-[#D2D2D7] hover:bg-[#6E6E73]"
                       }`}
                       aria-label={`Go to slide ${idx + 1}: ${s.navTitle}`}
                     />
                   ))}
                 </div>
 
-                <div className="text-[12px] text-slate-300 font-mono tracking-wider flex items-center gap-2">
-                  <span className="text-[#fedeb2] font-semibold">0{currentSlide + 1}</span>
-                  <span className="text-slate-500">/</span>
-                  <span>04</span>
-                  <span className="text-slate-400 hidden sm:inline ml-2 text-[11px] font-sans">
+                <div className="text-[12px] text-[#6E6E73] font-mono tracking-wider flex items-center gap-2">
+                  <span className="text-[#1D1D1F] font-semibold">0{currentSlide + 1}</span>
+                  <span className="text-[#D2D2D7]">/</span>
+                  <span>05</span>
+                  <span className="text-[#6E6E73] hidden sm:inline ml-2 text-[11px] font-sans">
                     • {activeSlideData.navTitle}
                   </span>
                 </div>
@@ -353,72 +348,72 @@ export default function Home() {
           </section>
 
           {/* ========================================================================= */}
-          {/* FULL-WIDTH SOVEREIGN TRUST BANNER                                         */}
+          {/* FULL-WIDTH TRUST BANNER                                                   */}
           {/* ========================================================================= */}
-          <section className="w-full bg-[#fedeb2]/30 py-10 border-b border-[#E2E8F0]">
+          <section className="w-full bg-white py-10 border-b border-[#D2D2D7]">
             <div className="max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12">
               {/* Primary 3 Trust Pillars */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center pb-8 border-b border-[#E2E8F0]/80">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center pb-8 border-b border-[#D2D2D7]">
                 {/* Trust Pillar 1: CQC Outstanding */}
-                <div className="flex items-center gap-4 p-5 bg-white/95 backdrop-blur-sm rounded-lg luxury-shadow-sm hover:luxury-shadow-md hover:-translate-y-0.5 border border-[#E2E8F0] hover:border-[#C5A880]/50 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-lg bg-[#0A192F] flex items-center justify-center text-[#C5A880] shrink-0">
+                <div className="flex items-center gap-4 p-5 rounded-2xl bg-[#F5F5F7] hover:bg-[#EDEDED] transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-full bg-[#1D1D1F] flex items-center justify-center text-white shrink-0">
                     <span className="material-symbols-outlined text-2xl">verified_user</span>
                   </div>
                   <div className="flex flex-col">
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[11px] font-semibold text-[#725b38] uppercase tracking-wider">
+                      <span className="text-[11px] font-semibold text-[#6E6E73] uppercase tracking-wider">
                         Independent Audit
                       </span>
-                      <span className="w-1 h-1 rounded-full bg-[#0A192F]"></span>
-                      <span className="text-[11px] font-semibold text-[#0A192F]">2024 / 2025</span>
+                      <span className="w-1 h-1 rounded-full bg-[#1D1D1F]"></span>
+                      <span className="text-[11px] font-semibold text-[#1D1D1F]">2024 / 2025</span>
                     </div>
-                    <span className="text-[18px] text-[#0A192F] font-semibold tracking-tight leading-snug">
+                    <span className="text-[18px] text-[#1D1D1F] font-semibold tracking-tight leading-snug">
                       CQC Rated “Outstanding”
                     </span>
-                    <span className="text-[12px] text-[#44474D]">
+                    <span className="text-[12px] text-[#6E6E73]">
                       Excellence in patient safety, clinical care, and responsiveness.
                     </span>
                   </div>
                 </div>
 
                 {/* Trust Pillar 2: GMC Specialist Register */}
-                <div className="flex items-center gap-4 p-5 bg-white/95 backdrop-blur-sm rounded-lg luxury-shadow-sm hover:luxury-shadow-md hover:-translate-y-0.5 border border-[#E2E8F0] hover:border-[#C5A880]/50 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-lg bg-[#0A192F] flex items-center justify-center text-[#C5A880] shrink-0">
+                <div className="flex items-center gap-4 p-5 rounded-2xl bg-[#F5F5F7] hover:bg-[#EDEDED] transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-full bg-[#1D1D1F] flex items-center justify-center text-white shrink-0">
                     <span className="material-symbols-outlined text-2xl">workspace_premium</span>
                   </div>
                   <div className="flex flex-col">
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[11px] font-semibold text-[#725b38] uppercase tracking-wider">
+                      <span className="text-[11px] font-semibold text-[#6E6E73] uppercase tracking-wider">
                         Clinical Governance
                       </span>
                     </div>
-                    <span className="text-[18px] text-[#0A192F] font-semibold tracking-tight leading-snug">
+                    <span className="text-[18px] text-[#1D1D1F] font-semibold tracking-tight leading-snug">
                       GMC Specialist Register
                     </span>
-                    <span className="text-[12px] text-[#44474D]">
+                    <span className="text-[12px] text-[#6E6E73]">
                       100% of surgical consultants hold substantive NHS credentials.
                     </span>
                   </div>
                 </div>
 
                 {/* Trust Pillar 3: Over 10,000 Patients & Reviews */}
-                <div className="flex items-center gap-4 p-5 bg-white/95 backdrop-blur-sm rounded-lg luxury-shadow-sm hover:luxury-shadow-md hover:-translate-y-0.5 border border-[#E2E8F0] hover:border-[#C5A880]/50 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-lg bg-[#0A192F] flex items-center justify-center text-[#C5A880] shrink-0">
+                <div className="flex items-center gap-4 p-5 rounded-2xl bg-[#F5F5F7] hover:bg-[#EDEDED] transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-full bg-[#1D1D1F] flex items-center justify-center text-white shrink-0">
                     <span className="material-symbols-outlined text-2xl">stars</span>
                   </div>
                   <div className="flex flex-col">
-                    <div className="flex items-center gap-1 text-[#725b38] mb-0.5">
+                    <div className="flex items-center gap-1 text-[#1D1D1F] mb-0.5">
                       <span className="material-symbols-outlined text-base">star</span>
                       <span className="material-symbols-outlined text-base">star</span>
                       <span className="material-symbols-outlined text-base">star</span>
                       <span className="material-symbols-outlined text-base">star</span>
                       <span className="material-symbols-outlined text-base">star</span>
-                      <span className="text-[12px] text-[#0A192F] font-semibold ml-1 tnum">4.98 / 5.0</span>
+                      <span className="text-[12px] text-[#1D1D1F] font-semibold ml-1 tnum">4.98 / 5.0</span>
                     </div>
-                    <span className="text-[18px] text-[#0A192F] font-semibold tracking-tight leading-snug">
+                    <span className="text-[18px] text-[#1D1D1F] font-semibold tracking-tight leading-snug">
                       Over 10,000 Happy Patients
                     </span>
-                    <span className="text-[12px] text-[#44474D]">
+                    <span className="text-[12px] text-[#6E6E73]">
                       Verified clinical outcomes, family care reviews, and discretion.
                     </span>
                   </div>
@@ -427,20 +422,20 @@ export default function Home() {
 
               {/* Secondary Trust Strip */}
               <div className="pt-6 flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center gap-2 text-[#44474D] text-[13px] font-medium">
-                  <span className="material-symbols-outlined text-[#725b38] text-base">location_on</span>
+                <div className="flex items-center gap-2 text-[#6E6E73] text-[13px] font-medium">
+                  <span className="material-symbols-outlined text-[#1D1D1F] text-base">location_on</span>
                   <span>Harley Street &amp; Belgravia Enclaves</span>
                 </div>
-                <div className="flex items-center gap-2 text-[#44474D] text-[13px] font-medium">
-                  <span className="material-symbols-outlined text-[#725b38] text-base">security</span>
+                <div className="flex items-center gap-2 text-[#6E6E73] text-[13px] font-medium">
+                  <span className="material-symbols-outlined text-[#1D1D1F] text-base">security</span>
                   <span>Strict Clinical &amp; GDPR Governance</span>
                 </div>
-                <div className="flex items-center gap-2 text-[#44474D] text-[13px] font-medium">
-                  <span className="material-symbols-outlined text-[#725b38] text-base">health_and_safety</span>
+                <div className="flex items-center gap-2 text-[#6E6E73] text-[13px] font-medium">
+                  <span className="material-symbols-outlined text-[#1D1D1F] text-base">health_and_safety</span>
                   <span>BUPA, AXA Health &amp; Aviva Approved</span>
                 </div>
-                <div className="flex items-center gap-2 text-[#44474D] text-[13px] font-medium">
-                  <span className="material-symbols-outlined text-[#725b38] text-base">lock</span>
+                <div className="flex items-center gap-2 text-[#6E6E73] text-[13px] font-medium">
+                  <span className="material-symbols-outlined text-[#1D1D1F] text-base">lock</span>
                   <span>End-to-End Patient Discretion</span>
                 </div>
               </div>
@@ -467,17 +462,17 @@ export default function Home() {
           {/* ========================================================================= */}
           {/* PATIENT STORIES & REVIEWS SECTION                                         */}
           {/* ========================================================================= */}
-          <section className="w-full bg-[#eff4ff]/60 py-16 md:py-24 border-b border-[#E2E8F0]">
+          <section className="w-full bg-[#F5F5F7] py-16 md:py-24 border-b border-[#D2D2D7]">
             <div className="max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12">
               <div className="flex flex-col items-center text-center max-w-[820px] mx-auto mb-12">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#e5eeff] text-[#725b38] text-[11px] font-semibold uppercase tracking-widest mb-3 border border-[#C5A880]/30">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880]"></span>
+                <div className="inline-flex items-center gap-1.5 text-[#1D1D1F] text-[11px] font-semibold uppercase tracking-widest mb-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F]"></span>
                   Patient Outcomes &amp; Family Voices
                 </div>
-                <h2 className="font-headline-xl text-3xl md:text-[38px] text-[#0A192F] font-semibold tracking-tight mb-3">
+                <h2 className="text-3xl md:text-[38px] text-[#1D1D1F] font-semibold tracking-tight mb-3">
                   Stories of Discretion, Care &amp; Transformation
                 </h2>
-                <p className="text-[17px] text-[#44474D] max-w-[680px] leading-relaxed">
+                <p className="text-[17px] text-[#6E6E73] max-w-[680px] leading-relaxed">
                   Reflecting our unwavering commitment to surgical distinction, clinical empathy, and exemplary patient outcomes.
                 </p>
               </div>
@@ -485,90 +480,90 @@ export default function Home() {
               {/* 3 Patient Review Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
                 {/* Card 1: Cosmetic Surgery */}
-                <div className="flex flex-col justify-between p-6 bg-white rounded-lg border border-[#E2E8F0] shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex flex-col justify-between p-6 bg-white rounded-2xl border border-[#D2D2D7] transition-all duration-300">
                   <div>
                     <div className="flex items-center justify-between gap-3 mb-4">
-                      <div className="flex items-center gap-0.5 text-[#725b38]">
+                      <div className="flex items-center gap-0.5 text-[#1D1D1F]">
                         <span className="material-symbols-outlined text-base">star</span>
                         <span className="material-symbols-outlined text-base">star</span>
                         <span className="material-symbols-outlined text-base">star</span>
                         <span className="material-symbols-outlined text-base">star</span>
                         <span className="material-symbols-outlined text-base">star</span>
                       </div>
-                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#fedeb2]/40 text-[#725b38] text-[11px] font-semibold uppercase tracking-wider">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-[#D2D2D7] text-[#1D1D1F] text-[11px] font-semibold uppercase tracking-wider">
                         <span className="material-symbols-outlined text-[14px]">verified</span>
                         Verified Patient
                       </span>
                     </div>
-                    <p className="text-[15px] text-[#0A192F] leading-relaxed mb-6 italic">
+                    <p className="text-[15px] text-[#1D1D1F] leading-relaxed mb-6 italic">
                       “My rhinoplasty results changed my life. From initial 3D surgical simulation to post-operative recovery in Mayfair, the surgical theatre team delivered complete aesthetic perfection with absolute discretion.”
                     </p>
                   </div>
-                  <div className="pt-4 border-t border-[#E2E8F0] flex flex-col gap-1">
-                    <span className="text-[16px] text-[#0A192F] font-semibold tracking-tight">
+                  <div className="pt-4 border-t border-[#D2D2D7] flex flex-col gap-1">
+                    <span className="text-[16px] text-[#1D1D1F] font-semibold tracking-tight">
                       Lady Charlotte H.
                     </span>
-                    <span className="text-[11px] text-[#725b38] uppercase font-semibold tracking-wider">
+                    <span className="text-[11px] text-[#6E6E73] uppercase font-semibold tracking-wider">
                       Preservation Rhinoplasty • Harley Street Suite
                     </span>
                   </div>
                 </div>
 
                 {/* Card 2: Care Services */}
-                <div className="flex flex-col justify-between p-6 bg-white rounded-lg border border-[#E2E8F0] shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex flex-col justify-between p-6 bg-white rounded-2xl border border-[#D2D2D7] transition-all duration-300">
                   <div>
                     <div className="flex items-center justify-between gap-3 mb-4">
-                      <div className="flex items-center gap-0.5 text-[#725b38]">
+                      <div className="flex items-center gap-0.5 text-[#1D1D1F]">
                         <span className="material-symbols-outlined text-base">star</span>
                         <span className="material-symbols-outlined text-base">star</span>
                         <span className="material-symbols-outlined text-base">star</span>
                         <span className="material-symbols-outlined text-base">star</span>
                         <span className="material-symbols-outlined text-base">star</span>
                       </div>
-                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#fedeb2]/40 text-[#725b38] text-[11px] font-semibold uppercase tracking-wider">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-[#D2D2D7] text-[#1D1D1F] text-[11px] font-semibold uppercase tracking-wider">
                         <span className="material-symbols-outlined text-[14px]">verified</span>
                         Family Advocate
                       </span>
                     </div>
-                    <p className="text-[15px] text-[#0A192F] leading-relaxed mb-6 italic">
+                    <p className="text-[15px] text-[#1D1D1F] leading-relaxed mb-6 italic">
                       “The care team was exceptional in supporting my father's transition into bespoke private residential nursing. Dignified, warm, and constantly communicative—our family felt supported every single day.”
                     </p>
                   </div>
-                  <div className="pt-4 border-t border-[#E2E8F0] flex flex-col gap-1">
-                    <span className="text-[16px] text-[#0A192F] font-semibold tracking-tight">
+                  <div className="pt-4 border-t border-[#D2D2D7] flex flex-col gap-1">
+                    <span className="text-[16px] text-[#1D1D1F] font-semibold tracking-tight">
                       Alexander M., KC
                     </span>
-                    <span className="text-[11px] text-[#725b38] uppercase font-semibold tracking-wider">
+                    <span className="text-[11px] text-[#6E6E73] uppercase font-semibold tracking-wider">
                       Full-Time Domiciliary &amp; Nursing Care • Belgravia
                     </span>
                   </div>
                 </div>
 
                 {/* Card 3: Advanced Aesthetics */}
-                <div className="flex flex-col justify-between p-6 bg-white rounded-lg border border-[#E2E8F0] shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex flex-col justify-between p-6 bg-white rounded-2xl border border-[#D2D2D7] transition-all duration-300">
                   <div>
                     <div className="flex items-center justify-between gap-3 mb-4">
-                      <div className="flex items-center gap-0.5 text-[#725b38]">
+                      <div className="flex items-center gap-0.5 text-[#1D1D1F]">
                         <span className="material-symbols-outlined text-base">star</span>
                         <span className="material-symbols-outlined text-base">star</span>
                         <span className="material-symbols-outlined text-base">star</span>
                         <span className="material-symbols-outlined text-base">star</span>
                         <span className="material-symbols-outlined text-base">star</span>
                       </div>
-                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#fedeb2]/40 text-[#725b38] text-[11px] font-semibold uppercase tracking-wider">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-[#D2D2D7] text-[#1D1D1F] text-[11px] font-semibold uppercase tracking-wider">
                         <span className="material-symbols-outlined text-[14px]">verified</span>
                         Verified Patient
                       </span>
                     </div>
-                    <p className="text-[15px] text-[#0A192F] leading-relaxed mb-6 italic">
+                    <p className="text-[15px] text-[#1D1D1F] leading-relaxed mb-6 italic">
                       “Doctor-led aesthetics at its highest standard. The bespoke laser resurfacing and subtle hyaluronic contouring left my skin luminous without ever looking overdone. I wouldn't trust anyone else.”
                     </p>
                   </div>
-                  <div className="pt-4 border-t border-[#E2E8F0] flex flex-col gap-1">
-                    <span className="text-[16px] text-[#0A192F] font-semibold tracking-tight">
+                  <div className="pt-4 border-t border-[#D2D2D7] flex flex-col gap-1">
+                    <span className="text-[16px] text-[#1D1D1F] font-semibold tracking-tight">
                       Elena V.
                     </span>
-                    <span className="text-[11px] text-[#725b38] uppercase font-semibold tracking-wider">
+                    <span className="text-[11px] text-[#6E6E73] uppercase font-semibold tracking-wider">
                       Fractional Laser &amp; Subtle Dermal Contouring
                     </span>
                   </div>
@@ -580,56 +575,53 @@ export default function Home() {
           {/* ========================================================================= */}
           {/* PRIVATE CLINICAL CONCIERGE & APPOINTMENT BOOKING SECTION                 */}
           {/* ========================================================================= */}
-          <section className="w-full bg-[#0A192F] py-16 md:py-20 text-white relative overflow-hidden">
-            <div className="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#C5A880] via-transparent to-transparent"></div>
-            <div className="relative max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12 text-center">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 border border-[#C5A880]/30 text-[#fedeb2] text-[11px] font-semibold uppercase tracking-widest mb-4 backdrop-blur">
-                <span className="material-symbols-outlined text-[16px] text-[#fedeb2]">medical_services</span>
+          <section className="w-full bg-white py-16 md:py-20 text-[#1D1D1F]">
+            <div className="max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12 text-center">
+              <div className="inline-flex items-center gap-2 text-[#1D1D1F] text-[11px] font-semibold uppercase tracking-widest mb-4">
+                <span className="material-symbols-outlined text-[16px] text-[#1D1D1F]">medical_services</span>
                 Confidential Clinical Concierge
               </div>
-              <h2 className="font-headline-xl text-3xl md:text-[40px] font-semibold tracking-tight mb-3 text-balance">
-                Arrange Your Priority Consultation Across Our{" "}
-                <span className="text-[#fedeb2]">London Enclaves</span>
+              <h2 className="text-3xl md:text-[40px] font-semibold tracking-tight mb-3 text-balance">
+                Arrange Your Priority Consultation Across Our London Enclaves
               </h2>
-              <p className="text-[17px] text-slate-300 max-w-[680px] mx-auto leading-relaxed mb-8">
+              <p className="text-[17px] text-[#6E6E73] max-w-[680px] mx-auto leading-relaxed mb-8">
                 Whether seeking comprehensive domiciliary care support, doctor-led aesthetic protocols, or consultant cosmetic surgery, our clinical coordinators provide discrete, same-day scheduling.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
                 <button
                   onClick={() => openConsultation("surgery")}
-                  className="inline-flex items-center justify-center h-12 px-7 bg-[#fedeb2] text-[#0A192F] font-semibold text-[14px] rounded-[4px] hover:bg-[#e0c298] transition-all shadow-md w-full sm:w-auto cursor-pointer"
+                  className="inline-flex items-center justify-center h-12 px-7 bg-[#1D1D1F] text-white font-semibold text-[14px] rounded-full hover:opacity-85 transition-all w-full sm:w-auto cursor-pointer"
                 >
                   <span>Book Private Consultation</span>
-                  <span className="material-symbols-outlined text-[18px] ml-1.5">calendar_month</span>
                 </button>
                 <a
                   href="tel:03331234567"
-                  className="inline-flex items-center justify-center h-12 px-7 border border-[#C5A880]/70 text-white font-medium text-[14px] rounded-[4px] hover:bg-white/10 transition-all w-full sm:w-auto"
+                  className="inline-flex items-center justify-center h-12 px-7 border border-[#D2D2D7] text-[#1D1D1F] font-medium text-[14px] rounded-full hover:border-[#1D1D1F] transition-all w-full sm:w-auto"
                 >
-                  <span className="material-symbols-outlined text-[18px] text-[#C5A880] mr-2">call</span>
+                  <span className="material-symbols-outlined text-[18px] text-[#1D1D1F] mr-2">call</span>
                   <span>Direct Line: 0333 123 4567</span>
                 </a>
               </div>
 
               {/* Security & Compliance Strip */}
-              <div className="pt-6 border-t border-slate-700/60 flex flex-wrap items-center justify-center gap-8 text-slate-300 text-[11px] font-semibold uppercase tracking-wider">
+              <div className="pt-6 border-t border-[#D2D2D7] flex flex-wrap items-center justify-center gap-8 text-[#6E6E73] text-[11px] font-semibold uppercase tracking-wider">
                 <div className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#fedeb2] text-[16px]">
+                  <span className="material-symbols-outlined text-[#1D1D1F] text-[16px]">
                     shield
                   </span>
                   <span>100% Confidentiality</span>
                 </div>
-                <span className="w-1 h-1 rounded-full bg-[#fedeb2]/40 hidden sm:inline-block"></span>
+                <span className="w-1 h-1 rounded-full bg-[#D2D2D7] hidden sm:inline-block"></span>
                 <div className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#fedeb2] text-[16px]">
+                  <span className="material-symbols-outlined text-[#1D1D1F] text-[16px]">
                     verified_user
                   </span>
                   <span>CQC Regulated Care</span>
                 </div>
-                <span className="w-1 h-1 rounded-full bg-[#fedeb2]/40 hidden sm:inline-block"></span>
+                <span className="w-1 h-1 rounded-full bg-[#D2D2D7] hidden sm:inline-block"></span>
                 <div className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#fedeb2] text-[16px]">
+                  <span className="material-symbols-outlined text-[#1D1D1F] text-[16px]">
                     workspace_premium
                   </span>
                   <span>GMC Consultant Practice</span>

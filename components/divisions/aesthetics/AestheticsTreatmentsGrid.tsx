@@ -18,7 +18,7 @@ export default function AestheticsTreatmentsGrid({
       category: "injectables",
       tag: "Botulinum Toxin Type A",
       badge: "GMC Doctor Administered",
-      image: "https://images.unsplash.com/photo-1512290900672-1f41d9a26370?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
       description:
         "Precision micro-dosing targeting forehead lines, frown furrows, and crow's feet, preserving natural expression while smoothing dynamic creasing.",
       duration: "30 mins",
@@ -104,23 +104,23 @@ export default function AestheticsTreatmentsGrid({
       : treatments.filter((t) => t.category === selectedCategory);
 
   return (
-    <div className="w-full bg-white rounded-xl border border-[#E2E8F0] shadow-sm p-6 md:p-8 lg:p-10">
+    <div className="w-full bg-white rounded-xl border border-[#DDD3BF] shadow-sm p-6 md:p-8 lg:p-10">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#fedeb2]/40 text-[#725b38] text-[11px] font-semibold uppercase tracking-wider border border-[#C5A880]/30 mb-2">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#E9C9AC]/40 text-[#8A4530] text-[11px] font-semibold uppercase tracking-wider border border-[#A85D3D]/30 mb-2">
             <span className="material-symbols-outlined text-[14px]">spa</span>
             Aesthetics Component 01 • Clinical Treatment Suite
           </div>
-          <h3 className="text-2xl md:text-3xl font-semibold text-[#0A192F] tracking-tight">
+          <h3 className="font-serif text-2xl md:text-3xl font-semibold text-[#211E1A] tracking-tight">
             Doctor-Led Medical Aesthetic Treatments
           </h3>
-          <p className="text-[15px] text-[#44474D] mt-1">
+          <p className="text-[15px] text-[#5A5347] mt-1">
             Every procedure is exclusively performed by GMC-registered medical doctors and senior clinical dermatologists.
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex items-center gap-1.5 p-1 bg-[#eff4ff] rounded-md border border-[#E2E8F0]">
+        <div className="flex items-center gap-1.5 p-1 bg-[#EFEAE0] rounded-md border border-[#DDD3BF]">
           {[
             { id: "all", label: "All Treatments" },
             { id: "injectables", label: "Injectables" },
@@ -132,8 +132,8 @@ export default function AestheticsTreatmentsGrid({
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-3 py-1.5 text-[12px] font-medium rounded transition-colors cursor-pointer ${
                 selectedCategory === cat.id
-                  ? "bg-[#0A192F] text-white shadow-sm"
-                  : "text-[#44474D] hover:text-[#0A192F]"
+                  ? "bg-[#211E1A] text-white shadow-sm"
+                  : "text-[#5A5347] hover:text-[#211E1A]"
               }`}
             >
               {cat.label}
@@ -147,7 +147,7 @@ export default function AestheticsTreatmentsGrid({
         {filtered.map((item) => (
           <div
             key={item.id}
-            className="group bg-[#f8f9ff] rounded-lg border border-[#E2E8F0] overflow-hidden flex flex-col justify-between hover:border-[#C5A880]/70 hover:shadow-md transition-all"
+            className="group bg-[#F7F4EC] rounded-lg border border-[#DDD3BF] overflow-hidden flex flex-col justify-between hover:border-[#A85D3D]/70 hover:shadow-md transition-all"
           >
             <div>
               <div className="relative aspect-[16/10] overflow-hidden">
@@ -156,38 +156,38 @@ export default function AestheticsTreatmentsGrid({
                   alt={item.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute top-3 left-3 bg-[#0A192F]/85 backdrop-blur-sm text-white px-2.5 py-0.5 rounded text-[11px] font-semibold tracking-wider uppercase border border-[#C5A880]/40">
+                <div className="absolute top-3 left-3 bg-[#211E1A]/85 backdrop-blur-sm text-white px-2.5 py-0.5 rounded text-[11px] font-semibold tracking-wider uppercase border border-[#A85D3D]/40">
                   {item.badge}
                 </div>
-                <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded shadow-sm text-[12px] font-mono font-bold text-[#0A192F] tnum">
+                <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded shadow-sm text-[12px] font-mono font-bold text-[#211E1A] tnum">
                   {item.price}
                 </div>
               </div>
 
               <div className="p-5">
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#725b38]">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#8A4530]">
                   {item.tag}
                 </span>
-                <h4 className="text-[17px] font-semibold text-[#0A192F] mt-0.5 group-hover:text-[#725b38] transition-colors">
+                <h4 className="text-[17px] font-semibold text-[#211E1A] mt-0.5 group-hover:text-[#8A4530] transition-colors">
                   {item.name}
                 </h4>
-                <p className="text-[13px] text-[#44474D] mt-2 leading-relaxed">
+                <p className="text-[13px] text-[#5A5347] mt-2 leading-relaxed">
                   {item.description}
                 </p>
 
                 {/* Treatment Specs Pill Row */}
-                <div className="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-[#E2E8F0] text-center">
-                  <div className="bg-white p-1.5 rounded border border-[#E2E8F0]">
-                    <span className="block text-[10px] text-[#64748B] uppercase">Time</span>
-                    <span className="text-[12px] font-semibold text-[#0A192F] font-mono">{item.duration}</span>
+                <div className="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-[#DDD3BF] text-center">
+                  <div className="bg-white p-1.5 rounded border border-[#DDD3BF]">
+                    <span className="block text-[10px] text-[#6B6457] uppercase">Time</span>
+                    <span className="text-[12px] font-semibold text-[#211E1A] font-mono">{item.duration}</span>
                   </div>
-                  <div className="bg-white p-1.5 rounded border border-[#E2E8F0]">
-                    <span className="block text-[10px] text-[#64748B] uppercase">Downtime</span>
-                    <span className="text-[12px] font-semibold text-[#0A192F] font-mono">{item.downtime}</span>
+                  <div className="bg-white p-1.5 rounded border border-[#DDD3BF]">
+                    <span className="block text-[10px] text-[#6B6457] uppercase">Downtime</span>
+                    <span className="text-[12px] font-semibold text-[#211E1A] font-mono">{item.downtime}</span>
                   </div>
-                  <div className="bg-white p-1.5 rounded border border-[#E2E8F0]">
-                    <span className="block text-[10px] text-[#64748B] uppercase">Longevity</span>
-                    <span className="text-[12px] font-semibold text-[#0A192F] font-mono">{item.longevity}</span>
+                  <div className="bg-white p-1.5 rounded border border-[#DDD3BF]">
+                    <span className="block text-[10px] text-[#6B6457] uppercase">Longevity</span>
+                    <span className="text-[12px] font-semibold text-[#211E1A] font-mono">{item.longevity}</span>
                   </div>
                 </div>
               </div>
@@ -196,10 +196,10 @@ export default function AestheticsTreatmentsGrid({
             <div className="p-5 pt-0">
               <button
                 onClick={() => onOpenConsultation?.("aesthetics")}
-                className="w-full h-9 bg-white border border-[#E2E8F0] hover:border-[#0A192F] hover:bg-[#0A192F] hover:text-white text-[#0A192F] text-[12px] font-semibold rounded-[4px] transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
+                className="w-full h-9 bg-white border border-[#DDD3BF] hover:border-[#211E1A] hover:bg-[#211E1A] hover:text-white text-[#211E1A] text-[12px] font-semibold rounded-[4px] transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
               >
                 <span>Book Doctor Consultation</span>
-                <span className="material-symbols-outlined text-[15px] text-[#C5A880]">calendar_today</span>
+                <span className="material-symbols-outlined text-[15px] text-[#A85D3D]">calendar_today</span>
               </button>
             </div>
           </div>

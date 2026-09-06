@@ -36,29 +36,29 @@ export default function SurgeryFinanceCalculator({
   const totalInterest = totalRepayable - totalCost;
 
   return (
-    <div className="w-full bg-[#f8f9ff] rounded-xl border border-[#E2E8F0] shadow-sm p-6 md:p-8 lg:p-10">
+    <div className="w-full bg-[#F7F4EC] rounded-xl border border-[#DDD3BF] shadow-sm p-6 md:p-8 lg:p-10">
       <div className="max-w-[900px] mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#fedeb2]/40 text-[#725b38] text-[11px] font-semibold uppercase tracking-wider border border-[#C5A880]/30 mb-2">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#E9C9AC]/40 text-[#8A4530] text-[11px] font-semibold uppercase tracking-wider border border-[#A85D3D]/30 mb-2">
             <span className="material-symbols-outlined text-[14px]">credit_card</span>
             Surgery Component 02 • Chrysalis 0% APR Finance Calculator
           </div>
-          <h3 className="text-2xl md:text-3xl font-semibold text-[#0A192F] tracking-tight">
+          <h3 className="font-serif text-2xl md:text-3xl font-semibold text-[#211E1A] tracking-tight">
             Flexible Cosmetic Surgery Finance Calculator
           </h3>
-          <p className="text-[14px] md:text-[15px] text-[#44474D] mt-2">
+          <p className="text-[14px] md:text-[15px] text-[#5A5347] mt-2">
             Calculate your transparent monthly repayments with 0% APR interest-free terms over 12 months, or extended plans up to 5 years with Chrysalis Finance UK.
           </p>
         </div>
 
-        <div className="bg-white rounded-lg border border-[#E2E8F0] p-6 md:p-8 shadow-sm">
+        <div className="bg-white rounded-lg border border-[#DDD3BF] p-6 md:p-8 shadow-sm">
           {/* Slider 1: Total Procedure Cost */}
-          <div className="mb-6 bg-[#f8f9ff] p-5 rounded-md border border-[#E2E8F0]">
+          <div className="mb-6 bg-[#F7F4EC] p-5 rounded-md border border-[#DDD3BF]">
             <div className="flex items-center justify-between mb-2">
-              <label className="text-[13px] font-semibold text-[#0A192F]">
+              <label className="text-[13px] font-semibold text-[#211E1A]">
                 Estimated Procedure Value
               </label>
-              <span className="font-mono text-[16px] font-bold text-[#0A192F] bg-white px-3 py-1 rounded border border-[#E2E8F0] tnum">
+              <span className="font-mono text-[16px] font-bold text-[#211E1A] bg-white px-3 py-1 rounded border border-[#DDD3BF] tnum">
                 £{totalCost.toLocaleString("en-GB")}
               </span>
             </div>
@@ -69,9 +69,9 @@ export default function SurgeryFinanceCalculator({
               step={250}
               value={totalCost}
               onChange={(e) => setTotalCost(Number(e.target.value))}
-              className="w-full h-2 bg-[#E2E8F0] rounded-lg appearance-none cursor-pointer accent-[#0A192F]"
+              className="w-full h-2 bg-[#DDD3BF] rounded-lg appearance-none cursor-pointer accent-[#211E1A]"
             />
-            <div className="flex justify-between text-[11px] text-[#64748B] mt-1 font-mono">
+            <div className="flex justify-between text-[11px] text-[#6B6457] mt-1 font-mono">
               <span>£3,000 (Blepharoplasty)</span>
               <span>£6,500 (Breast / Rhino)</span>
               <span>£10,000+ (Deep Plane / 360 Lipo)</span>
@@ -80,9 +80,9 @@ export default function SurgeryFinanceCalculator({
 
           {/* Deposit Selector */}
           <div className="mb-6">
-            <label className="block text-[13px] font-semibold text-[#0A192F] mb-2">
+            <label className="block text-[13px] font-semibold text-[#211E1A] mb-2">
               Select Initial Deposit Percentage:{" "}
-              <span className="font-mono text-[#725b38] font-bold">
+              <span className="font-mono text-[#8A4530] font-bold">
                 {depositPct}% (£{depositAmount.toLocaleString("en-GB")})
               </span>
             </label>
@@ -94,8 +94,8 @@ export default function SurgeryFinanceCalculator({
                   onClick={() => setDepositPct(pct)}
                   className={`py-2 text-[13px] font-medium rounded border transition-all cursor-pointer font-mono ${
                     depositPct === pct
-                      ? "bg-[#0A192F] text-white border-[#0A192F] shadow-xs"
-                      : "bg-white text-[#44474D] border-[#E2E8F0] hover:bg-[#eff4ff]"
+                      ? "bg-[#211E1A] text-white border-[#211E1A] shadow-xs"
+                      : "bg-white text-[#5A5347] border-[#DDD3BF] hover:bg-[#EFEAE0]"
                   }`}
                 >
                   {pct}% Deposit
@@ -106,7 +106,7 @@ export default function SurgeryFinanceCalculator({
 
           {/* Repayment Term Selector */}
           <div className="mb-8">
-            <label className="block text-[13px] font-semibold text-[#0A192F] mb-2">
+            <label className="block text-[13px] font-semibold text-[#211E1A] mb-2">
               Repayment Duration &amp; APR Terms
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -122,20 +122,20 @@ export default function SurgeryFinanceCalculator({
                   onClick={() => setTermMonths(item.term)}
                   className={`p-3 text-left rounded border transition-all cursor-pointer ${
                     termMonths === item.term
-                      ? "bg-[#0A192F] text-white border-[#0A192F] shadow-xs"
-                      : "bg-white text-[#44474D] border-[#E2E8F0] hover:bg-[#eff4ff]"
+                      ? "bg-[#211E1A] text-white border-[#211E1A] shadow-xs"
+                      : "bg-white text-[#5A5347] border-[#DDD3BF] hover:bg-[#EFEAE0]"
                   }`}
                 >
                   <span
                     className={`block text-[13px] font-bold ${
-                      termMonths === item.term ? "text-white" : "text-[#0A192F]"
+                      termMonths === item.term ? "text-white" : "text-[#211E1A]"
                     }`}
                   >
                     {item.label}
                   </span>
                   <span
                     className={`block text-[10px] mt-0.5 ${
-                      termMonths === item.term ? "text-[#C5A880]" : "text-[#725b38]"
+                      termMonths === item.term ? "text-[#A85D3D]" : "text-[#8A4530]"
                     }`}
                   >
                     {item.badge}
@@ -146,10 +146,10 @@ export default function SurgeryFinanceCalculator({
           </div>
 
           {/* Breakdown Output */}
-          <div className="p-6 rounded-md bg-[#0A192F] text-white flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="p-6 rounded-md bg-[#211E1A] text-white flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-[12px] uppercase tracking-wider text-[#C5A880] font-semibold">
+                <span className="text-[12px] uppercase tracking-wider text-[#A85D3D] font-semibold">
                   Monthly Repayment
                 </span>
                 {termMonths === 12 && (
@@ -174,7 +174,7 @@ export default function SurgeryFinanceCalculator({
               <button
                 type="button"
                 onClick={() => onOpenConsultation?.("surgery")}
-                className="w-full sm:w-auto h-11 px-6 bg-[#C5A880] text-[#0A192F] font-semibold text-[13px] rounded-[4px] hover:bg-[#d6be9a] transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto h-11 px-6 bg-[#A85D3D] text-[#211E1A] font-semibold text-[13px] rounded-[4px] hover:bg-[#D2A67E] transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Check Eligibility (Soft Search)</span>
                 <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
@@ -182,7 +182,7 @@ export default function SurgeryFinanceCalculator({
             </div>
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-[11px] text-[#64748B]">
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-[11px] text-[#6B6457]">
             <span className="flex items-center gap-1">
               <span className="material-symbols-outlined text-[14px] text-[#2D5A46]">verified</span>
               Regulated by Financial Conduct Authority (FCA) via Chrysalis Finance

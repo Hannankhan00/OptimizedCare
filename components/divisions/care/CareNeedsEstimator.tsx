@@ -29,25 +29,25 @@ export default function CareNeedsEstimator({ onOpenConsultation }: CareNeedsEsti
   const weeklyTotal = calculateEstimate();
 
   return (
-    <div className="w-full bg-[#f8f9ff] rounded-xl border border-[#E2E8F0] shadow-sm p-6 md:p-8 lg:p-10">
+    <div className="w-full bg-[#F7F4EC] rounded-xl border border-[#DDD3BF] shadow-sm p-6 md:p-8 lg:p-10">
       <div className="max-w-[900px] mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#fedeb2]/40 text-[#725b38] text-[11px] font-semibold uppercase tracking-wider border border-[#C5A880]/30 mb-2">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#E9C9AC]/40 text-[#8A4530] text-[11px] font-semibold uppercase tracking-wider border border-[#A85D3D]/30 mb-2">
             <span className="material-symbols-outlined text-[14px]">calculate</span>
             Care Component 02 • Assessment &amp; Cost Estimator
           </div>
-          <h3 className="text-2xl md:text-3xl font-semibold text-[#0A192F] tracking-tight">
+          <h3 className="font-serif text-2xl md:text-3xl font-semibold text-[#211E1A] tracking-tight">
             Personal Care Investment Estimator
           </h3>
-          <p className="text-[14px] md:text-[15px] text-[#44474D] mt-2">
+          <p className="text-[14px] md:text-[15px] text-[#5A5347] mt-2">
             Transparent, indicative budgeting for private care, local authority direct payments, and NHS Continuing Healthcare (CHC) funding.
           </p>
         </div>
 
-        <div className="bg-white rounded-lg border border-[#E2E8F0] p-6 md:p-8 shadow-sm">
+        <div className="bg-white rounded-lg border border-[#DDD3BF] p-6 md:p-8 shadow-sm">
           {/* Step 1: Select Care Level */}
           <div className="mb-6">
-            <label className="block text-[13px] font-semibold uppercase tracking-wider text-[#0A192F] mb-3">
+            <label className="block text-[13px] font-semibold uppercase tracking-wider text-[#211E1A] mb-3">
               1. Select Primary Care Model
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -56,16 +56,16 @@ export default function CareNeedsEstimator({ onOpenConsultation }: CareNeedsEsti
                 onClick={() => setCareTier("visiting")}
                 className={`p-4 rounded-md border text-left transition-all cursor-pointer ${
                   careTier === "visiting"
-                    ? "border-[#0A192F] bg-[#eff4ff]/60 shadow-sm"
-                    : "border-[#E2E8F0] hover:border-[#C5A880]/60 bg-white"
+                    ? "border-[#211E1A] bg-[#EFEAE0]/60 shadow-sm"
+                    : "border-[#DDD3BF] hover:border-[#A85D3D]/60 bg-white"
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-[14px] font-semibold text-[#0A192F]">Visiting Care</span>
-                  <span className="material-symbols-outlined text-[18px] text-[#C5A880]">home</span>
+                  <span className="text-[14px] font-semibold text-[#211E1A]">Visiting Care</span>
+                  <span className="material-symbols-outlined text-[18px] text-[#A85D3D]">home</span>
                 </div>
-                <p className="text-[12px] text-[#44474D]">Scheduled daytime &amp; evening home visits</p>
-                <span className="inline-block mt-2 text-[12px] font-mono text-[#725b38] font-semibold">
+                <p className="text-[12px] text-[#5A5347]">Scheduled daytime &amp; evening home visits</p>
+                <span className="inline-block mt-2 text-[12px] font-mono text-[#8A4530] font-semibold">
                   From £28/hr
                 </span>
               </button>
@@ -75,16 +75,16 @@ export default function CareNeedsEstimator({ onOpenConsultation }: CareNeedsEsti
                 onClick={() => setCareTier("livein")}
                 className={`p-4 rounded-md border text-left transition-all cursor-pointer ${
                   careTier === "livein"
-                    ? "border-[#0A192F] bg-[#eff4ff]/60 shadow-sm"
-                    : "border-[#E2E8F0] hover:border-[#C5A880]/60 bg-white"
+                    ? "border-[#211E1A] bg-[#EFEAE0]/60 shadow-sm"
+                    : "border-[#DDD3BF] hover:border-[#A85D3D]/60 bg-white"
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-[14px] font-semibold text-[#0A192F]">24/7 Live-in Care</span>
-                  <span className="material-symbols-outlined text-[18px] text-[#C5A880]">hotel</span>
+                  <span className="text-[14px] font-semibold text-[#211E1A]">24/7 Live-in Care</span>
+                  <span className="material-symbols-outlined text-[18px] text-[#A85D3D]">hotel</span>
                 </div>
-                <p className="text-[12px] text-[#44474D]">Dedicated resident carer living in your home</p>
-                <span className="inline-block mt-2 text-[12px] font-mono text-[#725b38] font-semibold">
+                <p className="text-[12px] text-[#5A5347]">Dedicated resident carer living in your home</p>
+                <span className="inline-block mt-2 text-[12px] font-mono text-[#8A4530] font-semibold">
                   From £1,250/wk
                 </span>
               </button>
@@ -94,16 +94,16 @@ export default function CareNeedsEstimator({ onOpenConsultation }: CareNeedsEsti
                 onClick={() => setCareTier("complex")}
                 className={`p-4 rounded-md border text-left transition-all cursor-pointer ${
                   careTier === "complex"
-                    ? "border-[#0A192F] bg-[#eff4ff]/60 shadow-sm"
-                    : "border-[#E2E8F0] hover:border-[#C5A880]/60 bg-white"
+                    ? "border-[#211E1A] bg-[#EFEAE0]/60 shadow-sm"
+                    : "border-[#DDD3BF] hover:border-[#A85D3D]/60 bg-white"
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-[14px] font-semibold text-[#0A192F]">Complex / Dementia</span>
-                  <span className="material-symbols-outlined text-[18px] text-[#C5A880]">psychology</span>
+                  <span className="text-[14px] font-semibold text-[#211E1A]">Complex / Dementia</span>
+                  <span className="material-symbols-outlined text-[18px] text-[#A85D3D]">psychology</span>
                 </div>
-                <p className="text-[12px] text-[#44474D]">Nurse-led clinical care &amp; palliative support</p>
-                <span className="inline-block mt-2 text-[12px] font-mono text-[#725b38] font-semibold">
+                <p className="text-[12px] text-[#5A5347]">Nurse-led clinical care &amp; palliative support</p>
+                <span className="inline-block mt-2 text-[12px] font-mono text-[#8A4530] font-semibold">
                   From £38/hr
                 </span>
               </button>
@@ -112,12 +112,12 @@ export default function CareNeedsEstimator({ onOpenConsultation }: CareNeedsEsti
 
           {/* Step 2: Slider or Options */}
           {careTier !== "livein" ? (
-            <div className="mb-6 bg-[#f8f9ff] p-5 rounded-md border border-[#E2E8F0]">
+            <div className="mb-6 bg-[#F7F4EC] p-5 rounded-md border border-[#DDD3BF]">
               <div className="flex items-center justify-between mb-2">
-                <label className="text-[13px] font-semibold text-[#0A192F]">
+                <label className="text-[13px] font-semibold text-[#211E1A]">
                   Estimated Weekly Support Hours
                 </label>
-                <span className="font-mono text-[16px] font-bold text-[#0A192F] bg-white px-3 py-1 rounded border border-[#E2E8F0] tnum">
+                <span className="font-mono text-[16px] font-bold text-[#211E1A] bg-white px-3 py-1 rounded border border-[#DDD3BF] tnum">
                   {hoursPerWeek} Hours / Week
                 </span>
               </div>
@@ -128,9 +128,9 @@ export default function CareNeedsEstimator({ onOpenConsultation }: CareNeedsEsti
                 step={1}
                 value={hoursPerWeek}
                 onChange={(e) => setHoursPerWeek(Number(e.target.value))}
-                className="w-full h-2 bg-[#E2E8F0] rounded-lg appearance-none cursor-pointer accent-[#0A192F]"
+                className="w-full h-2 bg-[#DDD3BF] rounded-lg appearance-none cursor-pointer accent-[#211E1A]"
               />
-              <div className="flex justify-between text-[11px] text-[#64748B] mt-1 font-mono">
+              <div className="flex justify-between text-[11px] text-[#6B6457] mt-1 font-mono">
                 <span>5 hrs (starter companion)</span>
                 <span>14 hrs (2 hrs daily)</span>
                 <span>28 hrs (4 hrs daily)</span>
@@ -138,12 +138,12 @@ export default function CareNeedsEstimator({ onOpenConsultation }: CareNeedsEsti
               </div>
             </div>
           ) : (
-            <div className="mb-6 bg-[#f8f9ff] p-5 rounded-md border border-[#E2E8F0] flex items-center justify-between">
+            <div className="mb-6 bg-[#F7F4EC] p-5 rounded-md border border-[#DDD3BF] flex items-center justify-between">
               <div>
-                <span className="text-[13px] font-semibold text-[#0A192F] block">
+                <span className="text-[13px] font-semibold text-[#211E1A] block">
                   Add Waking Night Cover
                 </span>
-                <span className="text-[12px] text-[#64748B]">
+                <span className="text-[12px] text-[#6B6457]">
                   Required if patient wakes frequently or requires continuous nighttime medication
                 </span>
               </div>
@@ -152,8 +152,8 @@ export default function CareNeedsEstimator({ onOpenConsultation }: CareNeedsEsti
                 onClick={() => setNightCover(!nightCover)}
                 className={`px-4 py-2 rounded text-[12px] font-semibold cursor-pointer border transition-colors ${
                   nightCover
-                    ? "bg-[#0A192F] text-white border-[#0A192F]"
-                    : "bg-white text-[#44474D] border-[#E2E8F0] hover:bg-[#eff4ff]"
+                    ? "bg-[#211E1A] text-white border-[#211E1A]"
+                    : "bg-white text-[#5A5347] border-[#DDD3BF] hover:bg-[#EFEAE0]"
                 }`}
               >
                 {nightCover ? "Included (+£350/wk)" : "Standard Sleep-In"}
@@ -162,10 +162,10 @@ export default function CareNeedsEstimator({ onOpenConsultation }: CareNeedsEsti
           )}
 
           {/* Step 3: Calculation Breakdown */}
-          <div className="p-6 rounded-md bg-[#0A192F] text-white flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="p-6 rounded-md bg-[#211E1A] text-white flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-[12px] uppercase tracking-wider text-[#C5A880] font-semibold">
+                <span className="text-[12px] uppercase tracking-wider text-[#A85D3D] font-semibold">
                   Indicative Care Estimate
                 </span>
                 <span className="text-[11px] text-white/60 bg-white/10 px-2 py-0.5 rounded">
@@ -187,7 +187,7 @@ export default function CareNeedsEstimator({ onOpenConsultation }: CareNeedsEsti
               <button
                 type="button"
                 onClick={() => onOpenConsultation?.("care")}
-                className="w-full sm:w-auto h-11 px-6 bg-[#C5A880] text-[#0A192F] font-semibold text-[13px] rounded-[4px] hover:bg-[#d6be9a] transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto h-11 px-6 bg-[#A85D3D] text-[#211E1A] font-semibold text-[13px] rounded-[4px] hover:bg-[#D2A67E] transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Request Free Assessment</span>
                 <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
@@ -195,7 +195,7 @@ export default function CareNeedsEstimator({ onOpenConsultation }: CareNeedsEsti
             </div>
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-[12px] text-[#64748B]">
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-[12px] text-[#6B6457]">
             <span className="flex items-center gap-1.5">
               <span className="material-symbols-outlined text-[15px] text-[#2D5A46]">check</span>
               Direct Payments &amp; Personal Health Budgets (PHB) Accepted
