@@ -39,19 +39,19 @@ export default function ConsultationModal({
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#1D3557]/60 backdrop-blur-sm p-4 animate-in fade-in duration-200">
-      <div className="relative w-full max-w-lg bg-white rounded-2xl border border-[#E2E8F0] shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#1D3557]/60 backdrop-blur-sm p-3 sm:p-4 animate-in fade-in duration-200">
+      <div className="relative w-full max-w-lg bg-white rounded-2xl border border-[#E2E8F0] shadow-2xl overflow-hidden max-h-[92vh] flex flex-col">
         {/* Modal Header */}
-        <div className="bg-white px-6 py-5 text-[#1D3557] flex items-center justify-between border-b border-[#E2E8F0]">
+        <div className="bg-white px-5 sm:px-6 py-4 sm:py-5 text-[#1D3557] flex items-center justify-between border-b border-[#E2E8F0] shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-[#E8F6F3] border border-[#94D2BD] flex items-center justify-center text-[#2A9D8F]">
+            <div className="w-8 h-8 rounded-full bg-[#E8F6F3] border border-[#94D2BD] flex items-center justify-center text-[#2A9D8F] shrink-0">
               <span className="material-symbols-outlined text-[20px]">event_available</span>
             </div>
             <div>
-              <h3 className="text-[17px] font-semibold tracking-tight text-[#1D3557]">
+              <h3 className="text-[16px] sm:text-[17px] font-semibold tracking-tight text-[#1D3557]">
                 Request Clinical Consultation
               </h3>
-              <p className="text-[11px] text-[#457B9D] tracking-wider uppercase font-semibold">
+              <p className="text-[10px] sm:text-[11px] text-[#457B9D] tracking-wider uppercase font-semibold">
                 OptimizedCare • Confidential Concierge
               </p>
             </div>
@@ -66,7 +66,7 @@ export default function ConsultationModal({
 
         {/* Modal Body */}
         {submitted ? (
-          <div className="p-8 flex flex-col items-center text-center gap-4">
+          <div className="p-6 sm:p-8 flex flex-col items-center text-center gap-4 overflow-y-auto">
             <div className="w-14 h-14 rounded-full bg-[#2A9D8F] text-white flex items-center justify-center shadow-xs">
               <span className="material-symbols-outlined text-3xl">check</span>
             </div>
@@ -81,7 +81,7 @@ export default function ConsultationModal({
             </div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-4 overflow-y-auto">
             {/* Department Selector */}
             <div>
               <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#457B9D] mb-1.5">

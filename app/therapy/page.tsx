@@ -24,7 +24,7 @@ export default function TherapyPage() {
       <Header onOpenConsultation={openConsultation} />
 
       {/* Main Therapeutic Services Page Flow */}
-      <main className="w-full pt-28 bg-[#F8FAFC] min-h-screen text-[#1D3557] selection:bg-[#E8F6F3] selection:text-[#2A9D8F]">
+      <main className="w-full pt-24 sm:pt-28 bg-[#F8FAFC] min-h-screen text-[#1D3557] selection:bg-[#E8F6F3] selection:text-[#2A9D8F]">
         {/* 1. Apple-Tier Therapy Hero Section */}
         <TherapyHero onOpenConsultation={openConsultation} />
 

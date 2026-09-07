@@ -190,7 +190,7 @@ export default function Home() {
       <Header onOpenConsultation={() => openConsultation("surgery")} />
 
       {/* Main Page Container */}
-      <main className="w-full pt-28 bg-[#F8FAFC] min-h-screen text-[#1D3557] selection:bg-[#E8F6F3] selection:text-[#2A9D8F]">
+      <main className="w-full pt-24 sm:pt-28 bg-[#F8FAFC] min-h-screen text-[#1D3557] selection:bg-[#E8F6F3] selection:text-[#2A9D8F]">
         <div className="flex flex-col w-full">
           {/* ========================================================================= */}
           {/* HERO: COMPACT PERSONNEL PALETTE, FRAMED IMAGE PANEL                       */}

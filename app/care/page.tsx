@@ -17,7 +17,7 @@ export default function CarePage() {
     <>
       <Header onOpenConsultation={() => setIsConsultationOpen(true)} />
 
-      <main className="w-full pt-20 sm:pt-24 bg-[#F8FAFC] min-h-screen text-[#1D3557] selection:bg-[#E8F6F3] selection:text-[#2A9D8F]">
+      <main className="w-full pt-24 sm:pt-28 bg-[#F8FAFC] min-h-screen text-[#1D3557] selection:bg-[#E8F6F3] selection:text-[#2A9D8F]">
         {/* Apple High-End Hero with Emerald Green Accent */}
         <CompactHero onOpenConsultation={() => setIsConsultationOpen(true)} />
 
