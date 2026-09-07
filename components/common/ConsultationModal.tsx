@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 interface ConsultationModalProps {
   isOpen: boolean;
@@ -44,8 +45,13 @@ export default function ConsultationModal({
         {/* Modal Header */}
         <div className="bg-white px-5 sm:px-6 py-4 sm:py-5 text-[#1D3557] flex items-center justify-between border-b border-[#E2E8F0] shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-[#E8F6F3] border border-[#94D2BD] flex items-center justify-center text-[#2A9D8F] shrink-0">
-              <span className="material-symbols-outlined text-[20px]">event_available</span>
+            <div className="relative w-8 h-10 shrink-0">
+              <Image
+                src="/assets/logo/logo.jpeg"
+                alt="OptimizedCare Logo"
+                fill
+                className="object-contain mix-blend-multiply"
+              />
             </div>
             <div>
               <h3 className="text-[16px] sm:text-[17px] font-semibold tracking-tight text-[#1D3557]">
@@ -89,10 +95,10 @@ export default function ConsultationModal({
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {[
-                  { id: "care", label: "Care Services" },
+                  { id: "care", label: "Supported Living" },
                   { id: "aesthetics", label: "Aesthetics" },
-                  { id: "surgery", label: "Cosmetic Surgery" },
-                  { id: "therapy", label: "Therapeutic" },
+                  { id: "surgery", label: "Cosmetic Surgeries" },
+                  { id: "therapy", label: "Diagnostic Center" },
                 ].map((item) => (
                   <button
                     key={item.id}

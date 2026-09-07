@@ -27,7 +27,6 @@ export default function Home() {
   const slides = [
     {
       id: "trust",
-      divisionNumber: "Flagship Umbrella",
       navTitle: "OptimizedCare Group",
       badge: "The Clinical Trust • Stockport & UK",
       title: "World-Class British Medicine & Dedicated Personal Care",
@@ -51,9 +50,8 @@ export default function Home() {
     },
     {
       id: "care",
-      divisionNumber: "Division 01",
-      navTitle: "Supported Care",
-      badge: "Residential, Domiciliary & Complex Nursing",
+      navTitle: "Supported Living",
+      badge: "Domiciliary, Supported Living & Complex Care",
       title: "Dignified In-Home Care & Supported Living Services",
       description:
         "Bespoke, compassionate residential, supported living, and private nursing care tailored to foster independence with dignity. 24/7 live-in carers and dementia specialists.",
@@ -65,7 +63,7 @@ export default function Home() {
         "Direct Local Authority & Family Referral Intake",
       ],
       primaryCta: {
-        label: "Explore Care Services",
+        label: "Explore Supported Living",
         href: "/care",
       },
       secondaryCta: {
@@ -75,7 +73,6 @@ export default function Home() {
     },
     {
       id: "aesthetics",
-      divisionNumber: "Division 02",
       navTitle: "Advanced Aesthetics",
       badge: "Doctor-Led Clinical Dermatology",
       title: "Doctor-Led Non-Surgical Rejuvenation & Skin Science",
@@ -99,10 +96,9 @@ export default function Home() {
     },
     {
       id: "surgery",
-      divisionNumber: "Division 03",
-      navTitle: "Cosmetic Surgery",
+      navTitle: "Cosmetic Surgeries",
       badge: "Pioneer Surgical Theatres • GMC Registered",
-      title: "Consultant Cosmetic & Reconstructive Surgical Distinction",
+      title: "Consultant Cosmetic Surgeries & Reconstructive Distinction",
       description:
         "Pioneering surgical excellence delivered by GMC-specialist registered British surgeons. Breast augmentation, preservation rhinoplasty, and high-definition VASER liposuction with 0% finance.",
       image:
@@ -113,7 +109,7 @@ export default function Home() {
         "Ultra-Clean CQC-Registered Hospital Theatres",
       ],
       primaryCta: {
-        label: "Explore Cosmetic Surgery",
+        label: "Explore Cosmetic Surgeries",
         href: "/surgery",
       },
       secondaryCta: {
@@ -123,10 +119,9 @@ export default function Home() {
     },
     {
       id: "therapy",
-      divisionNumber: "Division 04",
-      navTitle: "Therapeutic Services",
-      badge: "HCPC & CSP Multidisciplinary Rehabilitation",
-      title: "Restorative Physiotherapy, Speech & Clinical Therapy",
+      navTitle: "Diagnostic Center",
+      badge: "Multidisciplinary Diagnostics & Clinical Evaluation",
+      title: "Comprehensive Diagnostic Center & Restorative Clinical Evaluations",
       description:
         "Empowering physical autonomy, cognitive communication, and mental health resilience through specialist occupational therapy, chartered physiotherapy, and clinical psychotherapy.",
       image:
@@ -137,11 +132,11 @@ export default function Home() {
         "Direct Payments & NHS Continuing Healthcare",
       ],
       primaryCta: {
-        label: "Explore Therapeutic Services",
+        label: "Explore Diagnostic Center",
         href: "/therapy",
       },
       secondaryCta: {
-        label: "Book Therapy Assessment",
+        label: "Book Diagnostic Evaluation",
         action: () => openConsultation("therapy"),
       },
     },
@@ -240,9 +235,6 @@ export default function Home() {
               {/* Main Two-Column Hero Content */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 <div className="lg:col-span-6">
-                  <div className="inline-block text-[#2A9D8F] font-semibold text-[12px] uppercase tracking-widest mb-3">
-                    {activeSlideData.divisionNumber}
-                  </div>
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-semibold text-[#1D3557] tracking-tight leading-[1.1] mb-5 text-balance transition-all duration-500">
                     {activeSlideData.title}
                   </h1>
@@ -353,78 +345,11 @@ export default function Home() {
           {/* ========================================================================= */}
           {/* FULL-WIDTH TRUST BANNER                                                   */}
           {/* ========================================================================= */}
-          <section className="w-full bg-white py-10 border-b border-[#E2E8F0]">
+          {/* TRUST CREDENTIALS & GOVERNANCE STRIP                                      */}
+          {/* ========================================================================= */}
+          <section className="w-full bg-white py-5 sm:py-6 border-b border-[#E2E8F0]">
             <div className="max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12">
-              {/* Primary 3 Trust Pillars */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center pb-8 border-b border-[#E2E8F0]">
-                {/* Trust Pillar 1: CQC Outstanding */}
-                <div className="flex items-center gap-4 p-5 rounded-2xl bg-[#F8FAFC] hover:bg-[#E8F6F3] border border-[#E2E8F0] transition-colors duration-300">
-                  <div className="w-12 h-12 rounded-full bg-[#1D3557] flex items-center justify-center text-white shrink-0 shadow-xs">
-                    <span className="material-symbols-outlined text-2xl text-[#94D2BD]">verified_user</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-[11px] font-semibold text-[#457B9D] uppercase tracking-wider">
-                        Independent Audit
-                      </span>
-                      <span className="w-1 h-1 rounded-full bg-[#2A9D8F]"></span>
-                      <span className="text-[11px] font-semibold text-[#1D3557]">2024 / 2025</span>
-                    </div>
-                    <span className="text-[18px] text-[#1D3557] font-semibold tracking-tight leading-snug">
-                      CQC Rated “Outstanding”
-                    </span>
-                    <span className="text-[12px] text-[#457B9D]">
-                      Excellence in patient safety, clinical care, and responsiveness.
-                    </span>
-                  </div>
-                </div>
-
-                {/* Trust Pillar 2: GMC Specialist Register */}
-                <div className="flex items-center gap-4 p-5 rounded-2xl bg-[#F8FAFC] hover:bg-[#E8F6F3] border border-[#E2E8F0] transition-colors duration-300">
-                  <div className="w-12 h-12 rounded-full bg-[#1D3557] flex items-center justify-center text-white shrink-0 shadow-xs">
-                    <span className="material-symbols-outlined text-2xl text-[#94D2BD]">workspace_premium</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-[11px] font-semibold text-[#457B9D] uppercase tracking-wider">
-                        Clinical Governance
-                      </span>
-                    </div>
-                    <span className="text-[18px] text-[#1D3557] font-semibold tracking-tight leading-snug">
-                      GMC Specialist Register
-                    </span>
-                    <span className="text-[12px] text-[#457B9D]">
-                      100% of surgical consultants hold substantive NHS credentials.
-                    </span>
-                  </div>
-                </div>
-
-                {/* Trust Pillar 3: Over 10,000 Patients & Reviews */}
-                <div className="flex items-center gap-4 p-5 rounded-2xl bg-[#F8FAFC] hover:bg-[#E8F6F3] border border-[#E2E8F0] transition-colors duration-300">
-                  <div className="w-12 h-12 rounded-full bg-[#1D3557] flex items-center justify-center text-white shrink-0 shadow-xs">
-                    <span className="material-symbols-outlined text-2xl text-[#94D2BD]">stars</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-1 text-[#2A9D8F] mb-0.5">
-                      <span className="material-symbols-outlined text-base">star</span>
-                      <span className="material-symbols-outlined text-base">star</span>
-                      <span className="material-symbols-outlined text-base">star</span>
-                      <span className="material-symbols-outlined text-base">star</span>
-                      <span className="material-symbols-outlined text-base">star</span>
-                      <span className="text-[12px] text-[#1D3557] font-semibold ml-1 tnum">4.98 / 5.0</span>
-                    </div>
-                    <span className="text-[18px] text-[#1D3557] font-semibold tracking-tight leading-snug">
-                      Over 10,000 Happy Patients
-                    </span>
-                    <span className="text-[12px] text-[#457B9D]">
-                      Verified clinical outcomes, family care reviews, and discretion.
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Secondary Trust Strip */}
-              <div className="pt-6 flex flex-wrap items-center justify-between gap-4">
+              <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-2 text-[#457B9D] text-[13px] font-medium">
                   <span className="material-symbols-outlined text-[#2A9D8F] text-base">location_on</span>
                   <span>24 Greek Street, Stockport (SK3 8AB)</span>

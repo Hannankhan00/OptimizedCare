@@ -38,7 +38,7 @@ export default function AestheticsHero({ onOpenConsultation }: AestheticsHeroPro
           <div className="lg:col-span-7 flex flex-col items-start space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E8F6F3] border border-[#94D2BD] text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-widest">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2A9D8F]" />
-              <span className="text-[#1D3557]">Division 02 • Doctor-Led Clinical Aesthetics</span>
+              <span className="text-[#1D3557]">Doctor-Led Clinical Aesthetics</span>
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-semibold text-[#1D3557] tracking-tight leading-[1.1] text-balance">

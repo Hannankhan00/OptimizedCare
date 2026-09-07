@@ -44,7 +44,7 @@ export default function CompactHero({ onOpenConsultation }: CompactHeroProps) {
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-[#2A9D8F]" />
                 <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#2A9D8F]">
-                  Division 01 • Supported Living &amp; Domiciliary Care
+                  Supported Living &amp; Domiciliary Care
                 </span>
               </div>
             </div>

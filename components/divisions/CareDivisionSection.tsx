@@ -19,7 +19,7 @@ export default function CareDivisionSection({
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#E9C9AC]/40 text-[#8A4530] text-[11px] font-semibold uppercase tracking-widest border border-[#A85D3D]/30 mb-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#8A4530]"></span>
-            Division 01 • Supported &amp; Domiciliary Care Services
+            Supported Living &amp; Domiciliary Care Services
           </div>
           <h2 className="font-serif text-3xl md:text-4xl font-semibold text-[#211E1A] tracking-tight">
             Supported Living, Domiciliary &amp; Live-In Nursing

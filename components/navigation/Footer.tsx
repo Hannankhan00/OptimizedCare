@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -10,20 +11,16 @@ export default function Footer() {
           {/* Col 1: Brand & Clinical Governance */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#1D3557] flex items-center justify-center text-white shrink-0 shadow-xs">
-                <svg
-                  className="w-5 h-5 text-[#94D2BD]"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
-                >
-                  <path d="M12 2v20M2 12h20" />
-                  <circle cx="12" cy="12" r="9" />
-                </svg>
+              <div className="relative w-10 h-13 sm:w-11 sm:h-14 shrink-0">
+                <Image
+                  src="/assets/logo/logo.jpeg"
+                  alt="OptimizedCare Logo"
+                  fill
+                  className="object-contain mix-blend-multiply"
+                />
               </div>
               <div className="flex flex-col">
-                <span className="text-[18px] font-semibold text-[#1D3557] tracking-tight leading-tight">
+                <span className="text-[19px] sm:text-[21px] font-semibold text-[#1D3557] tracking-tight leading-tight">
                   OptimizedCare
                 </span>
                 <span className="text-[10px] text-[#457B9D] font-semibold tracking-widest uppercase">
@@ -62,7 +59,7 @@ export default function Footer() {
             <ul className="space-y-2 text-[13px] text-[#457B9D]">
               <li>
                 <Link href="/care" className="hover:text-[#2A9D8F] transition-colors">
-                  Supported &amp; Domiciliary Care
+                  Supported Living &amp; Domiciliary Care
                 </Link>
               </li>
               <li>
@@ -72,12 +69,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/surgery" className="hover:text-[#2A9D8F] transition-colors">
-                  Consultant Cosmetic Surgery
+                  Cosmetic Surgeries &amp; Theatres
                 </Link>
               </li>
               <li>
                 <Link href="/therapy" className="hover:text-[#2A9D8F] transition-colors">
-                  Therapeutic &amp; Rehab Services
+                  Diagnostic Center &amp; Clinical Services
                 </Link>
               </li>
             </ul>

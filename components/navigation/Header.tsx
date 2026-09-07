@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Header({
@@ -31,10 +32,10 @@ export default function Header({
 
   const navLinks = [
     { name: "The Trust", href: "/" },
-    { name: "Supported Care", href: "/care" },
+    { name: "Supported Living", href: "/care" },
     { name: "Advanced Aesthetics", href: "/aesthetics" },
-    { name: "Cosmetic Surgery", href: "/surgery" },
-    { name: "Therapeutic Services", href: "/therapy" },
+    { name: "Cosmetic Surgeries", href: "/surgery" },
+    { name: "Diagnostic Center", href: "/therapy" },
   ];
 
   return (
@@ -42,21 +43,15 @@ export default function Header({
       {/* 1. Top Utility / Trust Ribbon */}
       <div className="w-full bg-white text-[#1D3557] border-b border-[#E2E8F0] text-[11px] font-medium tracking-wide">
         <div className="max-w-[1360px] mx-auto px-3 sm:px-6 md:px-8 lg:px-12 h-7 sm:h-8 flex items-center justify-between">
-          {/* Left: Trust & CQC Seal */}
-          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-            <div className="flex items-center gap-1.5 shrink-0">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2A9D8F]" />
-              <span className="text-[#1D3557] font-semibold uppercase tracking-wider text-[10px] whitespace-nowrap">
-                CQC Outstanding
-              </span>
-            </div>
-            <span className="text-[#E2E8F0] hidden sm:inline">•</span>
-            <span className="text-[#457B9D] hidden sm:inline truncate">
-              24 Greek Street, Stockport
+          {/* Left: Location */}
+          <div className="flex items-center gap-1.5 min-w-0">
+            <span className="material-symbols-outlined text-[14px] text-[#2A9D8F] shrink-0">location_on</span>
+            <span className="text-[#457B9D] truncate">
+              24 Greek Street, Stockport SK3 8AB
             </span>
           </div>
 
-          {/* Right: Direct Telephone & Governance */}
+          {/* Right: Direct Telephone & Operating Hours */}
           <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             <a
               href="tel:+447404210566"
@@ -66,13 +61,8 @@ export default function Header({
               <span className="material-symbols-outlined text-[13px] sm:text-[15px] text-[#2A9D8F]">call</span>
               <span className="tnum font-semibold">+44 7404 210566</span>
             </a>
-            <span className="text-[#E2E8F0] hidden md:inline">|</span>
-            <div className="hidden md:flex items-center gap-1.5 text-[#457B9D] whitespace-nowrap">
-              <span className="material-symbols-outlined text-[15px] text-[#2A9D8F]">verified</span>
-              <span>GMC Specialist Regulated</span>
-            </div>
-            <span className="text-[#E2E8F0] hidden lg:inline">|</span>
-            <span className="text-[#457B9D] hidden lg:inline whitespace-nowrap">
+            <span className="text-[#E2E8F0] hidden sm:inline">|</span>
+            <span className="text-[#457B9D] hidden sm:inline whitespace-nowrap">
               Mon–Sat: 08:00 – 20:00
             </span>
           </div>
@@ -82,23 +72,18 @@ export default function Header({
       {/* 2. Main Navigation Bar */}
       <div className="w-full bg-white/95 backdrop-blur-md border-b border-[#E2E8F0]">
         <div className="h-16 sm:h-20 max-w-[1360px] mx-auto px-3 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between gap-3 sm:gap-6">
-          {/* Brand Crest & Title */}
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 shrink-0 group">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#1D3557] flex items-center justify-center text-white group-hover:bg-[#2A9D8F] transition-colors shadow-xs shrink-0">
-              <svg
-                className="w-4 h-4 sm:w-5 sm:h-5 text-[#94D2BD]"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.75"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 2v20M2 12h20" />
-                <circle cx="12" cy="12" r="9" />
-              </svg>
+          {/* Brand Logo & Title */}
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 shrink-0 group">
+            <div className="relative w-8 h-10 sm:w-10 sm:h-12 shrink-0">
+              <Image
+                src="/assets/logo/logo.jpeg"
+                alt="OptimizedCare Logo"
+                fill
+                className="object-contain mix-blend-multiply group-hover:scale-105 transition-transform"
+                priority
+              />
             </div>
-            <span className="text-[17px] sm:text-[20px] font-semibold text-[#1D3557] tracking-tight leading-tight whitespace-nowrap">
+            <span className="text-[18px] sm:text-[21px] font-semibold text-[#1D3557] tracking-tight leading-tight whitespace-nowrap group-hover:text-[#2A9D8F] transition-colors">
               OptimizedCare
             </span>
           </Link>
@@ -171,12 +156,19 @@ export default function Header({
           <div className="relative z-50 lg:hidden bg-white border-b border-[#E2E8F0] shadow-xl px-4 sm:px-6 py-5 max-h-[calc(100vh-95px)] sm:max-h-[calc(100vh-115px)] overflow-y-auto animate-in slide-in-from-top-2 duration-200">
             <div className="flex flex-col gap-3">
               <div className="pb-3 border-b border-[#E2E8F0] flex items-center justify-between">
-                <span className="text-[11px] uppercase tracking-widest text-[#457B9D] font-semibold">
-                  Clinical Divisions
-                </span>
-                <span className="text-[10px] sm:text-[11px] font-semibold text-[#2A9D8F] bg-[#E8F6F3] border border-[#94D2BD] px-2.5 py-0.5 rounded-full">
-                  CQC Outstanding
-                </span>
+                <div className="flex items-center gap-2.5">
+                  <div className="relative w-7 h-9 shrink-0">
+                    <Image
+                      src="/assets/logo/logo.jpeg"
+                      alt="OptimizedCare Logo"
+                      fill
+                      className="object-contain mix-blend-multiply"
+                    />
+                  </div>
+                  <span className="text-[15px] text-[#1D3557] font-semibold tracking-tight">
+                    OptimizedCare
+                  </span>
+                </div>
               </div>
 
               {navLinks.map((link) => {
@@ -225,9 +217,8 @@ export default function Header({
                   Book Priority Consultation
                 </button>
 
-                <div className="pt-2 flex items-center justify-between text-[11px] text-[#457B9D] px-1">
+                <div className="pt-2 flex items-center justify-center text-[11px] text-[#457B9D] px-1">
                   <span>24 Greek St, Stockport SK3 8AB</span>
-                  <span className="font-semibold text-[#2A9D8F]">GMC Regulated</span>
                 </div>
               </div>
             </div>

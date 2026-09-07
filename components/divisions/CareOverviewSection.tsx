@@ -19,7 +19,7 @@ export default function CareOverviewSection({
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E8F6F3] border border-[#94D2BD] text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2A9D8F]"></span>
-                <span className="text-[#1D3557]">Division 01 • Supported Living &amp; Domiciliary Care</span>
+                <span className="text-[#1D3557]">Supported Living &amp; Domiciliary Care</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#1D3557] tracking-tight leading-[1.15]">
@@ -80,7 +80,7 @@ export default function CareOverviewSection({
                 href="/care"
                 className="h-11 px-6 bg-[#2A9D8F] text-white font-medium text-[14px] rounded-full hover:bg-[#21867A] active:scale-[0.985] transition-all duration-200 flex items-center gap-2 group shadow-xs"
               >
-                <span>Visit Care Main Page</span>
+                <span>Visit Supported Living Hub</span>
                 <span className="material-symbols-outlined text-[18px] text-white group-hover:translate-x-1 transition-transform">
                   arrow_forward
                 </span>

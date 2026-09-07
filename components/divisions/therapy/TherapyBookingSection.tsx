@@ -33,15 +33,15 @@ export default function TherapyBookingSection() {
           <div className="lg:col-span-5 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E8F6F3] border border-[#94D2BD] text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-wider">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2A9D8F]" />
-              <span>Direct Therapy Assessment Intake</span>
+              <span>Direct Diagnostic Assessment Intake</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1D3557] tracking-tight leading-tight">
-              Arrange Your Comprehensive Therapy Assessment
+              Arrange Your Comprehensive Diagnostic Assessment
             </h2>
 
             <p className="text-[16px] text-[#457B9D] leading-relaxed">
-              Every therapeutic care plan begins with a 60-minute objective evaluation by our HCPC-registered chartered clinicians. Available in our Stockport clinic (24 Greek Street) or delivered at home nationwide.
+              Every clinical care plan begins with a 60-minute objective evaluation by our HCPC-registered chartered clinicians at our Diagnostic Center. Available in our Stockport clinic (24 Greek Street) or delivered at home nationwide.
             </p>
 
             <div className="space-y-4 pt-2">

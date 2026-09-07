@@ -46,7 +46,7 @@ export default function TherapyOverviewSection({
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E8F6F3] border border-[#94D2BD] text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2A9D8F]"></span>
-                <span className="text-[#1D3557]">Division 04 • Therapeutic &amp; Rehabilitation Services</span>
+                <span className="text-[#1D3557]">Diagnostic Center &amp; Clinical Services</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#1D3557] tracking-tight leading-[1.15]">
@@ -107,7 +107,7 @@ export default function TherapyOverviewSection({
                 href="/therapy"
                 className="h-11 px-6 bg-[#2A9D8F] text-white font-medium text-[14px] rounded-full hover:bg-[#21867A] active:scale-[0.985] transition-all flex items-center gap-2 group cursor-pointer shadow-xs"
               >
-                <span>Visit Therapy Main Page</span>
+                <span>Visit Diagnostic Center</span>
                 <span className="material-symbols-outlined text-[18px] text-white group-hover:translate-x-1 transition-transform">
                   arrow_forward
                 </span>
@@ -118,7 +118,7 @@ export default function TherapyOverviewSection({
                 onClick={() => onOpenConsultation?.("therapy")}
                 className="h-11 px-5 bg-white border border-[#E2E8F0] hover:border-[#94D2BD] hover:bg-[#F0F9FF] active:scale-[0.985] text-[#1D3557] font-semibold text-[14px] rounded-full transition-all cursor-pointer"
               >
-                Book Therapy Assessment
+                Book Diagnostic Evaluation
               </button>
             </div>
           </div>

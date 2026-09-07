@@ -46,7 +46,7 @@ export default function AestheticsOverviewSection({
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E8F6F3] border border-[#94D2BD] text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2A9D8F]"></span>
-                <span className="text-[#1D3557]">Division 02 • Advanced Medical Aesthetics Clinic</span>
+                <span className="text-[#1D3557]">Advanced Medical Aesthetics Clinic</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#1D3557] tracking-tight leading-[1.15]">

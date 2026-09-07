@@ -38,15 +38,15 @@ export default function TherapyHero({ onOpenConsultation }: TherapyHeroProps) {
           <div className="lg:col-span-7 flex flex-col items-start space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E8F6F3] border border-[#94D2BD] text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-widest">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2A9D8F]" />
-              <span className="text-[#1D3557]">Division 04 • Multidisciplinary Clinical Rehabilitation</span>
+              <span className="text-[#1D3557]">Diagnostic Center &amp; Restorative Care</span>
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-semibold text-[#1D3557] tracking-tight leading-[1.1] text-balance">
-              Restorative Physiotherapy, Speech &amp; Clinical Therapy.
+              Diagnostic Center, Physiotherapy &amp; Restorative Care.
             </h1>
 
             <p className="text-[17px] sm:text-[18px] text-[#457B9D] leading-relaxed max-w-[620px]">
-              Empowering physical mobility, daily living autonomy, cognitive communication, and psychological resilience. Delivered by HCPC-registered chartered physiotherapists, occupational therapists, and clinical speech specialists across our Stockport clinic suites (24 Greek Street) and nationwide in-home therapy visits.
+              Empowering physical mobility, daily living autonomy, cognitive communication, and psychological resilience. Delivered by HCPC-registered chartered physiotherapists, occupational therapists, and clinical specialists across our Stockport diagnostic clinic suites (24 Greek Street) and nationwide in-home visits.
             </p>
 
             {/* Key Clinical Governance Chips */}
@@ -71,7 +71,7 @@ export default function TherapyHero({ onOpenConsultation }: TherapyHeroProps) {
                 onClick={onOpenConsultation}
                 className="group inline-flex items-center justify-between gap-4 h-13 pl-7 pr-3 bg-[#2A9D8F] text-white font-semibold text-[14px] rounded-full hover:bg-[#21867A] active:scale-[0.985] transition-all cursor-pointer shadow-xs"
               >
-                <span>Arrange Therapy Assessment</span>
+                <span>Arrange Diagnostic Assessment</span>
                 <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-105 group-hover:translate-x-0.5 transition-all">
                   <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </span>

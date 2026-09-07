@@ -19,11 +19,11 @@ export default function SurgeryOverviewSection({
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E8F6F3] border border-[#94D2BD] text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2A9D8F]"></span>
-                <span className="text-[#1D3557]">Division 03 • Consultant Plastic &amp; Reconstructive Surgery</span>
+                <span className="text-[#1D3557]">Consultant Cosmetic Surgeries &amp; Reconstructive Care</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold text-[#1D3557] tracking-tight leading-[1.15]">
-                Consultant Plastic Surgery &amp; Body Contouring
+                Consultant Cosmetic Surgeries &amp; Body Contouring
               </h2>
 
               <p className="text-[16px] md:text-[17px] text-[#457B9D] leading-relaxed">
@@ -80,7 +80,7 @@ export default function SurgeryOverviewSection({
                 href="/surgery"
                 className="h-11 px-6 bg-[#2A9D8F] text-white font-medium text-[14px] rounded-full hover:bg-[#21867A] active:scale-[0.985] transition-all duration-200 flex items-center gap-2 group shadow-xs"
               >
-                <span>Visit Surgery Main Page</span>
+                <span>Visit Cosmetic Surgeries Hub</span>
                 <span className="material-symbols-outlined text-[18px] text-white group-hover:translate-x-1 transition-transform">
                   arrow_forward
                 </span>

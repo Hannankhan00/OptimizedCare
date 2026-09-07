@@ -37,6 +37,11 @@ export const metadata: Metadata = {
     "GMC specialist plastic surgeons",
     "CQC outstanding care",
   ],
+  icons: {
+    icon: "/assets/logo/logo.jpeg",
+    shortcut: "/assets/logo/logo.jpeg",
+    apple: "/assets/logo/logo.jpeg",
+  },
 };
 
 export default function RootLayout({
