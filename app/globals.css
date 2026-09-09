@@ -1,40 +1,73 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F8FAFC;
-  --foreground: #1D3557;
-  --surface: #FFFFFF;
-  --surface-dim: #E2E8F0;
-  --surface-bright: #FFFFFF;
+  /* Surface & Base Canvas (Optimized Care) */
+  --surface: #f4faff;
+  --surface-dim: #ccdde6;
+  --surface-bright: #f4faff;
   --surface-container-lowest: #ffffff;
-  --surface-container-low: #F0F9FF;
-  --surface-container: #E8F6F3;
-  --surface-container-high: #E2E8F0;
-  --surface-container-highest: #CBD5E1;
-  --on-surface: #1D3557;
-  --on-surface-variant: #457B9D;
-  --primary: #1D3557;
-  --primary-container: #1D3557;
+  --surface-container-low: #e6f6ff;
+  --surface-container: #dff1fa;
+  --surface-container-high: #daebf5;
+  --surface-container-highest: #d4e5ef;
+  --on-surface: #0d1e25;
+  --on-surface-variant: #3e4a3d;
+  --inverse-surface: #23333a;
+  --inverse-on-surface: #e2f3fd;
+  --background: #f4faff;
+  --foreground: #0d1e25;
+
+  /* Primary (Vibrant Bio-Green) */
+  --primary: #006b29;
   --on-primary: #ffffff;
-  --on-primary-container: #94D2BD;
-  --secondary: #2A9D8F;
-  --secondary-container: #E8F6F3;
-  --secondary-fixed: #E8F6F3;
-  --secondary-fixed-dim: #94D2BD;
+  --primary-container: #008735;
+  --on-primary-container: #f7fff2;
+  --inverse-primary: #6ade7d;
+  --primary-fixed: #86fb96;
+  --primary-fixed-dim: #6ade7d;
+  --on-primary-fixed: #002108;
+  --on-primary-fixed-variant: #00531e;
+  --bio-green: #29A34A;
+  --bio-green-hover: #238B3F;
+
+  /* Secondary (Precision Clinical Blue) */
+  --secondary: #00639a;
   --on-secondary: #ffffff;
-  --on-secondary-container: #1D3557;
-  --tertiary: #457B9D;
-  --tertiary-container: #F0F9FF;
-  --tertiary-fixed: #E8F6F3;
-  --tertiary-fixed-dim: #94D2BD;
-  --outline: #94D2BD;
-  --outline-variant: #CBD5E1;
+  --secondary-container: #68baff;
+  --on-secondary-container: #004973;
+  --secondary-fixed: #cee5ff;
+  --secondary-fixed-dim: #96ccff;
+  --on-secondary-fixed: #001d32;
+  --on-secondary-fixed-variant: #004a76;
+  --clinical-blue: #0878B9;
+
+  /* Tertiary (Deep Imperial Navy / Slate) */
+  --tertiary: #4c5e6c;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #657785;
+  --on-tertiary-container: #fcfcff;
+  --tertiary-fixed: #d2e5f6;
+  --tertiary-fixed-dim: #b6c9d9;
+  --on-tertiary-fixed: #0b1d29;
+  --on-tertiary-fixed-variant: #374956;
+  --imperial-navy: #071A26;
+
+  /* Structural Borders & Neutral Accents */
+  --outline: #6e7a6c;
+  --outline-variant: #bdcaba;
+  --surface-tint: #006e2a;
+  --surface-variant: #d4e5ef;
   --border-slate: #E2E8F0;
-  --text-muted: #457B9D;
-  --inverse-surface: #1D3557;
-  --inverse-on-surface: #F8FAFC;
-  --success: #2A9D8F;
-  --alert: #E63946;
+  --border-ice: #E9EEF0;
+  --text-muted: #6e7a6c;
+
+  /* Semantic */
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+  --success: #29A34A;
+  --alert: #ba1a1a;
 }
 
 @theme inline {
@@ -48,21 +81,33 @@
   --color-surface-container: var(--surface-container);
   --color-surface-container-high: var(--surface-container-high);
   --color-surface-container-highest: var(--surface-container-highest);
+  --color-surface-variant: var(--surface-variant);
   --color-on-surface: var(--on-surface);
   --color-on-surface-variant: var(--on-surface-variant);
   --color-primary: var(--primary);
   --color-primary-container: var(--primary-container);
+  --color-primary-fixed: var(--primary-fixed);
+  --color-primary-fixed-dim: var(--primary-fixed-dim);
   --color-on-primary: var(--on-primary);
   --color-on-primary-container: var(--on-primary-container);
+  --color-on-primary-fixed: var(--on-primary-fixed);
+  --color-on-primary-fixed-variant: var(--on-primary-fixed-variant);
   --color-secondary: var(--secondary);
   --color-secondary-container: var(--secondary-container);
   --color-secondary-fixed: var(--secondary-fixed);
   --color-secondary-fixed-dim: var(--secondary-fixed-dim);
   --color-on-secondary: var(--on-secondary);
   --color-on-secondary-container: var(--on-secondary-container);
+  --color-on-secondary-fixed: var(--on-secondary-fixed);
+  --color-on-secondary-fixed-variant: var(--on-secondary-fixed-variant);
   --color-tertiary: var(--tertiary);
   --color-tertiary-container: var(--tertiary-container);
   --color-tertiary-fixed: var(--tertiary-fixed);
+  --color-tertiary-fixed-dim: var(--tertiary-fixed-dim);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+  --color-on-tertiary-fixed: var(--on-tertiary-fixed);
+  --color-on-tertiary-fixed-variant: var(--on-tertiary-fixed-variant);
   --color-outline: var(--outline);
   --color-outline-variant: var(--outline-variant);
   --color-border-slate: var(--border-slate);
@@ -71,27 +116,52 @@
   --color-inverse-on-surface: var(--inverse-on-surface);
   --color-success: var(--success);
   --color-alert: var(--alert);
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: var(--font-fraunces), Georgia, 'Times New Roman', serif;
+  
+  --spacing-unit-2xs: 0.25rem;
+  --spacing-unit-xs: 0.5rem;
+  --spacing-unit-sm: 0.75rem;
+  --spacing-unit-md: 1rem;
+  --spacing-unit-lg: 1.5rem;
+  --spacing-unit-xl: 2rem;
+  --spacing-unit-2xl: 3rem;
+  --spacing-unit-3xl: 4rem;
+  --spacing-unit-4xl: 6rem;
+  --spacing-gutter-mobile: 1rem;
+  --spacing-gutter-tablet: 1.5rem;
+  --spacing-gutter-desktop: 2rem;
+  --spacing-margin-mobile: 1.25rem;
+  --spacing-margin-tablet: 2.5rem;
+  --spacing-margin-desktop: 4rem;
+
+  --radius-DEFAULT: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
+
+  --font-sans: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  --font-serif: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
 }
 
-/* Typography tokens from Cavendish Stone & Clay — Fraunces reserved for display/headline tiers */
-.font-display-lg { font-family: var(--font-serif); font-size: 56px; line-height: 62px; letter-spacing: -0.01em; font-weight: 500; }
-.font-headline-xl { font-family: var(--font-serif); font-size: 40px; line-height: 46px; letter-spacing: -0.01em; font-weight: 500; }
-.font-headline-lg { font-family: var(--font-serif); font-size: 32px; line-height: 38px; letter-spacing: -0.005em; font-weight: 500; }
-.font-headline-md { font-family: var(--font-serif); font-size: 24px; line-height: 30px; letter-spacing: 0em; font-weight: 500; }
-.font-headline-sm { font-size: 20px; line-height: 28px; letter-spacing: -0.01em; font-weight: 600; }
-.font-body-xl { font-size: 18px; line-height: 28px; letter-spacing: -0.005em; font-weight: 400; }
-.font-body-lg { font-size: 16px; line-height: 24px; letter-spacing: 0em; font-weight: 400; }
-.font-body-md { font-size: 14px; line-height: 20px; letter-spacing: 0em; font-weight: 400; }
-.font-body-sm { font-size: 12px; line-height: 18px; letter-spacing: 0.01em; font-weight: 400; }
-.font-label-lg { font-size: 14px; line-height: 20px; letter-spacing: 0.02em; font-weight: 500; }
-.font-label-md { font-size: 12px; line-height: 16px; letter-spacing: 0.04em; font-weight: 500; }
-.font-label-caps { font-size: 11px; line-height: 16px; letter-spacing: 0.08em; font-weight: 600; text-transform: uppercase; }
+/* Typography tokens from Optimized Care Design System */
+.font-display-hero { font-family: var(--font-display); font-size: 56px; line-height: 64px; letter-spacing: -0.03em; font-weight: 600; }
+.font-display-lg { font-family: var(--font-display); font-size: 56px; line-height: 64px; letter-spacing: -0.03em; font-weight: 600; }
+.font-headline-xl { font-family: var(--font-display); font-size: 36px; line-height: 44px; letter-spacing: -0.02em; font-weight: 600; }
+.font-headline-lg { font-family: var(--font-display); font-size: 28px; line-height: 36px; letter-spacing: -0.015em; font-weight: 500; }
+.font-headline-md { font-family: var(--font-display); font-size: 22px; line-height: 30px; letter-spacing: -0.01em; font-weight: 500; }
+.font-headline-sm { font-family: var(--font-display); font-size: 18px; line-height: 26px; letter-spacing: 0em; font-weight: 600; }
+.font-body-xl { font-family: var(--font-sans); font-size: 18px; line-height: 28px; letter-spacing: -0.005em; font-weight: 400; }
+.font-body-lg { font-family: var(--font-sans); font-size: 16px; line-height: 26px; letter-spacing: 0em; font-weight: 400; }
+.font-body-md { font-family: var(--font-sans); font-size: 14px; line-height: 22px; letter-spacing: 0em; font-weight: 400; }
+.font-body-sm { font-family: var(--font-sans); font-size: 12px; line-height: 18px; letter-spacing: 0.01em; font-weight: 400; }
+.font-label-lg { font-family: var(--font-display); font-size: 14px; line-height: 18px; letter-spacing: 0.02em; font-weight: 500; }
+.font-label-md { font-family: var(--font-display); font-size: 12px; line-height: 16px; letter-spacing: 0.04em; font-weight: 600; }
+.font-label-caps { font-family: var(--font-display); font-size: 11px; line-height: 14px; letter-spacing: 0.08em; font-weight: 700; text-transform: uppercase; }
 
 @media (max-width: 768px) {
-  .font-display-lg { font-size: 36px; line-height: 42px; letter-spacing: -0.005em; }
-  .font-headline-xl { font-size: 28px; line-height: 34px; letter-spacing: -0.005em; }
+  .font-display-hero { font-size: 40px; line-height: 48px; letter-spacing: -0.02em; }
+  .font-display-lg { font-size: 40px; line-height: 48px; letter-spacing: -0.02em; }
+  .font-headline-xl { font-size: 28px; line-height: 36px; letter-spacing: -0.01em; }
 }
 
 html {
@@ -121,29 +191,41 @@ p {
 }
 
 :focus-visible {
-  outline: 2px solid #A85D3D;
+  outline: 2px solid #0878B9;
   outline-offset: 2px;
 }
 
-/* Ink-tinted Architectural Shadow & Surface Layering (Cavendish Stone & Clay) */
-.luxury-shadow-sm {
-  box-shadow: 0 2px 8px -2px rgba(33, 30, 26, 0.06), 0 1px 4px -1px rgba(33, 30, 26, 0.04);
+/* Elevation Hierarchy (Optimized Care) */
+/* Level 1: Clinical Cards & Panels */
+.luxury-shadow-sm, .elevation-1 {
+  box-shadow: 0 4px 20px -2px rgba(16, 32, 39, 0.03);
 }
 
-.luxury-shadow-md {
-  box-shadow: 0 12px 30px -6px rgba(33, 30, 26, 0.10), 0 4px 12px -2px rgba(33, 30, 26, 0.05);
+/* Level 2: Hover & Focus States */
+.luxury-shadow-md, .elevation-2 {
+  box-shadow: 0 12px 32px -4px rgba(8, 120, 185, 0.08);
 }
 
-.luxury-shadow-lg {
-  box-shadow: 0 24px 60px -12px rgba(33, 30, 26, 0.16), 0 8px 24px -4px rgba(33, 30, 26, 0.08);
+/* Level 3: Modal & Diagnostic Drawers */
+.luxury-shadow-lg, .elevation-3 {
+  box-shadow: 0 24px 48px -12px rgba(7, 26, 38, 0.12);
 }
 
-/* Glassmorphic Clinical Surface Fallback */
+/* Glassmorphic Clinical Surface (Level 3) */
 .clinical-glass {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(221, 211, 191, 0.8);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid #E2E8F0;
+}
+
+/* Biometric Glow Accent */
+.biometric-glow {
+  background: radial-gradient(circle at top left, rgba(41, 163, 74, 0.12), transparent 70%);
+}
+
+.cyan-glow {
+  background: radial-gradient(circle at top right, rgba(8, 120, 185, 0.10), transparent 70%);
 }
 
 .material-symbols-outlined {
@@ -158,4 +240,3 @@ p {
   white-space: nowrap;
   direction: ltr;
 }
-

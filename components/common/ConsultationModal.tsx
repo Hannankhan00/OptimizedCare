@@ -20,7 +20,7 @@ export default function ConsultationModal({
     name: "",
     phone: "",
     email: "",
-    location: "24 Greek Street, Stockport (SK3 8AB)",
+    location: "24 Greek Street, Stockport, England, SK3 8AB",
     date: "",
     notes: "",
   });
@@ -47,9 +47,10 @@ export default function ConsultationModal({
           <div className="flex items-center gap-3">
             <div className="relative w-8 h-10 shrink-0">
               <Image
-                src="/assets/logo/logo.jpeg"
+                src="/assets/logo.png"
                 alt="OptimizedCare Logo"
                 fill
+                sizes="32px"
                 className="object-contain mix-blend-multiply"
               />
             </div>
@@ -171,7 +172,7 @@ export default function ConsultationModal({
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                   className="w-full h-10 px-3 text-[13px] bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg focus:outline-none focus:border-[#2A9D8F] focus:bg-white text-[#1D3557]"
                 >
-                  <option value="24 Greek Street, Stockport (SK3 8AB)">24 Greek Street, Stockport (SK3 8AB)</option>
+                  <option value="24 Greek Street, Stockport, England, SK3 8AB">24 Greek Street, Stockport, England, SK3 8AB</option>
                   <option value="In-Home Care Assessment">In-Home Assessment (UK-Wide)</option>
                   <option value="Private Video Consultation">Private Video Consultation (GMC)</option>
                 </select>

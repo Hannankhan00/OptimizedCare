@@ -1,498 +1,421 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/navigation/Header";
 import Footer from "@/components/navigation/Footer";
 import ConsultationModal from "@/components/common/ConsultationModal";
-import CareOverviewSection from "@/components/divisions/CareOverviewSection";
-import AestheticsOverviewSection from "@/components/divisions/AestheticsOverviewSection";
-import SurgeryOverviewSection from "@/components/divisions/SurgeryOverviewSection";
-import TherapyOverviewSection from "@/components/divisions/TherapyOverviewSection";
 
 export default function Home() {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-  const [consultationDept, setConsultationDept] = useState("surgery");
+  const [consultationDept, setConsultationDept] = useState("general");
 
-  // Hero Carousel State
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [progress, setProgress] = useState(0);
-
-  const openConsultation = (dept: string = "surgery") => {
+  const openConsultation = (dept: string = "general") => {
     setConsultationDept(dept);
     setIsConsultationOpen(true);
   };
 
-  const slides = [
-    {
-      id: "trust",
-      navTitle: "OptimizedCare Group",
-      badge: "The Clinical Trust • Stockport & UK",
-      title: "World-Class British Medicine & Dedicated Personal Care",
-      description:
-        "Uniting pioneer surgical precision, doctor-led aesthetic science, and dignified private residential nursing under unified clinical governance at OptimizedCare.org.pk.",
-      image:
-        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80",
-      highlights: [
-        "Care Quality Commission (CQC) Rated “Outstanding”",
-        "GMC Specialist Governance Across All Divisions",
-        "Head Office: 24 Greek Street, Stockport (SK3 8AB)",
-      ],
-      primaryCta: {
-        label: "Book Priority Consultation",
-        action: () => openConsultation("surgery"),
-      },
-      secondaryCta: {
-        label: "Explore Treatments",
-        href: "#divisions",
-      },
-    },
+  const services = [
     {
       id: "care",
-      navTitle: "Supported Living",
-      badge: "Domiciliary, Supported Living & Complex Care",
-      title: "Dignified In-Home Care & Supported Living Services",
+      number: "01 / CARE",
+      badge: "Care Pathways",
+      badgeClass: "bg-primary/10 text-primary",
+      glowClass: "bg-primary/10",
+      image: "/stitch/service_care.jpg",
+      title: "Supported Living",
       description:
-        "Bespoke, compassionate residential, supported living, and private nursing care tailored to foster independence with dignity. 24/7 live-in carers and dementia specialists.",
-      image:
-        "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1600&q=80",
-      highlights: [
-        "24/7 Dedicated Live-in Care & Waking Nights",
-        "Specialist Dementia, Stroke & Complex Needs",
-        "Direct Local Authority & Family Referral Intake",
+        "Compassionate, person-centred support designed to help individuals live with greater independence, confidence and dignity.",
+      tags: [
+        "24/7 Supported Environments",
+        "Personalised Independence Plans",
+        "Trained Care Teams",
       ],
-      primaryCta: {
-        label: "Explore Supported Living",
-        href: "/care",
-      },
-      secondaryCta: {
-        label: "Arrange Care Assessment",
-        action: () => openConsultation("care"),
-      },
+      href: "/care",
+      ctaText: "Explore Supported Living",
+      btnClass:
+        "bg-primary text-on-primary hover:bg-[#005a22] shadow-[0_4px_16px_rgba(0,107,41,0.22)] hover:shadow-[0_6px_22px_rgba(0,107,41,0.32)]",
     },
     {
       id: "aesthetics",
-      navTitle: "Advanced Aesthetics",
-      badge: "Doctor-Led Clinical Dermatology",
-      title: "Doctor-Led Non-Surgical Rejuvenation & Skin Science",
+      number: "02 / AESTHETICS",
+      badge: "Doctor-Led",
+      badgeClass: "bg-secondary/10 text-secondary",
+      glowClass: "bg-secondary/10",
+      image: "/stitch/service_aesthetics.jpg",
+      title: "Advanced Aesthetics",
       description:
-        "Physician-administered anti-wrinkle injectables, subtle hyaluronic dermal contouring, Profhilo biostimulators, and Morpheus8 RF subdermal remodeling at private Stockport suites.",
-      image:
-        "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80",
-      highlights: [
-        "Strictly GMC & NMC Doctor-Led Consultations",
-        "Profhilo, Polynucleotides & Natural Contouring",
-        "Morpheus8 RF & Fractional Laser Resurfacing",
+        "Advanced aesthetic treatments combining clinical expertise, precision and a natural approach to helping you look and feel your best.",
+      tags: [
+        "Doctor-Led Consultations",
+        "Bespoke Facial Rejuvenation",
+        "Medical Grade Skincare",
       ],
-      primaryCta: {
-        label: "Explore Aesthetics Clinic",
-        href: "/aesthetics",
-      },
-      secondaryCta: {
-        label: "Book Aesthetic Consultation",
-        action: () => openConsultation("aesthetics"),
-      },
+      href: "/aesthetics",
+      ctaText: "Explore Aesthetics",
+      btnClass:
+        "bg-secondary text-on-secondary hover:bg-[#005280] shadow-[0_4px_16px_rgba(0,99,154,0.22)] hover:shadow-[0_6px_22px_rgba(0,99,154,0.32)]",
     },
     {
       id: "surgery",
-      navTitle: "Cosmetic Surgeries",
-      badge: "Pioneer Surgical Theatres • GMC Registered",
-      title: "Consultant Cosmetic Surgeries & Reconstructive Distinction",
+      number: "03 / SURGERY",
+      badge: "Consultant Surgeons",
+      badgeClass: "bg-surface-container-high text-on-surface",
+      glowClass: "bg-secondary-container/10",
+      image: "/stitch/service_surgery.jpg",
+      title: "Cosmetic Surgeries",
       description:
-        "Pioneering surgical excellence delivered by GMC-specialist registered British surgeons. Breast augmentation, preservation rhinoplasty, and high-definition VASER liposuction with 0% finance.",
-      image:
-        "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1600&q=80",
-      highlights: [
-        "100% BAAPS & BAPRAS Consultant Surgeons",
-        "0% APR Chrysalis Medical Finance (12 Months)",
-        "Ultra-Clean CQC-Registered Hospital Theatres",
+        "Thoughtfully delivered cosmetic procedures focused on safety, precision, confidence and naturally refined results.",
+      tags: [
+        "Consultant Plastic Surgeons",
+        "Accredited Hospital Theatres",
+        "Full Aftercare Support",
       ],
-      primaryCta: {
-        label: "Explore Cosmetic Surgeries",
-        href: "/surgery",
-      },
-      secondaryCta: {
-        label: "Calculate 0% Finance Plans",
-        href: "/surgery#finance",
-      },
+      href: "/surgery",
+      ctaText: "Explore Cosmetic Surgery",
+      btnClass:
+        "bg-secondary text-on-secondary hover:bg-[#005280] shadow-[0_4px_16px_rgba(0,99,154,0.22)] hover:shadow-[0_6px_22px_rgba(0,99,154,0.32)]",
     },
     {
-      id: "therapy",
-      navTitle: "Diagnostic Center",
-      badge: "Multidisciplinary Diagnostics & Clinical Evaluation",
-      title: "Comprehensive Diagnostic Center & Restorative Clinical Evaluations",
+      id: "diagnostics",
+      number: "04 / DIAGNOSTICS",
+      badge: "Rapid Diagnostic Scans",
+      badgeClass: "bg-secondary-fixed text-on-secondary-fixed",
+      glowClass: "bg-primary-fixed/15",
+      image: "/stitch/service_diagnostics.jpg",
+      title: "Diagnostic Center",
       description:
-        "Empowering physical autonomy, cognitive communication, and mental health resilience through specialist occupational therapy, chartered physiotherapy, and clinical psychotherapy.",
-      image:
-        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80",
-      highlights: [
-        "HCPC, CSP, RCOT & RCSLT Registered Clinicians",
-        "In-Clinic Suites & Direct Home Visit Therapy",
-        "Direct Payments & NHS Continuing Healthcare",
+        "Modern diagnostic services supported by advanced technology, experienced professionals and a commitment to accurate results.",
+      tags: [
+        "Rapid Access Scans",
+        "High-Resolution MRI & Ultrasound",
+        "Same-Day Consultant Reports",
       ],
-      primaryCta: {
-        label: "Explore Diagnostic Center",
-        href: "/therapy",
-      },
-      secondaryCta: {
-        label: "Book Diagnostic Evaluation",
-        action: () => openConsultation("therapy"),
-      },
+      href: "/therapy",
+      ctaText: "Explore Diagnostics",
+      btnClass:
+        "bg-secondary text-on-secondary hover:bg-[#005280] shadow-[0_4px_16px_rgba(0,99,154,0.22)] hover:shadow-[0_6px_22px_rgba(0,99,154,0.32)]",
     },
   ];
 
-  const SLIDE_DURATION = 6500; // 6.5s auto-rotation
-
-  // Auto-play timer with progress bar
-  useEffect(() => {
-    if (isPaused) return;
-
-    const interval = 50;
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          setCurrentSlide((curr) => (curr + 1) % slides.length);
-          return 0;
-        }
-        return prev + (interval / SLIDE_DURATION) * 100;
-      });
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, [isPaused, currentSlide, slides.length]);
-
-  const handleSelectSlide = (index: number) => {
-    setCurrentSlide(index);
-    setProgress(0);
-  };
-
-  const handlePrev = () => {
-    setCurrentSlide((curr) => (curr - 1 + slides.length) % slides.length);
-    setProgress(0);
-  };
-
-  const handleNext = () => {
-    setCurrentSlide((curr) => (curr + 1) % slides.length);
-    setProgress(0);
-  };
-
-  const activeSlideData = slides[currentSlide];
+  const principles = [
+    {
+      title: "People First",
+      icon: "favorite",
+      iconColor: "text-primary",
+      description:
+        "Compassion and respect in every individual journey. Every protocol is structured to respect personal dignity and autonomy.",
+    },
+    {
+      title: "Clinical Excellence",
+      icon: "verified",
+      iconColor: "text-secondary",
+      description:
+        "Rigorous British medical standards, stringent CQC oversight, and consultant-led patient pathways at every stage.",
+    },
+    {
+      title: "Modern Expertise",
+      icon: "biotech",
+      iconColor: "text-secondary",
+      description:
+        "Cutting-edge clinical diagnostic tech, modern imaging equipment, and evidence-based aesthetic methodologies.",
+    },
+    {
+      title: "Personalised Care",
+      icon: "tune",
+      iconColor: "text-primary",
+      description:
+        "Tailored treatment plans crafted uniquely for your biological needs, lifestyle goals, and personal comfort.",
+    },
+  ];
 
   return (
     <>
-      {/* Global Persistent Universal Header */}
-      <Header onOpenConsultation={() => openConsultation("surgery")} />
+      <Header onOpenConsultation={() => openConsultation("general")} />
 
-      {/* Main Page Container */}
-      <main className="w-full pt-24 sm:pt-28 bg-[#F8FAFC] min-h-screen text-[#1D3557] selection:bg-[#E8F6F3] selection:text-[#2A9D8F]">
-        <div className="flex flex-col w-full">
+      <main className="w-full pt-20 sm:pt-24 bg-background min-h-screen">
+        <div className="flex flex-col w-full selection:bg-secondary-fixed selection:text-on-secondary-fixed">
           {/* ========================================================================= */}
-          {/* HERO: COMPACT PERSONNEL PALETTE, FRAMED IMAGE PANEL                       */}
+          {/* HERO SECTION                                                              */}
           {/* ========================================================================= */}
-          <section
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            className="relative w-full bg-white border-b border-[#E2E8F0] overflow-hidden"
-          >
-            {/* Ambient Teal-Green Glow */}
-            <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[720px] md:w-[1000px] h-[350px] bg-gradient-to-b from-[#2A9D8F]/15 via-[#94D2BD]/10 to-transparent blur-3xl opacity-75" />
+          <section className="relative overflow-hidden pt-unit-3xl pb-unit-4xl">
+            {/* Ambient Biotech / Wellness Glow Accents */}
+            <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[840px] h-[520px] bg-gradient-to-tr from-secondary/15 via-primary-fixed/25 to-transparent blur-[120px] rounded-full pointer-events-none -z-10" />
+            <div className="absolute -top-24 right-10 w-96 h-96 bg-secondary-container/15 blur-[100px] rounded-full pointer-events-none -z-10" />
 
-            <div className="relative max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12 pt-10 md:pt-14 pb-10">
-              {/* Top Row: Division Badge & Counter/Arrows */}
-              <div className="flex items-center justify-between gap-4 pb-8">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E8F6F3] border border-[#94D2BD] text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-wider">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#2A9D8F]" />
-                  <span className="text-[#1D3557]">{activeSlideData.badge}</span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-[#457B9D] font-mono">
-                    <span className="text-[#1D3557] font-semibold">0{currentSlide + 1}</span>
-                    <span className="text-[#E2E8F0]">/</span>
-                    <span>05</span>
-                  </div>
-                  {/* Arrow Buttons */}
-                  <div className="flex items-center gap-1.5">
-                    <button
-                      onClick={handlePrev}
-                      className="w-9 h-9 rounded-full bg-white hover:bg-[#2A9D8F] hover:text-white text-[#1D3557] flex items-center justify-center border border-[#E2E8F0] hover:border-[#2A9D8F] active:scale-95 transition-all cursor-pointer shadow-xs"
-                      aria-label="Previous Slide"
-                    >
-                      <span className="material-symbols-outlined text-[18px]">chevron_left</span>
-                    </button>
-                    <button
-                      onClick={handleNext}
-                      className="w-9 h-9 rounded-full bg-white hover:bg-[#2A9D8F] hover:text-white text-[#1D3557] flex items-center justify-center border border-[#E2E8F0] hover:border-[#2A9D8F] active:scale-95 transition-all cursor-pointer shadow-xs"
-                      aria-label="Next Slide"
-                    >
-                      <span className="material-symbols-outlined text-[18px]">chevron_right</span>
-                    </button>
-                  </div>
-                </div>
+            <div className="w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop flex flex-col items-center">
+              {/* Trust Indicator Pill */}
+              <div className="inline-flex items-center gap-unit-xs px-unit-md py-unit-2xs rounded-full bg-surface-container-lowest shadow-sm mb-unit-xl border border-border-slate/50">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+                </span>
+                <span className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant font-semibold">
+                  Compassionate Care • Clinical Excellence • Modern Expertise
+                </span>
               </div>
 
-              {/* Main Two-Column Hero Content */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-                <div className="lg:col-span-6">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-semibold text-[#1D3557] tracking-tight leading-[1.1] mb-5 text-balance transition-all duration-500">
-                    {activeSlideData.title}
-                  </h1>
-                  <p className="text-[16px] md:text-[18px] text-[#457B9D] leading-relaxed mb-6 max-w-[560px]">
-                    {activeSlideData.description}
-                  </p>
+              {/* Main Headline */}
+              <h1 className="font-display-hero text-display-hero md:text-[68px] md:leading-[1.08] tracking-tight text-on-surface max-w-4xl text-center">
+                Care, Beauty &amp; Precision.
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-secondary-container to-primary">
+                  Optimized for You.
+                </span>
+              </h1>
 
-                  {/* Key Bullet Highlights */}
-                  <div className="flex flex-col gap-2 mb-8 text-[13px] text-[#1D3557] font-medium">
-                    {activeSlideData.highlights.map((h) => (
-                      <div key={h} className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-[#2A9D8F] text-[17px]">
-                          check
-                        </span>
-                        <span>{h}</span>
-                      </div>
-                    ))}
-                  </div>
+              {/* Supporting Subtitle */}
+              <p className="mt-unit-lg font-body-xl text-body-xl text-on-surface-variant max-w-2xl text-center leading-relaxed">
+                Exceptional care, advanced aesthetics, cosmetic surgery and diagnostic services — brought together under one trusted organisation.
+              </p>
 
-                  {/* Slide Action CTAs */}
-                  <div className="flex flex-wrap items-center gap-5">
-                    {activeSlideData.primaryCta.href ? (
-                      <Link
-                        href={activeSlideData.primaryCta.href}
-                        className="inline-flex items-center justify-center h-12 px-7 bg-[#2A9D8F] text-white font-semibold text-[14px] rounded-full hover:bg-[#21867A] active:scale-[0.985] transition-all cursor-pointer shadow-xs"
-                      >
-                        <span>{activeSlideData.primaryCta.label}</span>
-                      </Link>
-                    ) : (
-                      <button
-                        onClick={activeSlideData.primaryCta.action}
-                        className="inline-flex items-center justify-center h-12 px-7 bg-[#2A9D8F] text-white font-semibold text-[14px] rounded-full hover:bg-[#21867A] active:scale-[0.985] transition-all cursor-pointer shadow-xs"
-                      >
-                        <span>{activeSlideData.primaryCta.label}</span>
-                      </button>
-                    )}
-
-                    {activeSlideData.secondaryCta.href ? (
-                      <Link
-                        href={activeSlideData.secondaryCta.href}
-                        className="inline-flex items-center gap-1 text-[#1D3557] font-medium text-[14px] hover:text-[#2A9D8F] hover:underline underline-offset-4 cursor-pointer transition-colors"
-                      >
-                        <span>{activeSlideData.secondaryCta.label}</span>
-                        <span className="material-symbols-outlined text-[16px]">chevron_right</span>
-                      </Link>
-                    ) : (
-                      <button
-                        onClick={activeSlideData.secondaryCta.action}
-                        className="inline-flex items-center gap-1 text-[#1D3557] font-medium text-[14px] hover:text-[#2A9D8F] hover:underline underline-offset-4 cursor-pointer transition-colors"
-                      >
-                        <span>{activeSlideData.secondaryCta.label}</span>
-                        <span className="material-symbols-outlined text-[16px]">chevron_right</span>
-                      </button>
-                    )}
-                  </div>
-                </div>
-
-                {/* Framed Image Panel (Cross-Fade) */}
-                <div className="lg:col-span-6">
-                  <div className="relative rounded-2xl overflow-hidden border border-[#E2E8F0] w-full aspect-[4/3] md:aspect-[16/11] shadow-xs">
-                    {slides.map((s, idx) => (
-                      <div
-                        key={s.id}
-                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                          currentSlide === idx ? "opacity-100" : "opacity-0"
-                        }`}
-                      >
-                        <img
-                          src={s.image}
-                          alt={s.title}
-                          className="w-full h-full object-cover object-center"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              {/* CTAs */}
+              <div className="mt-unit-xl flex flex-wrap items-center justify-center gap-unit-md">
+                <a
+                  href="#services"
+                  className="inline-flex items-center justify-center px-unit-2xl py-unit-sm rounded-full bg-secondary text-on-secondary font-label-lg text-label-lg shadow-md hover:bg-secondary/90 transition-all hover:scale-[1.02] active:scale-95"
+                >
+                  Explore Our Services
+                </a>
+                <button
+                  onClick={() => openConsultation("general")}
+                  className="inline-flex items-center justify-center px-unit-2xl py-unit-sm rounded-full bg-surface-container-lowest text-on-surface font-label-lg text-label-lg shadow-sm hover:bg-surface-container-low transition-all border border-border-slate/60 cursor-pointer hover:border-secondary/40"
+                >
+                  Book a Consultation
+                </button>
               </div>
 
-              {/* Sleek Minimal Carousel Indicators */}
-              <div className="pt-8 mt-8 flex items-center justify-between border-t border-[#E2E8F0]">
-                <div className="flex items-center gap-2">
-                  {slides.map((s, idx) => (
-                    <button
-                      key={s.id}
-                      onClick={() => handleSelectSlide(idx)}
-                      className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                        currentSlide === idx
-                          ? "w-10 bg-[#2A9D8F]"
-                          : "w-3 bg-[#CBD5E1] hover:bg-[#94D2BD]"
-                      }`}
-                      aria-label={`Go to slide ${idx + 1}: ${s.navTitle}`}
+              {/* Large Showcase Visual with Floating Badges */}
+              <div className="mt-unit-3xl relative w-full max-w-6xl">
+                <div className="relative rounded-xl overflow-hidden shadow-2xl bg-surface-container-lowest ring-1 ring-border-slate/40">
+                  <div className="relative w-full h-[380px] sm:h-[480px] md:h-[620px]">
+                    <Image
+                      src="/stitch/hero_consultation.jpg"
+                      alt="Optimized Care Clinical Consultation"
+                      fill
+                      priority
+                      fetchPriority="high"
+                      sizes="(max-width: 1280px) 100vw, 1152px"
+                      className="object-cover object-center"
                     />
-                  ))}
-                </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/30 via-transparent to-transparent pointer-events-none" />
 
-                <div className="text-[12px] text-[#457B9D] font-mono tracking-wider flex items-center gap-2">
-                  <span className="text-[#1D3557] font-semibold">0{currentSlide + 1}</span>
-                  <span className="text-[#E2E8F0]">/</span>
-                  <span>05</span>
-                  <span className="text-[#457B9D] hidden sm:inline ml-2 text-[11px] font-sans">
-                    • {activeSlideData.navTitle}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </section>
+                  {/* Micro Badge: Top Left CQC */}
+                  <div className="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-8 md:left-8 backdrop-blur-xl bg-surface-container-lowest/90 px-unit-md py-unit-xs rounded-full shadow-lg flex items-center gap-unit-xs border border-white/50">
+                    <span className="material-symbols-outlined text-primary text-base">verified</span>
+                    <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface font-semibold">
+                      CQC Regulated Standards
+                    </span>
+                  </div>
 
-          {/* ========================================================================= */}
-          {/* FULL-WIDTH TRUST BANNER                                                   */}
-          {/* ========================================================================= */}
-          {/* TRUST CREDENTIALS & GOVERNANCE STRIP                                      */}
-          {/* ========================================================================= */}
-          <section className="w-full bg-white py-5 sm:py-6 border-b border-[#E2E8F0]">
-            <div className="max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center gap-2 text-[#457B9D] text-[13px] font-medium">
-                  <span className="material-symbols-outlined text-[#2A9D8F] text-base">location_on</span>
-                  <span>24 Greek Street, Stockport (SK3 8AB)</span>
-                </div>
-                <div className="flex items-center gap-2 text-[#457B9D] text-[13px] font-medium">
-                  <span className="material-symbols-outlined text-[#2A9D8F] text-base">security</span>
-                  <span>Strict Clinical &amp; GDPR Governance</span>
-                </div>
-                <div className="flex items-center gap-2 text-[#457B9D] text-[13px] font-medium">
-                  <span className="material-symbols-outlined text-[#2A9D8F] text-base">health_and_safety</span>
-                  <span>BUPA, AXA Health &amp; Aviva Approved</span>
-                </div>
-                <div className="flex items-center gap-2 text-[#457B9D] text-[13px] font-medium">
-                  <span className="material-symbols-outlined text-[#2A9D8F] text-base">lock</span>
-                  <span>End-to-End Patient Discretion</span>
+                  {/* Micro Badge: Bottom Right Disciplines */}
+                  <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 backdrop-blur-xl bg-inverse-surface/90 text-inverse-on-surface px-unit-lg py-unit-xs rounded-full shadow-xl flex items-center gap-unit-sm border border-white/10">
+                    <span className="w-2.5 h-2.5 rounded-full bg-primary-fixed animate-ping" />
+                    <span className="font-label-md text-label-md">
+                      4 Comprehensive Clinical Disciplines
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
 
           {/* ========================================================================= */}
-          {/* THREE SEPARATE CLINICAL DIVISIONS (CONCISE DETAILS & DEDICATED PAGE LINK) */}
+          {/* SERVICES OVERVIEW SECTION                                                 */}
           {/* ========================================================================= */}
-          <div id="divisions" className="w-full">
-            {/* Division 01: Care Section */}
-            <CareOverviewSection onOpenConsultation={openConsultation} />
-
-            {/* Division 02: Aesthetics Section */}
-            <AestheticsOverviewSection onOpenConsultation={openConsultation} />
-
-            {/* Division 03: Surgery Section */}
-            <SurgeryOverviewSection onOpenConsultation={openConsultation} />
-
-            {/* Division 04: Therapeutic & Rehabilitation Section */}
-            <TherapyOverviewSection onOpenConsultation={openConsultation} />
-          </div>
-
-          {/* ========================================================================= */}
-          {/* PATIENT STORIES & REVIEWS SECTION                                         */}
-          {/* ========================================================================= */}
-          <section className="w-full bg-[#F8FAFC] py-16 md:py-24 border-b border-[#E2E8F0]">
-            <div className="max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12">
-              <div className="flex flex-col items-center text-center max-w-[820px] mx-auto mb-12">
-                <div className="inline-flex items-center gap-1.5 text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-widest mb-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#2A9D8F]"></span>
-                  Patient Outcomes &amp; Family Voices
-                </div>
-                <h2 className="text-3xl md:text-[38px] text-[#1D3557] font-semibold tracking-tight mb-3">
-                  Stories of Discretion, Care &amp; Transformation
+          <section className="w-full py-unit-4xl bg-surface border-t border-border-slate/40" id="services">
+            <div className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
+              {/* Minimal Centered Header */}
+              <div className="max-w-2xl mx-auto text-center mb-unit-3xl flex flex-col items-center">
+                <span className="font-label-caps text-label-caps tracking-widest uppercase text-secondary font-semibold mb-unit-xs">
+                  Our Services
+                </span>
+                <h2 className="font-headline-xl text-headline-xl md:text-[44px] md:leading-[52px] text-on-surface tracking-tight">
+                  Four areas of expertise.
+                  <br />
+                  One standard of excellence.
                 </h2>
-                <p className="text-[17px] text-[#457B9D] max-w-[680px] leading-relaxed">
-                  Reflecting our unwavering commitment to surgical distinction, clinical empathy, and exemplary patient outcomes.
+                <p className="mt-unit-md font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                  Optimized Care brings together dedicated supported living, bespoke advanced aesthetics, precision cosmetic surgery, and state-of-the-art diagnostic imaging under one cohesive, patient-centred organisation.
                 </p>
               </div>
 
-              {/* 3 Patient Review Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-                {/* Card 1: Cosmetic Surgery */}
-                <div className="flex flex-col justify-between p-6 bg-white rounded-2xl border border-[#E2E8F0] shadow-xs hover:border-[#94D2BD] transition-all duration-300">
-                  <div>
-                    <div className="flex items-center justify-between gap-3 mb-4">
-                      <div className="flex items-center gap-0.5 text-[#2A9D8F]">
-                        <span className="material-symbols-outlined text-base">star</span>
-                        <span className="material-symbols-outlined text-base">star</span>
-                        <span className="material-symbols-outlined text-base">star</span>
-                        <span className="material-symbols-outlined text-base">star</span>
-                        <span className="material-symbols-outlined text-base">star</span>
+              {/* Spacious 2x2 Bento Services Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+                {services.map((svc) => (
+                  <div
+                    key={svc.id}
+                    className="group relative rounded-lg bg-surface-container-lowest p-unit-xl md:p-unit-2xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden border border-border-slate/40"
+                  >
+                    <div
+                      className={`absolute -right-16 -top-16 w-56 h-56 ${svc.glowClass} rounded-full blur-2xl group-hover:scale-125 transition-transform duration-500`}
+                    />
+                    <div>
+                      <div className="flex items-center justify-between mb-unit-lg">
+                        <span className="font-label-caps text-label-caps tracking-widest text-secondary uppercase font-bold">
+                          {svc.number}
+                        </span>
+                        <span className={`px-unit-sm py-1 rounded-full font-label-caps text-label-caps ${svc.badgeClass}`}>
+                          {svc.badge}
+                        </span>
                       </div>
-                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-[#94D2BD] bg-[#E8F6F3] text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-wider">
-                        <span className="material-symbols-outlined text-[14px]">verified</span>
-                        Verified Patient
+                      <div className="relative rounded-DEFAULT overflow-hidden mb-unit-lg shadow-sm h-64 sm:h-72 ring-1 ring-border-slate/40">
+                        <Image
+                          src={svc.image}
+                          alt={svc.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <h3 className="font-headline-lg text-headline-lg text-on-surface group-hover:text-secondary transition-colors">
+                        {svc.title}
+                      </h3>
+                      <p className="mt-unit-xs font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        {svc.description}
+                      </p>
+                    </div>
+
+                    <div className="mt-unit-xl">
+                      {/* Feature Tags */}
+                      <div className="flex flex-wrap gap-unit-2xs mb-unit-lg">
+                        {svc.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-unit-sm py-1 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <Link
+                        href={svc.href}
+                        className={`inline-flex items-center justify-between gap-3 w-full sm:w-auto px-6 py-3 rounded-full font-label-lg text-label-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer group/btn ${svc.btnClass}`}
+                      >
+                        <span className="font-semibold tracking-tight">{svc.ctaText}</span>
+                        <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover/btn:translate-x-1 shrink-0">
+                          <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ========================================================================= */}
+          {/* WHY OPTIMIZED CARE (Split Editorial Layout)                               */}
+          {/* ========================================================================= */}
+          <section className="w-full py-unit-4xl bg-surface-container-low border-t border-border-slate/40" id="philosophy">
+            <div className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+                {/* Left Sticky Narrative */}
+                <div className="lg:col-span-5 lg:sticky lg:top-28 flex flex-col gap-unit-md">
+                  <span className="font-label-caps text-label-caps tracking-widest uppercase text-primary font-semibold">
+                    Our Philosophy
+                  </span>
+                  <h2 className="font-headline-xl text-headline-xl md:text-5xl md:leading-[1.15] text-on-surface tracking-tight">
+                    Healthcare should feel human.
+                  </h2>
+                  <p className="font-body-xl text-body-xl text-on-surface-variant leading-relaxed">
+                    By harmonising clinical precision with deep human empathy, we eradicate the clinical friction in health journeys. Whether in daily supported living or bespoke surgical care, our standard is tailored to you.
+                  </p>
+                  <div className="mt-unit-lg p-unit-lg rounded-lg bg-surface-container-lowest shadow-sm flex items-center gap-unit-md border border-border-slate/40">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                      <span className="material-symbols-outlined text-primary text-2xl">
+                        shield_with_heart
                       </span>
                     </div>
-                    <p className="text-[15px] text-[#1D3557] leading-relaxed mb-6 italic">
-                      “My rhinoplasty results changed my life. From initial 3D surgical simulation to post-operative recovery in Mayfair, the surgical theatre team delivered complete aesthetic perfection with absolute discretion.”
-                    </p>
-                  </div>
-                  <div className="pt-4 border-t border-[#E2E8F0] flex flex-col gap-1">
-                    <span className="text-[16px] text-[#1D3557] font-semibold tracking-tight">
-                      Lady Charlotte H.
-                    </span>
-                    <span className="text-[11px] text-[#457B9D] uppercase font-semibold tracking-wider">
-                      Preservation Rhinoplasty • Stockport Surgical Suite
-                    </span>
+                    <div>
+                      <h4 className="font-headline-sm text-headline-sm text-on-surface">
+                        Integrated Clinical Pathways
+                      </h4>
+                      <p className="font-body-md text-body-md text-on-surface-variant">
+                        Seamless continuity from diagnosis to ongoing wellbeing.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Card 2: Care Services */}
-                <div className="flex flex-col justify-between p-6 bg-white rounded-2xl border border-[#E2E8F0] shadow-xs hover:border-[#94D2BD] transition-all duration-300">
-                  <div>
-                    <div className="flex items-center justify-between gap-3 mb-4">
-                      <div className="flex items-center gap-0.5 text-[#2A9D8F]">
-                        <span className="material-symbols-outlined text-base">star</span>
-                        <span className="material-symbols-outlined text-base">star</span>
-                        <span className="material-symbols-outlined text-base">star</span>
-                        <span className="material-symbols-outlined text-base">star</span>
-                        <span className="material-symbols-outlined text-base">star</span>
+                {/* Right 4 Core Principles */}
+                <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-gutter-tablet">
+                  {principles.map((p) => (
+                    <div
+                      key={p.title}
+                      className="p-unit-xl rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col border border-border-slate/40"
+                    >
+                      <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-unit-lg">
+                        <span className={`material-symbols-outlined text-2xl ${p.iconColor}`}>
+                          {p.icon}
+                        </span>
                       </div>
-                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-[#94D2BD] bg-[#E8F6F3] text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-wider">
-                        <span className="material-symbols-outlined text-[14px]">verified</span>
-                        Family Advocate
-                      </span>
+                      <h3 className="font-headline-md text-headline-md text-on-surface mb-unit-xs">
+                        {p.title}
+                      </h3>
+                      <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        {p.description}
+                      </p>
                     </div>
-                    <p className="text-[15px] text-[#1D3557] leading-relaxed mb-6 italic">
-                      “The care team was exceptional in supporting my father's transition into bespoke private residential nursing. Dignified, warm, and constantly communicative—our family felt supported every single day.”
-                    </p>
-                  </div>
-                  <div className="pt-4 border-t border-[#E2E8F0] flex flex-col gap-1">
-                    <span className="text-[16px] text-[#1D3557] font-semibold tracking-tight">
-                      Alexander M., KC
-                    </span>
-                    <span className="text-[11px] text-[#457B9D] uppercase font-semibold tracking-wider">
-                      Full-Time Domiciliary &amp; Nursing Care • Belgravia
-                    </span>
-                  </div>
+                  ))}
                 </div>
+              </div>
+            </div>
+          </section>
 
-                {/* Card 3: Advanced Aesthetics */}
-                <div className="flex flex-col justify-between p-6 bg-white rounded-2xl border border-[#E2E8F0] shadow-xs hover:border-[#94D2BD] transition-all duration-300">
-                  <div>
-                    <div className="flex items-center justify-between gap-3 mb-4">
-                      <div className="flex items-center gap-0.5 text-[#2A9D8F]">
-                        <span className="material-symbols-outlined text-base">star</span>
-                        <span className="material-symbols-outlined text-base">star</span>
-                        <span className="material-symbols-outlined text-base">star</span>
-                        <span className="material-symbols-outlined text-base">star</span>
-                        <span className="material-symbols-outlined text-base">star</span>
-                      </div>
-                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-[#94D2BD] bg-[#E8F6F3] text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-wider">
-                        <span className="material-symbols-outlined text-[14px]">verified</span>
-                        Verified Patient
-                      </span>
-                    </div>
-                    <p className="text-[15px] text-[#1D3557] leading-relaxed mb-6 italic">
-                      “Doctor-led aesthetics at its highest standard. The bespoke laser resurfacing and subtle hyaluronic contouring left my skin luminous without ever looking overdone. I wouldn't trust anyone else.”
-                    </p>
-                  </div>
-                  <div className="pt-4 border-t border-[#E2E8F0] flex flex-col gap-1">
-                    <span className="text-[16px] text-[#1D3557] font-semibold tracking-tight">
-                      Elena V.
+          {/* ========================================================================= */}
+          {/* METRICS & TRUST SECTION                                                   */}
+          {/* ========================================================================= */}
+          <section className="w-full py-unit-3xl bg-surface-container-lowest border-t border-border-slate/40">
+            <div className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
+              <div className="rounded-xl bg-surface-container-low p-unit-xl md:p-unit-2xl shadow-sm relative overflow-hidden border border-border-slate/50">
+                {/* Gradient Accent Bar Top */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-secondary-container to-primary" />
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-gutter-desktop items-center">
+                  <div className="flex flex-col items-center text-center">
+                    <span className="font-display-hero text-display-hero md:text-6xl font-bold text-on-surface tracking-tight leading-none tnum">
+                      4
                     </span>
-                    <span className="text-[11px] text-[#457B9D] uppercase font-semibold tracking-wider">
-                      Fractional Laser &amp; Subtle Dermal Contouring
+                    <span className="font-label-caps text-label-caps uppercase tracking-widest text-secondary mt-unit-xs">
+                      Core Services
+                    </span>
+                    <span className="font-body-md text-body-md text-on-surface-variant mt-unit-2xs">
+                      Integrated in one network
+                    </span>
+                  </div>
+                  <div className="flex flex-col items-center text-center">
+                    <span className="font-display-hero text-display-hero md:text-6xl font-bold text-secondary tracking-tight leading-none tnum">
+                      1
+                    </span>
+                    <span className="font-label-caps text-label-caps uppercase tracking-widest text-secondary mt-unit-xs">
+                      Integrated Organization
+                    </span>
+                    <span className="font-body-md text-body-md text-on-surface-variant mt-unit-2xs">
+                      Seamless communication
+                    </span>
+                  </div>
+                  <div className="flex flex-col items-center text-center">
+                    <span className="font-display-hero text-display-hero md:text-6xl font-bold text-primary tracking-tight leading-none tnum">
+                      100%
+                    </span>
+                    <span className="font-label-caps text-label-caps uppercase tracking-widest text-primary mt-unit-xs">
+                      Patient Focused
+                    </span>
+                    <span className="font-body-md text-body-md text-on-surface-variant mt-unit-2xs">
+                      Dedicated medical teams
+                    </span>
+                  </div>
+                  <div className="flex flex-col items-center text-center">
+                    <span className="font-display-hero text-display-hero md:text-6xl font-bold text-on-surface tracking-tight leading-none tnum">
+                      24/7
+                    </span>
+                    <span className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface mt-unit-xs">
+                      Commitment to Care
+                    </span>
+                    <span className="font-body-md text-body-md text-on-surface-variant mt-unit-2xs">
+                      Active round-the-clock safety
                     </span>
                   </div>
                 </div>
@@ -501,58 +424,125 @@ export default function Home() {
           </section>
 
           {/* ========================================================================= */}
-          {/* PRIVATE CLINICAL CONCIERGE & APPOINTMENT BOOKING SECTION                 */}
+          {/* ABOUT OPTIMIZED CARE (Modern Editorial Showcase)                          */}
           {/* ========================================================================= */}
-          <section className="w-full bg-white py-16 md:py-20 text-[#1D3557]">
-            <div className="max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12 text-center">
-              <div className="inline-flex items-center gap-2 text-[#2A9D8F] text-[11px] font-semibold uppercase tracking-widest mb-4">
-                <span className="material-symbols-outlined text-[16px] text-[#2A9D8F]">medical_services</span>
-                Confidential Clinical Concierge
+          <section className="w-full py-unit-4xl bg-surface border-t border-border-slate/40" id="about">
+            <div className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+                {/* Left Editorial Copy */}
+                <div className="lg:col-span-6 flex flex-col items-start gap-unit-md">
+                  <span className="font-label-caps text-label-caps tracking-widest uppercase text-secondary font-semibold">
+                    About Optimized Care
+                  </span>
+                  <h2 className="font-headline-xl text-headline-xl md:text-5xl md:leading-[1.15] text-on-surface tracking-tight">
+                    One organization.
+                    <br />
+                    Multiple ways to care.
+                  </h2>
+                  <p className="font-body-xl text-body-xl text-on-surface-variant leading-relaxed">
+                    Optimized Care was established to dismantle the fragmentation typical in modern British healthcare. By synthesizing supported community housing, advanced non-invasive aesthetics, surgical expertise, and ultra-high resolution diagnostics, we create a unified standard of care.
+                  </p>
+                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Every consultant, nurse, and support worker works within a unified governance structure registered with the Care Quality Commission, ensuring that trust, transparency, and clinical excellence guide every decision.
+                  </p>
+                  <div className="pt-unit-sm">
+                    <button
+                      onClick={() => openConsultation("general")}
+                      className="inline-flex items-center gap-unit-xs px-unit-xl py-unit-sm rounded-full bg-inverse-surface text-inverse-on-surface font-label-lg text-label-lg shadow-sm hover:bg-inverse-surface/90 transition-all cursor-pointer"
+                    >
+                      <span>About Optimized Care</span>
+                      <span className="material-symbols-outlined text-base">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Right Visual Showcase */}
+                <div className="lg:col-span-6 relative">
+                  <div className="relative rounded-xl overflow-hidden shadow-xl ring-1 ring-border-slate/40">
+                    <div className="relative w-full h-[360px] sm:h-[460px]">
+                      <Image
+                        src="/stitch/hero_consultation.jpg"
+                        alt="Optimized Care Clinical Facility"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-inverse-surface/50 to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 backdrop-blur-md bg-surface-container-lowest/90 p-unit-md rounded-lg shadow-lg flex items-center gap-unit-md border border-white/50">
+                      <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0 text-primary">
+                        <span className="material-symbols-outlined">verified_user</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="font-label-caps text-label-caps uppercase text-on-surface font-bold">
+                          UK Care Quality Commission
+                        </span>
+                        <span className="font-body-md text-body-md text-on-surface-variant">
+                          Registered &amp; Regulated Health and Social Care Provider
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h2 className="text-3xl md:text-[40px] font-semibold tracking-tight mb-3 text-balance text-[#1D3557]">
-                Arrange Your Priority Consultation
+            </div>
+          </section>
+
+          {/* ========================================================================= */}
+          {/* FINAL CONSULTATION CTA                                                    */}
+          {/* ========================================================================= */}
+          <section className="w-full py-unit-4xl bg-inverse-surface relative overflow-hidden" id="consultation">
+            {/* Bioluminescent Glows in Navy Room */}
+            <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-secondary/20 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/20 blur-[120px] rounded-full pointer-events-none" />
+
+            <div className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop relative z-10 text-center flex flex-col items-center">
+              <div className="inline-flex items-center gap-unit-xs px-unit-md py-1 rounded-full bg-surface-container-high/10 text-primary-fixed mb-unit-lg border border-primary-fixed/20">
+                <span className="w-2 h-2 rounded-full bg-primary-fixed animate-ping" />
+                <span className="font-label-caps text-label-caps uppercase tracking-widest">
+                  Appointments Available Across London &amp; South East
+                </span>
+              </div>
+
+              <h2 className="font-display-hero text-display-hero md:text-6xl text-inverse-on-surface tracking-tight max-w-3xl leading-[1.1]">
+                Ready to take the next step?
               </h2>
-              <p className="text-[17px] text-[#457B9D] max-w-[680px] mx-auto leading-relaxed mb-8">
-                Whether seeking comprehensive domiciliary care support, doctor-led aesthetic protocols, or consultant cosmetic surgery, our clinical coordinators provide discrete, same-day scheduling.
+
+              <p className="mt-unit-md font-body-xl text-body-xl text-tertiary-fixed-dim max-w-xl leading-relaxed">
+                Speak with our team and discover the right service for you. Confidential consultations available online or at our regional clinics.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <div className="mt-unit-2xl flex flex-wrap items-center justify-center gap-unit-md">
                 <button
-                  onClick={() => openConsultation("surgery")}
-                  className="inline-flex items-center justify-center h-12 px-7 bg-[#2A9D8F] text-white font-semibold text-[14px] rounded-full hover:bg-[#21867A] active:scale-[0.985] transition-all w-full sm:w-auto cursor-pointer shadow-xs"
+                  onClick={() => openConsultation("general")}
+                  className="inline-flex items-center justify-center px-unit-2xl py-unit-md rounded-full bg-surface-container-lowest text-inverse-surface font-label-lg text-label-lg shadow-xl hover:bg-surface-container-low transition-all hover:scale-105 active:scale-95 cursor-pointer"
                 >
-                  <span>Book Private Consultation</span>
+                  Book a Consultation
                 </button>
                 <a
                   href="tel:+447404210566"
-                  className="inline-flex items-center justify-center h-12 px-7 border border-[#E2E8F0] text-[#1D3557] font-medium text-[14px] rounded-full hover:border-[#94D2BD] hover:bg-[#F0F9FF] transition-all w-full sm:w-auto"
+                  className="inline-flex items-center justify-center px-unit-2xl py-unit-md rounded-full bg-surface-container-high/10 text-inverse-on-surface font-label-lg text-label-lg hover:bg-surface-container-high/20 transition-all border border-white/10"
                 >
-                  <span className="material-symbols-outlined text-[18px] text-[#2A9D8F] mr-2">call</span>
-                  <span>Direct Line: +44 7404 210566</span>
+                  Contact Us
                 </a>
               </div>
 
-              {/* Security & Compliance Strip */}
-              <div className="pt-6 border-t border-[#E2E8F0] flex flex-wrap items-center justify-center gap-8 text-[#457B9D] text-[11px] font-semibold uppercase tracking-wider">
-                <div className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#2A9D8F] text-[16px]">
-                    shield
-                  </span>
-                  <span>100% Confidentiality</span>
+              <div className="mt-unit-3xl flex flex-wrap items-center justify-center gap-unit-xl text-tertiary-fixed-dim font-body-md text-body-md">
+                <div className="flex items-center gap-unit-2xs">
+                  <span className="material-symbols-outlined text-sm text-primary-fixed">lock</span>
+                  <span>100% Confidential</span>
                 </div>
-                <span className="w-1 h-1 rounded-full bg-[#CBD5E1] hidden sm:inline-block"></span>
-                <div className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#2A9D8F] text-[16px]">
-                    verified_user
+                <div className="flex items-center gap-unit-2xs">
+                  <span className="material-symbols-outlined text-sm text-secondary-fixed">
+                    calendar_today
                   </span>
-                  <span>CQC Regulated Care</span>
+                  <span>Flexible Scheduling</span>
                 </div>
-                <span className="w-1 h-1 rounded-full bg-[#CBD5E1] hidden sm:inline-block"></span>
-                <div className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#2A9D8F] text-[16px]">
-                    workspace_premium
+                <div className="flex items-center gap-unit-2xs">
+                  <span className="material-symbols-outlined text-sm text-primary-fixed">
+                    verified
                   </span>
-                  <span>GMC Consultant Practice</span>
+                  <span>Consultant-Led Approach</span>
                 </div>
               </div>
             </div>
@@ -560,10 +550,9 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Global Universal Footer */}
       <Footer />
 
-      {/* Interactive Consultation Modal */}
+      {/* Interactive Consultation Intake Flow Modal */}
       <ConsultationModal
         isOpen={isConsultationOpen}
         onClose={() => setIsConsultationOpen(false)}

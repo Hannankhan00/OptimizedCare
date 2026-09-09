@@ -1,25 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-space-grotesk",
+  display: "swap",
+  weight: ["500", "600", "700"],
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta-sans",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  display: "swap",
-  weight: "variable",
-  style: ["normal", "italic"],
-  axes: ["opsz", "SOFT", "WONK"],
-});
-
 export const viewport: Viewport = {
-  themeColor: "#2A9D8F",
+  themeColor: "#29A34A",
   width: "device-width",
   initialScale: 1,
 };
@@ -38,9 +36,12 @@ export const metadata: Metadata = {
     "CQC outstanding care",
   ],
   icons: {
-    icon: "/assets/logo/logo.jpeg",
-    shortcut: "/assets/logo/logo.jpeg",
-    apple: "/assets/logo/logo.jpeg",
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/icon.png",
+    apple: "/icon.png",
   },
 };
 
@@ -50,7 +51,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} h-full antialiased`}
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -59,7 +63,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans bg-[#F8FAFC] text-[#1D3557]">
+      <body className="min-h-full flex flex-col font-sans bg-[#F7F9F8] text-[#102027]">
         {children}
       </body>
     </html>

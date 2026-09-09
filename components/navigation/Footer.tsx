@@ -4,152 +4,149 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white border-t border-[#E2E8F0] pt-14 pb-10 text-[#1D3557]">
-      <div className="max-w-[1360px] mx-auto px-4 md:px-8 lg:px-12">
-        {/* Main 4-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#E2E8F0]">
-          {/* Col 1: Brand & Clinical Governance */}
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <div className="relative w-10 h-13 sm:w-11 sm:h-14 shrink-0">
+    <footer className="w-full bg-inverse-surface text-inverse-on-surface relative overflow-hidden">
+      {/* Ambient Glows */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-secondary/15 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-primary/15 blur-3xl pointer-events-none" />
+
+      <div className="w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop pt-unit-4xl pb-unit-2xl relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter-desktop mb-unit-3xl">
+          {/* Brand & Contact */}
+          <div className="lg:col-span-4 flex flex-col gap-unit-md">
+            <div className="flex items-center gap-unit-sm">
+              <div className="relative w-9 h-9 rounded-full bg-white/95 p-1 flex items-center justify-center shrink-0 shadow-sm">
                 <Image
-                  src="/assets/logo/logo.jpeg"
-                  alt="OptimizedCare Logo"
+                  src="/assets/logo.png"
+                  alt="Optimized Care Logo"
                   fill
-                  className="object-contain mix-blend-multiply"
+                  sizes="36px"
+                  className="object-contain p-0.5"
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="text-[19px] sm:text-[21px] font-semibold text-[#1D3557] tracking-tight leading-tight">
-                  OptimizedCare
-                </span>
-                <span className="text-[10px] text-[#457B9D] font-semibold tracking-widest uppercase">
-                  Healthcare Group • Stockport &amp; UK
-                </span>
-              </div>
+              <span className="font-headline-md text-headline-md text-inverse-on-surface tracking-tight">
+                Optimized Care
+              </span>
             </div>
-
-            <p className="text-[13px] text-[#457B9D] leading-relaxed">
-              OptimizedCare unites British surgical precision, doctor-led aesthetic dermatology, and dignified private residential nursing under centralized Care Quality Commission governance.
+            <p className="font-body-md text-body-md text-tertiary-fixed-dim max-w-sm leading-relaxed">
+              Care, beauty and clinical expertise, optimized around you. Uniting British surgical precision, doctor-led aesthetics, diagnostic imaging, and compassionate supported living.
             </p>
-
-            {/* CQC, GMC & HCPC Regulatory Badges */}
-            <div className="flex flex-wrap items-center gap-2 pt-1">
-              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-[#E2E8F0] bg-[#F8FAFC] text-[11px] font-medium text-[#1D3557]">
-                <span>CQC Regulated</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-[#E2E8F0] bg-[#F8FAFC] text-[11px] font-medium text-[#1D3557]">
-                <span>GMC Specialist</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-[#E2E8F0] bg-[#F8FAFC] text-[11px] font-medium text-[#1D3557]">
-                <span>HCPC &amp; CSP Certified</span>
-              </div>
-            </div>
-
-            <div className="text-[11px] text-[#457B9D] pt-1">
-              Official Hub: <span className="font-mono text-[#2A9D8F] font-semibold">OptimizedCare.org.pk</span>
-            </div>
-          </div>
-
-          {/* Col 2: Divisions & Services */}
-          <div className="flex flex-col gap-3">
-            <h3 className="text-[11px] text-[#1D3557] font-semibold uppercase tracking-widest">
-              Clinical Divisions
-            </h3>
-            <ul className="space-y-2 text-[13px] text-[#457B9D]">
-              <li>
-                <Link href="/care" className="hover:text-[#2A9D8F] transition-colors">
-                  Supported Living &amp; Domiciliary Care
-                </Link>
-              </li>
-              <li>
-                <Link href="/aesthetics" className="hover:text-[#2A9D8F] transition-colors">
-                  Advanced Medical Aesthetics
-                </Link>
-              </li>
-              <li>
-                <Link href="/surgery" className="hover:text-[#2A9D8F] transition-colors">
-                  Cosmetic Surgeries &amp; Theatres
-                </Link>
-              </li>
-              <li>
-                <Link href="/therapy" className="hover:text-[#2A9D8F] transition-colors">
-                  Diagnostic Center &amp; Clinical Services
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 3: Legal & Governance */}
-          <div className="flex flex-col gap-3">
-            <h3 className="text-[11px] text-[#1D3557] font-semibold uppercase tracking-widest">
-              Governance &amp; Trust
-            </h3>
-            <ul className="space-y-2 text-[13px] text-[#457B9D]">
-              <li>
-                <a href="#governance" className="hover:text-[#2A9D8F] transition-colors">
-                  CQC Inspection Certificate
-                </a>
-              </li>
-              <li>
-                <a href="#disclosures" className="hover:text-[#2A9D8F] transition-colors">
-                  GMC Register Verification
-                </a>
-              </li>
-              <li>
-                <a href="#chaperone" className="hover:text-[#2A9D8F] transition-colors">
-                  Clinical Chaperone Policy
-                </a>
-              </li>
-              <li>
-                <a href="#gdpr" className="hover:text-[#2A9D8F] transition-colors">
-                  GDPR &amp; Medical Record Privacy
-                </a>
-              </li>
-              <li>
-                <a href="#complaints" className="hover:text-[#2A9D8F] transition-colors">
-                  Patient Advocacy &amp; Complaints
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 4: Central Headquarters & Contact */}
-          <div className="flex flex-col gap-3">
-            <h3 className="text-[11px] text-[#1D3557] font-semibold uppercase tracking-widest">
-              Headquarters &amp; Contact
-            </h3>
-            <div className="space-y-2.5 text-[13px] text-[#457B9D]">
-              <div>
-                <p className="font-semibold text-[#1D3557]">Head Office</p>
-                <p className="text-[#457B9D]">24 Greek Street, Stockport, England, SK3 8AB</p>
-              </div>
-              <div className="pt-1 flex items-center gap-2">
-                <span className="material-symbols-outlined text-[#2A9D8F] text-[18px]">call</span>
-                <a href="tel:+447404210566" className="font-semibold text-[#1D3557] hover:text-[#2A9D8F]">
+            <div className="flex flex-col gap-unit-2xs mt-unit-sm font-body-md text-body-md text-tertiary-fixed-dim">
+              <div className="flex items-center gap-unit-xs">
+                <span className="material-symbols-outlined text-base text-secondary-fixed">call</span>
+                <a href="tel:+447404210566" className="hover:text-inverse-on-surface transition-colors tnum">
                   +44 7404 210566
                 </a>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[#2A9D8F] text-[18px]">mail</span>
-                <a
-                  href="mailto:info@optimizedcare.org.pk"
-                  className="text-[12px] text-[#457B9D] hover:text-[#2A9D8F]"
-                >
-                  info@optimizedcare.org.pk
+              <div className="flex items-center gap-unit-xs">
+                <span className="material-symbols-outlined text-base text-secondary-fixed">mail</span>
+                <a href="mailto:contact@optimizedcare.org.uk" className="hover:text-inverse-on-surface transition-colors">
+                  contact@optimizedcare.org.uk
                 </a>
               </div>
+              <div className="flex items-center gap-unit-xs">
+                <span className="material-symbols-outlined text-base text-secondary-fixed">location_on</span>
+                <span>24 Greek Street, Stockport, England, SK3 8AB</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Services Column */}
+          <div className="lg:col-span-3 flex flex-col gap-unit-sm">
+            <span className="font-headline-sm text-headline-sm text-inverse-on-surface tracking-wide">
+              Services
+            </span>
+            <div className="flex flex-col gap-unit-xs">
+              <Link
+                href="/care"
+                className="font-body-md text-body-md text-tertiary-fixed-dim hover:text-inverse-on-surface transition-colors py-1"
+              >
+                Supported Living
+              </Link>
+              <Link
+                href="/aesthetics"
+                className="font-body-md text-body-md text-tertiary-fixed-dim hover:text-inverse-on-surface transition-colors py-1"
+              >
+                Advanced Aesthetics
+              </Link>
+              <Link
+                href="/surgery"
+                className="font-body-md text-body-md text-tertiary-fixed-dim hover:text-inverse-on-surface transition-colors py-1"
+              >
+                Cosmetic Surgery
+              </Link>
+              <Link
+                href="/therapy"
+                className="font-body-md text-body-md text-tertiary-fixed-dim hover:text-inverse-on-surface transition-colors py-1"
+              >
+                Diagnostic Center
+              </Link>
+            </div>
+          </div>
+
+          {/* Company Column */}
+          <div className="lg:col-span-3 flex flex-col gap-unit-sm">
+            <span className="font-headline-sm text-headline-sm text-inverse-on-surface tracking-wide">
+              Company
+            </span>
+            <div className="flex flex-col gap-unit-xs">
+              <Link
+                href="/#about"
+                className="font-body-md text-body-md text-tertiary-fixed-dim hover:text-inverse-on-surface transition-colors py-1"
+              >
+                About Us
+              </Link>
+              <Link
+                href="/#philosophy"
+                className="font-body-md text-body-md text-tertiary-fixed-dim hover:text-inverse-on-surface transition-colors py-1"
+              >
+                Clinical Governance
+              </Link>
+              <Link
+                href="/#about"
+                className="font-body-md text-body-md text-tertiary-fixed-dim hover:text-inverse-on-surface transition-colors py-1"
+              >
+                CQC Compliance
+              </Link>
+              <Link
+                href="/#consultation"
+                className="font-body-md text-body-md text-tertiary-fixed-dim hover:text-inverse-on-surface transition-colors py-1"
+              >
+                Book Priority Consultation
+              </Link>
+            </div>
+          </div>
+
+          {/* Accreditation Column */}
+          <div className="lg:col-span-2 flex flex-col gap-unit-sm">
+            <span className="font-headline-sm text-headline-sm text-inverse-on-surface tracking-wide">
+              Accreditation
+            </span>
+            <p className="font-body-md text-body-md text-tertiary-fixed-dim leading-relaxed">
+              Care Quality Commission (CQC) registered provider adhering strictly to British clinical benchmarks.
+            </p>
+            <div className="mt-unit-xs inline-flex items-center gap-unit-xs px-unit-sm py-1.5 rounded-full bg-surface-container-high/10 text-primary-fixed font-label-caps text-label-caps tracking-wider uppercase border border-primary-fixed/20 w-fit">
+              <span className="w-2 h-2 rounded-full bg-primary-fixed animate-pulse" />
+              <span>Regulated Care</span>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright & Medical Disclaimers */}
-        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[12px] text-[#457B9D]">
-          <div>
-            &copy; {new Date().getFullYear()} OptimizedCare Healthcare Group Limited. All rights reserved.
-          </div>
-          <div className="text-center md:text-right max-w-xl text-[11px] leading-relaxed">
-            All surgical and medical aesthetic procedures carry clinical risks. Consultations are conducted exclusively by GMC-registered medical practitioners. Care services are regulated by the Care Quality Commission (CQC).
+        {/* Sub-footer Legal Bar */}
+        <div className="pt-unit-xl border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-unit-md text-tertiary-fixed-dim font-body-md text-body-md">
+          <p>© 2026 Optimized Care Ltd. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-unit-md">
+            <a href="#" className="hover:text-inverse-on-surface transition-colors text-sm">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-inverse-on-surface transition-colors text-sm">
+              Terms &amp; Conditions
+            </a>
+            <a href="#" className="hover:text-inverse-on-surface transition-colors text-sm">
+              Cookie Policy
+            </a>
+            <a href="#" className="hover:text-inverse-on-surface transition-colors text-sm">
+              Modern Slavery Statement
+            </a>
           </div>
         </div>
       </div>
